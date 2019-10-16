@@ -12,9 +12,16 @@ namespace RCSv1._0
 {
     public partial class MainForm : Form
     {
+        private NuclideInputPanel nuclideInputPanel;
+        private ModelsInputPanel modelsInputPanel;
+        private KineticsInputPanel kineticsInputPanel;
+
         public MainForm()
         {
             InitializeComponent();
+            nuclideInputPanel = new NuclideInputPanel(pnlNuclideInput);
+            nuclideInputPanel.DrawNuclideInputPanel();
+
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -28,6 +35,16 @@ namespace RCSv1._0
             {
                 WindowState = FormWindowState.Minimized;
             }
+        }
+
+        private void btnNuclideInput_Click(object sender, EventArgs e)
+        {
+            nuclideInputPanel.DrawNuclideInputPanel();
+        }
+
+        private void btnIModelsInput_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
