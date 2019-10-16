@@ -41,18 +41,9 @@
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCheckbox3 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCheckbox4 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCheckbox5 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCheckbox6 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCheckbox7 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCheckbox8 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCheckbox9 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCheckbox10 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.pnlRibbon.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -205,163 +196,42 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.bunifuCustomLabel1);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.bunifuCheckbox10);
-            this.panel2.Controls.Add(this.bunifuCheckbox9);
-            this.panel2.Controls.Add(this.bunifuCheckbox8);
-            this.panel2.Controls.Add(this.bunifuCheckbox7);
-            this.panel2.Controls.Add(this.bunifuCheckbox6);
-            this.panel2.Controls.Add(this.bunifuCheckbox5);
-            this.panel2.Controls.Add(this.bunifuCheckbox4);
-            this.panel2.Controls.Add(this.bunifuCheckbox3);
-            this.panel2.Controls.Add(this.bunifuCheckbox2);
-            this.panel2.Controls.Add(this.bunifuCheckbox1);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(4, 45);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(764, 518);
             this.panel2.TabIndex = 2;
             // 
-            // bunifuCheckbox1
-            // 
-            this.bunifuCheckbox1.BackColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.Checked = true;
-            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(30, 60);
-            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
-            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox1.TabIndex = 9;
-            // 
-            // bunifuCheckbox2
-            // 
-            this.bunifuCheckbox2.BackColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox2.Checked = true;
-            this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox2.Location = new System.Drawing.Point(30, 86);
-            this.bunifuCheckbox2.Name = "bunifuCheckbox2";
-            this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox2.TabIndex = 10;
-            // 
-            // bunifuCheckbox3
-            // 
-            this.bunifuCheckbox3.BackColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox3.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox3.Checked = true;
-            this.bunifuCheckbox3.CheckedOnColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox3.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox3.Location = new System.Drawing.Point(30, 112);
-            this.bunifuCheckbox3.Name = "bunifuCheckbox3";
-            this.bunifuCheckbox3.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox3.TabIndex = 11;
-            // 
-            // bunifuCheckbox4
-            // 
-            this.bunifuCheckbox4.BackColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox4.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox4.Checked = true;
-            this.bunifuCheckbox4.CheckedOnColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox4.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox4.Location = new System.Drawing.Point(30, 138);
-            this.bunifuCheckbox4.Name = "bunifuCheckbox4";
-            this.bunifuCheckbox4.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox4.TabIndex = 12;
-            // 
-            // bunifuCheckbox5
-            // 
-            this.bunifuCheckbox5.BackColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox5.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox5.Checked = true;
-            this.bunifuCheckbox5.CheckedOnColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox5.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox5.Location = new System.Drawing.Point(30, 164);
-            this.bunifuCheckbox5.Name = "bunifuCheckbox5";
-            this.bunifuCheckbox5.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox5.TabIndex = 13;
-            // 
-            // bunifuCheckbox6
-            // 
-            this.bunifuCheckbox6.BackColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox6.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox6.Checked = true;
-            this.bunifuCheckbox6.CheckedOnColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox6.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox6.Location = new System.Drawing.Point(30, 190);
-            this.bunifuCheckbox6.Name = "bunifuCheckbox6";
-            this.bunifuCheckbox6.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox6.TabIndex = 14;
-            // 
-            // bunifuCheckbox7
-            // 
-            this.bunifuCheckbox7.BackColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox7.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox7.Checked = true;
-            this.bunifuCheckbox7.CheckedOnColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox7.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox7.Location = new System.Drawing.Point(30, 216);
-            this.bunifuCheckbox7.Name = "bunifuCheckbox7";
-            this.bunifuCheckbox7.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox7.TabIndex = 15;
-            // 
-            // bunifuCheckbox8
-            // 
-            this.bunifuCheckbox8.BackColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox8.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox8.Checked = true;
-            this.bunifuCheckbox8.CheckedOnColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox8.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox8.Location = new System.Drawing.Point(30, 242);
-            this.bunifuCheckbox8.Name = "bunifuCheckbox8";
-            this.bunifuCheckbox8.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox8.TabIndex = 16;
-            // 
-            // bunifuCheckbox9
-            // 
-            this.bunifuCheckbox9.BackColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox9.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox9.Checked = true;
-            this.bunifuCheckbox9.CheckedOnColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox9.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox9.Location = new System.Drawing.Point(30, 268);
-            this.bunifuCheckbox9.Name = "bunifuCheckbox9";
-            this.bunifuCheckbox9.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox9.TabIndex = 17;
-            // 
-            // bunifuCheckbox10
-            // 
-            this.bunifuCheckbox10.BackColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox10.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox10.Checked = true;
-            this.bunifuCheckbox10.CheckedOnColor = System.Drawing.Color.Blue;
-            this.bunifuCheckbox10.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox10.Location = new System.Drawing.Point(30, 294);
-            this.bunifuCheckbox10.Name = "bunifuCheckbox10";
-            this.bunifuCheckbox10.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox10.TabIndex = 18;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(76, 60);
+            this.label1.Location = new System.Drawing.Point(605, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 18);
             this.label1.TabIndex = 19;
             this.label1.Text = "label1";
             // 
-            // bunifuCustomLabel1
+            // button1
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(26, 16);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(108, 23);
-            this.bunifuCustomLabel1.TabIndex = 20;
-            this.bunifuCustomLabel1.Text = "Chọn độ tuổi";
+            this.button1.Location = new System.Drawing.Point(669, 150);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 14);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(218, 49);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // FormDesign
             // 
@@ -395,18 +265,9 @@
         private System.Windows.Forms.Panel pnlRibbon;
         private System.Windows.Forms.Label lbRibbon;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox10;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox9;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox8;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox7;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox6;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox5;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox4;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox3;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -12,6 +12,9 @@ namespace RCSv1._0
 {
     public partial class MainForm : Form
     {
+        /* These variables are different from the panel in the MainForm, these are used for 
+         * supporting the way approaching those panel
+         */
         private NuclideInputPanel nuclideInputPanel;
         private ModelsInputPanel modelsInputPanel;
         private KineticsInputPanel kineticsInputPanel;

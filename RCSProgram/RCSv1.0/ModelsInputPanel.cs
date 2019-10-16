@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Drawing.Text;
 using Bunifu.Framework.UI;
 
 namespace RCSv1._0
@@ -36,6 +37,7 @@ namespace RCSv1._0
             "Phụ nữ mang thai (6 tháng)",
             "Phụ nữ mang thai (9 tháng)",
         };
+        Label[] arrHumanAgeCheckboxLabel = new Label[10];
 
         #endregion
 
@@ -50,22 +52,44 @@ namespace RCSv1._0
 
         public void DrawModelsInputPanel()
         {
+
+            var pfc = new PrivateFontCollection();
+            string fontLocation = Application.StartupPath.Remove(Application.StartupPath.Length - 10, 10) + "\\Resources\\OpenSans-Light.ttf";
+            pfc.AddFontFile(fontLocation);
+            // This uses for adding new fonts
+
             lbChoose = new Label()
             {
-                Text = "This is a test label",
-                Location = new Point(97, 138),
+                Text = "Chọn độ tuổi",
+                Location = new Point(26, 5),
+                Font = new Font(pfc.Families[0], 16, FontStyle.Bold),
+                Size = new Size(218, 50),
             };
             pnlModelsInput.Controls.Add(lbChoose);
 
+            int locationY = 60;
+            int locationX = 30;
+            // Position of ckbHumanAge and arrHumanAgeCheckboxLabel
             for (int i = 0; i < 10; i++)
             {
                 ckbHumanAge[i] = new BunifuCheckbox()
                 {
                     BackColor = Color.Blue,
                     CheckedOnColor = Color.Blue,
-                    Location = new Point(25, 21),
+                    Location = new Point(locationX, locationY),
+                    Size = new Size(20, 20),
+                    Checked = false,
                 };
-
+                arrHumanAgeCheckboxLabel[i] = new Label()
+                {
+                    Text = arrHumanAgeCheckboxName[i],
+                    Location = new Point(locationX + 40, locationY),
+                    Font = new Font(pfc.Families[0], 10, FontStyle.Regular),
+                    Size = new Size(347, 30),
+                };
+                pnlModelsInput.Controls.Add(ckbHumanAge[i]);
+                pnlModelsInput.Controls.Add(arrHumanAgeCheckboxLabel[i]);
+                locationY += 45;
             }
 
         }
