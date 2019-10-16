@@ -34,8 +34,8 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.pnlRibbon = new System.Windows.Forms.Panel();
             this.lbRibbon = new System.Windows.Forms.Label();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnMinimize = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnKineticsInput = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -45,11 +45,10 @@
             this.pnlNuclideInput = new System.Windows.Forms.Panel();
             this.pnlModelsInput = new System.Windows.Forms.Panel();
             this.pnlRibbon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.pnlNuclideInput.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -68,8 +67,8 @@
             // 
             this.pnlRibbon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.pnlRibbon.Controls.Add(this.lbRibbon);
-            this.pnlRibbon.Controls.Add(this.bunifuImageButton2);
-            this.pnlRibbon.Controls.Add(this.bunifuImageButton1);
+            this.pnlRibbon.Controls.Add(this.btnMinimize);
+            this.pnlRibbon.Controls.Add(this.btnClose);
             this.pnlRibbon.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlRibbon.Location = new System.Drawing.Point(0, 0);
             this.pnlRibbon.Name = "pnlRibbon";
@@ -86,33 +85,33 @@
             this.lbRibbon.TabIndex = 2;
             this.lbRibbon.Text = "RCS v1.0";
             // 
-            // bunifuImageButton2
+            // btnMinimize
             // 
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(948, 5);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(25, 26);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 2;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 20;
-            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
+            this.btnMinimize.ImageActive = null;
+            this.btnMinimize.Location = new System.Drawing.Point(948, 5);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(25, 26);
+            this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimize.TabIndex = 2;
+            this.btnMinimize.TabStop = false;
+            this.btnMinimize.Zoom = 20;
+            this.btnMinimize.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
-            // bunifuImageButton1
+            // btnClose
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(979, 5);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(25, 26);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 1;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 20;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.ImageActive = null;
+            this.btnClose.Location = new System.Drawing.Point(979, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(25, 26);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 1;
+            this.btnClose.TabStop = false;
+            this.btnClose.Zoom = 20;
+            this.btnClose.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // bunifuDragControl2
             // 
@@ -164,6 +163,7 @@
             this.btnKineticsInput.Size = new System.Drawing.Size(206, 70);
             this.btnKineticsInput.TabIndex = 7;
             this.btnKineticsInput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnKineticsInput.Click += new System.EventHandler(this.btnKineticsInput_Click);
             // 
             // btnIModelsInput
             // 
@@ -219,6 +219,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pnlModelsInput);
             this.panel1.Controls.Add(this.pnlNuclideInput);
             this.panel1.Controls.Add(this.bunifuGradientPanel1);
             this.panel1.Controls.Add(this.pnlRibbon);
@@ -230,7 +231,6 @@
             // 
             // pnlNuclideInput
             // 
-            this.pnlNuclideInput.Controls.Add(this.pnlModelsInput);
             this.pnlNuclideInput.Location = new System.Drawing.Point(4, 45);
             this.pnlNuclideInput.Name = "pnlNuclideInput";
             this.pnlNuclideInput.Size = new System.Drawing.Size(764, 518);
@@ -238,10 +238,9 @@
             // 
             // pnlModelsInput
             // 
-            this.pnlModelsInput.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlModelsInput.Location = new System.Drawing.Point(0, 0);
+            this.pnlModelsInput.Location = new System.Drawing.Point(4, 44);
             this.pnlModelsInput.Name = "pnlModelsInput";
-            this.pnlModelsInput.Size = new System.Drawing.Size(377, 518);
+            this.pnlModelsInput.Size = new System.Drawing.Size(764, 519);
             this.pnlModelsInput.TabIndex = 0;
             // 
             // MainForm
@@ -255,11 +254,10 @@
             this.Text = "Radiation Software Calculation v1.0";
             this.pnlRibbon.ResumeLayout(false);
             this.pnlRibbon.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.pnlNuclideInput.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -276,8 +274,8 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnNuclideInput;
         private System.Windows.Forms.Panel pnlRibbon;
         private System.Windows.Forms.Label lbRibbon;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuImageButton btnMinimize;
+        private Bunifu.Framework.UI.BunifuImageButton btnClose;
         private System.Windows.Forms.Panel pnlNuclideInput;
         private System.Windows.Forms.Panel pnlModelsInput;
     }

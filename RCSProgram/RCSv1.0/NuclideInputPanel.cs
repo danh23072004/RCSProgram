@@ -36,8 +36,7 @@ namespace RCSv1._0
             button = new Button()
             {
                 Text = "Hello world",
-            }
-            ;
+            };
             pnlNuclideInput.Controls.Add(button);
         }
         #endregion 

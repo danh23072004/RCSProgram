@@ -20,8 +20,9 @@ namespace RCSv1._0
         {
             InitializeComponent();
             nuclideInputPanel = new NuclideInputPanel(pnlNuclideInput);
+            modelsInputPanel = new ModelsInputPanel(pnlModelsInput);
             nuclideInputPanel.DrawNuclideInputPanel();
-
+            modelsInputPanel.DrawModelsInputPanel();
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -39,10 +40,17 @@ namespace RCSv1._0
 
         private void btnNuclideInput_Click(object sender, EventArgs e)
         {
-            nuclideInputPanel.DrawNuclideInputPanel();
+            pnlNuclideInput.Show();
+            pnlModelsInput.Hide();
         }
 
         private void btnIModelsInput_Click(object sender, EventArgs e)
+        {
+            pnlModelsInput.Show();
+            pnlNuclideInput.Hide();
+        }
+
+        private void btnKineticsInput_Click(object sender, EventArgs e)
         {
 
         }
