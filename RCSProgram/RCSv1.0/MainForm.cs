@@ -24,8 +24,10 @@ namespace RCSv1._0
             InitializeComponent();
             nuclideInputPanel = new NuclideInputPanel(pnlNuclideInput);
             modelsInputPanel = new ModelsInputPanel(pnlModelsInput);
-            nuclideInputPanel.DrawNuclideInputPanel();
             modelsInputPanel.DrawModelsInputPanel();
+            pnlModelsInput.Hide();
+            nuclideInputPanel.DrawNuclideInputPanel();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)

@@ -42,13 +42,15 @@
             this.btnIModelsInput = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnNuclideInput = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlNuclideInput = new System.Windows.Forms.Panel();
             this.pnlModelsInput = new System.Windows.Forms.Panel();
+            this.pnlNuclideInput = new System.Windows.Forms.Panel();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.pnlRibbon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.pnlModelsInput.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -229,6 +231,14 @@
             this.panel1.Size = new System.Drawing.Size(1009, 566);
             this.panel1.TabIndex = 1;
             // 
+            // pnlModelsInput
+            // 
+            this.pnlModelsInput.Controls.Add(this.vScrollBar1);
+            this.pnlModelsInput.Location = new System.Drawing.Point(4, 44);
+            this.pnlModelsInput.Name = "pnlModelsInput";
+            this.pnlModelsInput.Size = new System.Drawing.Size(764, 519);
+            this.pnlModelsInput.TabIndex = 0;
+            // 
             // pnlNuclideInput
             // 
             this.pnlNuclideInput.Location = new System.Drawing.Point(4, 45);
@@ -236,12 +246,12 @@
             this.pnlNuclideInput.Size = new System.Drawing.Size(764, 518);
             this.pnlNuclideInput.TabIndex = 2;
             // 
-            // pnlModelsInput
+            // vScrollBar1
             // 
-            this.pnlModelsInput.Location = new System.Drawing.Point(4, 44);
-            this.pnlModelsInput.Name = "pnlModelsInput";
-            this.pnlModelsInput.Size = new System.Drawing.Size(764, 519);
-            this.pnlModelsInput.TabIndex = 0;
+            this.vScrollBar1.Location = new System.Drawing.Point(489, 107);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 125);
+            this.vScrollBar1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -258,6 +268,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.pnlModelsInput.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -278,6 +289,7 @@
         private Bunifu.Framework.UI.BunifuImageButton btnClose;
         private System.Windows.Forms.Panel pnlNuclideInput;
         private System.Windows.Forms.Panel pnlModelsInput;
+        private System.Windows.Forms.VScrollBar vScrollBar1;
     }
 }
 
