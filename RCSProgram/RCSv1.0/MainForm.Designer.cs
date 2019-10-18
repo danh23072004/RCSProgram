@@ -38,19 +38,19 @@
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.btnHomeInput = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnKineticsInput = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnIModelsInput = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnNuclideInput = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlHomeInput = new System.Windows.Forms.Panel();
             this.pnlModelsInput = new System.Windows.Forms.Panel();
             this.pnlNuclideInput = new System.Windows.Forms.Panel();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.pnlRibbon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.pnlModelsInput.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -127,6 +127,7 @@
             this.bunifuGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.btnHomeInput);
             this.bunifuGradientPanel1.Controls.Add(this.btnKineticsInput);
             this.bunifuGradientPanel1.Controls.Add(this.btnIModelsInput);
             this.bunifuGradientPanel1.Controls.Add(this.btnNuclideInput);
@@ -140,6 +141,32 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(235, 528);
             this.bunifuGradientPanel1.TabIndex = 1;
+            // 
+            // btnHomeInput
+            // 
+            this.btnHomeInput.ActiveBorderThickness = 1;
+            this.btnHomeInput.ActiveCornerRadius = 20;
+            this.btnHomeInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btnHomeInput.ActiveForecolor = System.Drawing.Color.White;
+            this.btnHomeInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnHomeInput.BackColor = System.Drawing.Color.Transparent;
+            this.btnHomeInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHomeInput.BackgroundImage")));
+            this.btnHomeInput.ButtonText = "Trang chủ";
+            this.btnHomeInput.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomeInput.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHomeInput.ForeColor = System.Drawing.Color.Black;
+            this.btnHomeInput.IdleBorderThickness = 1;
+            this.btnHomeInput.IdleCornerRadius = 20;
+            this.btnHomeInput.IdleFillColor = System.Drawing.Color.White;
+            this.btnHomeInput.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btnHomeInput.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btnHomeInput.Location = new System.Drawing.Point(15, 6);
+            this.btnHomeInput.Margin = new System.Windows.Forms.Padding(5);
+            this.btnHomeInput.Name = "btnHomeInput";
+            this.btnHomeInput.Size = new System.Drawing.Size(206, 70);
+            this.btnHomeInput.TabIndex = 8;
+            this.btnHomeInput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnHomeInput.Click += new System.EventHandler(this.btnHomeInput_Click);
             // 
             // btnKineticsInput
             // 
@@ -159,7 +186,7 @@
             this.btnKineticsInput.IdleFillColor = System.Drawing.Color.White;
             this.btnKineticsInput.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnKineticsInput.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnKineticsInput.Location = new System.Drawing.Point(15, 168);
+            this.btnKineticsInput.Location = new System.Drawing.Point(15, 246);
             this.btnKineticsInput.Margin = new System.Windows.Forms.Padding(5);
             this.btnKineticsInput.Name = "btnKineticsInput";
             this.btnKineticsInput.Size = new System.Drawing.Size(206, 70);
@@ -185,7 +212,7 @@
             this.btnIModelsInput.IdleFillColor = System.Drawing.Color.White;
             this.btnIModelsInput.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnIModelsInput.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnIModelsInput.Location = new System.Drawing.Point(15, 88);
+            this.btnIModelsInput.Location = new System.Drawing.Point(15, 166);
             this.btnIModelsInput.Margin = new System.Windows.Forms.Padding(5);
             this.btnIModelsInput.Name = "btnIModelsInput";
             this.btnIModelsInput.Size = new System.Drawing.Size(206, 70);
@@ -211,7 +238,7 @@
             this.btnNuclideInput.IdleFillColor = System.Drawing.Color.White;
             this.btnNuclideInput.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnNuclideInput.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnNuclideInput.Location = new System.Drawing.Point(15, 8);
+            this.btnNuclideInput.Location = new System.Drawing.Point(15, 86);
             this.btnNuclideInput.Margin = new System.Windows.Forms.Padding(5);
             this.btnNuclideInput.Name = "btnNuclideInput";
             this.btnNuclideInput.Size = new System.Drawing.Size(206, 70);
@@ -221,6 +248,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pnlHomeInput);
             this.panel1.Controls.Add(this.pnlModelsInput);
             this.panel1.Controls.Add(this.pnlNuclideInput);
             this.panel1.Controls.Add(this.bunifuGradientPanel1);
@@ -231,9 +259,15 @@
             this.panel1.Size = new System.Drawing.Size(1009, 566);
             this.panel1.TabIndex = 1;
             // 
+            // pnlHomeInput
+            // 
+            this.pnlHomeInput.Location = new System.Drawing.Point(4, 44);
+            this.pnlHomeInput.Name = "pnlHomeInput";
+            this.pnlHomeInput.Size = new System.Drawing.Size(764, 519);
+            this.pnlHomeInput.TabIndex = 0;
+            // 
             // pnlModelsInput
             // 
-            this.pnlModelsInput.Controls.Add(this.vScrollBar1);
             this.pnlModelsInput.Location = new System.Drawing.Point(4, 44);
             this.pnlModelsInput.Name = "pnlModelsInput";
             this.pnlModelsInput.Size = new System.Drawing.Size(764, 519);
@@ -245,13 +279,6 @@
             this.pnlNuclideInput.Name = "pnlNuclideInput";
             this.pnlNuclideInput.Size = new System.Drawing.Size(764, 518);
             this.pnlNuclideInput.TabIndex = 2;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(489, 107);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 125);
-            this.vScrollBar1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -268,7 +295,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.pnlModelsInput.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -289,7 +315,8 @@
         private Bunifu.Framework.UI.BunifuImageButton btnClose;
         private System.Windows.Forms.Panel pnlNuclideInput;
         private System.Windows.Forms.Panel pnlModelsInput;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnHomeInput;
+        private System.Windows.Forms.Panel pnlHomeInput;
     }
 }
 

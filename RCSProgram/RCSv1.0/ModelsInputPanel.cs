@@ -24,7 +24,7 @@ namespace RCSv1._0
 
         #region Local Variables
 
-        string[] arrHumanAgeCheckboxName = new string[10]
+        private string[] arrHumanAgeCheckboxName = new string[10]
         {
             "Đàn ông trưởng thành",
             "Phụ nữ trưởng thành",
@@ -50,9 +50,25 @@ namespace RCSv1._0
             pnlModelsInput = PnlModelsInput;
         }
 
+        public bool[] ReturnHumanAgeOption()
+        {
+            bool[] value = new bool[10];
+            for (int i = 0; i < 10; i++)
+            {
+                if (ckbHumanAge[i].Checked == true)
+                {
+                    value[i] = true;
+                }
+                else
+                {
+                    value[i] = false;
+                }
+            }
+            return value;
+        }
+
         public void DrawModelsInputPanel()
         {
-
             var pfc = new PrivateFontCollection();
             string fontLocation = Application.StartupPath.Remove(Application.StartupPath.Length - 10, 10) + "\\Resources\\OpenSans-Light.ttf";
             pfc.AddFontFile(fontLocation);

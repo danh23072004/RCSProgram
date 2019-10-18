@@ -15,17 +15,25 @@ namespace RCSv1._0
         /* These variables are different from the panel in the MainForm, these are used for 
          * supporting the way approaching those panel
          */
+        private HomeInputPanel homeInputPanel;
         private NuclideInputPanel nuclideInputPanel;
         private ModelsInputPanel modelsInputPanel;
         private KineticsInputPanel kineticsInputPanel;
 
+        // This uses for storing data
+        private UserData data = new UserData();
+
         public MainForm()
         {
             InitializeComponent();
+
+            homeInputPanel = new HomeInputPanel(pnlHomeInput);
             nuclideInputPanel = new NuclideInputPanel(pnlNuclideInput);
             modelsInputPanel = new ModelsInputPanel(pnlModelsInput);
             modelsInputPanel.DrawModelsInputPanel();
             pnlModelsInput.Hide();
+            homeInputPanel.DrawHomeInputPanel();
+            pnlHomeInput.Hide();
             nuclideInputPanel.DrawNuclideInputPanel();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
@@ -47,17 +55,28 @@ namespace RCSv1._0
         {
             pnlNuclideInput.Show();
             pnlModelsInput.Hide();
+            pnlHomeInput.Hide();
         }
 
         private void btnIModelsInput_Click(object sender, EventArgs e)
         {
             pnlModelsInput.Show();
             pnlNuclideInput.Hide();
+            pnlHomeInput.Hide();
         }
 
         private void btnKineticsInput_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void btnHomeInput_Click(object sender, EventArgs e)
+        {
+            pnlHomeInput.Show();
+            pnlNuclideInput.Hide();
+            pnlModelsInput.Hide();
+            data.HumanAge = modelsInputPanel.ReturnHumanAgeOption();
+        }
+
     }
 }

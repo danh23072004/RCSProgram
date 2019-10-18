@@ -8,6 +8,9 @@ namespace RCSv1._0
 {
     class UserData
     {
-        public int HumanAge;
+        public bool[] HumanAge = new bool[10]
+        {
+            false, false, false, false, false, false, false, false, false, false
+        };
     }
 }
