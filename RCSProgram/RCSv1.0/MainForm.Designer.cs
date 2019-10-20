@@ -44,6 +44,7 @@
             this.btnNuclideInput = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlHomeInput = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnlModelsInput = new System.Windows.Forms.Panel();
             this.pnlNuclideInput = new System.Windows.Forms.Panel();
             this.pnlRibbon.SuspendLayout();
@@ -51,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.pnlHomeInput.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -261,10 +263,19 @@
             // 
             // pnlHomeInput
             // 
+            this.pnlHomeInput.Controls.Add(this.textBox1);
             this.pnlHomeInput.Location = new System.Drawing.Point(4, 44);
             this.pnlHomeInput.Name = "pnlHomeInput";
             this.pnlHomeInput.Size = new System.Drawing.Size(764, 519);
             this.pnlHomeInput.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 55);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(717, 231);
+            this.textBox1.TabIndex = 0;
             // 
             // pnlModelsInput
             // 
@@ -295,6 +306,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.pnlHomeInput.ResumeLayout(false);
+            this.pnlHomeInput.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -317,6 +330,7 @@
         private System.Windows.Forms.Panel pnlModelsInput;
         private Bunifu.Framework.UI.BunifuThinButton2 btnHomeInput;
         private System.Windows.Forms.Panel pnlHomeInput;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

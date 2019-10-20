@@ -33,8 +33,9 @@ namespace RCSv1._0
             modelsInputPanel.DrawModelsInputPanel();
             pnlModelsInput.Hide();
             homeInputPanel.DrawHomeInputPanel();
-            pnlHomeInput.Hide();
+            pnlHomeInput.Show();
             nuclideInputPanel.DrawNuclideInputPanel();
+            pnlNuclideInput.Hide();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 

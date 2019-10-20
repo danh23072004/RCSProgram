@@ -1,0 +1,12 @@
+D:\NHHSchool\RCSProgram\RCSProgram\RCSv1.0\obj\Debug\RCSv1.0.csprojAssemblyReference.cache
+D:\NHHSchool\RCSProgram\RCSProgram\RCSv1.0\obj\Debug\RCSv1._0.MainForm.resources
+D:\NHHSchool\RCSProgram\RCSProgram\RCSv1.0\obj\Debug\RCSv1._0.Properties.Resources.resources
+D:\NHHSchool\RCSProgram\RCSProgram\RCSv1.0\obj\Debug\RCSv1.0.csproj.GenerateResource.cache
+D:\NHHSchool\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\RCSv1.0.exe.config
+D:\NHHSchool\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\RCSv1.0.exe
+D:\NHHSchool\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\RCSv1.0.pdb
+D:\NHHSchool\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\Bunifu_UI_v1.52.dll
+D:\NHHSchool\RCSProgram\RCSProgram\RCSv1.0\obj\Debug\RCSv1.0.csproj.CopyComplete
+D:\NHHSchool\RCSProgram\RCSProgram\RCSv1.0\obj\Debug\RCSv1.0.exe
+D:\NHHSchool\RCSProgram\RCSProgram\RCSv1.0\obj\Debug\RCSv1.0.pdb
+D:\NHHSchool\RCSProgram\RCSProgram\RCSv1.0\obj\Debug\RCSv1._0.FormDesign.resources

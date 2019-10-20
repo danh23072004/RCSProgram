@@ -39,6 +39,31 @@ namespace RCSv1._0
             btnDose.Font = new Font(pfc.Families[0], 14, FontStyle.Regular);
             pnlHomeInput.Controls.Add(btnDose);
             btnDose.Click += BtnDose_Click;
+
+            Button btnInstruction = new Button()
+            {
+                Text = "",
+                ForeColor = Color.White,
+                Location = new Point(12, 3),
+                BackColor = Color.DarkRed,
+                Size = new Size(231, 45),
+                FlatStyle = FlatStyle.Flat,
+                Enabled = false,
+            };
+            btnInstruction.FlatAppearance.BorderColor = Color.DarkRed;
+            pnlHomeInput.Controls.Add(btnInstruction);
+
+            Label lbInstruction = new Label()
+            {
+                Text = "Hướng dẫn",
+                Location = new Point(12, 3),
+                Size = new Size(231, 45),
+                Font = new Font(pfc.Families[0], 17, FontStyle.Regular),
+                ForeColor = Color.White,
+                BackColor = Color.Transparent,
+            };
+            pnlHomeInput.Controls.Add(lbInstruction);
+            lbInstruction.BringToFront();
         }
 
 
