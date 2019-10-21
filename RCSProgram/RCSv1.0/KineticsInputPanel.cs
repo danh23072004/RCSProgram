@@ -42,6 +42,8 @@ namespace RCSv1._0
             };
             pnlKineticsInputPanel.Controls.Add(lbTimeExist);
 
+            Button btn = new Button();
+            pnlKineticsInputPanel.Controls.Add(btn);
         }
 
         #endregion

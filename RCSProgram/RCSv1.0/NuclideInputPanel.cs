@@ -15,6 +15,7 @@ namespace RCSv1._0
 
         private Panel pnlNuclideInput = new Panel();
         private ComboBox cmbChooseNuclide = new ComboBox();
+        private ComboBox cmbChooseIsotopes = new ComboBox();
 
         #endregion
 
@@ -44,7 +45,6 @@ namespace RCSv1._0
 
             // Modify cmbChooseNuclide
             cmbChooseNuclide.DataSource = UserData.listNuclide;
-            cmbChooseNuclide.AutoCompleteCustomSource = UserData.listNuclideAutoComplete;
             cmbChooseNuclide.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbChooseNuclide.DropDownHeight = 250;
             cmbChooseNuclide.Size = new Size(237, 28);
@@ -52,7 +52,28 @@ namespace RCSv1._0
             cmbChooseNuclide.Font = new Font(pfc.Families[0], 12, FontStyle.Regular);
             cmbChooseNuclide.Location = new Point(26, 145);
             pnlNuclideInput.Controls.Add(cmbChooseNuclide);
+
+            //Modify cmbChooseIsotopes
+            cmbChooseIsotopes.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbChooseIsotopes.DropDownHeight = 250;
+            cmbChooseIsotopes.Size = new Size(237, 28);
+            cmbChooseIsotopes.MaxLength = 2;
+            cmbChooseIsotopes.Font = new Font(pfc.Families[0], 12, FontStyle.Regular);
+            cmbChooseIsotopes.Location = new Point(400, 145);
+            pnlNuclideInput.Controls.Add(cmbChooseIsotopes);
+            string[] arr = new string[5];
+            for (int i = 0; i < 5; i++)
+            {
+                arr[i] = UserData.listNuclideIsotopes[0][i];
+            }
+            cmbChooseIsotopes.DataSource = arr;
+
+            cmbChooseNuclide.SelectedValueChanged += CmbChooseNuclide_SelectedValueChanged;
         }
-        #endregion 
+
+        private void CmbChooseNuclide_SelectedValueChanged(object sender, EventArgs e)
+        {
+        }
+        #endregion
     }
 }

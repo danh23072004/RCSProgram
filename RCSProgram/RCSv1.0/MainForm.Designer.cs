@@ -33,6 +33,7 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.pnlRibbon = new System.Windows.Forms.Panel();
+            this.pnlKineticsInput = new System.Windows.Forms.Panel();
             this.lbRibbon = new System.Windows.Forms.Label();
             this.btnMinimize = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
@@ -46,7 +47,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlHomeInput = new System.Windows.Forms.Panel();
             this.pnlDoseOutput = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlModelsInput = new System.Windows.Forms.Panel();
             this.pnlNuclideInput = new System.Windows.Forms.Panel();
             this.pnlRibbon.SuspendLayout();
@@ -55,7 +55,6 @@
             this.bunifuGradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlHomeInput.SuspendLayout();
-            this.pnlDoseOutput.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -73,6 +72,7 @@
             // pnlRibbon
             // 
             this.pnlRibbon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.pnlRibbon.Controls.Add(this.pnlKineticsInput);
             this.pnlRibbon.Controls.Add(this.lbRibbon);
             this.pnlRibbon.Controls.Add(this.btnMinimize);
             this.pnlRibbon.Controls.Add(this.btnClose);
@@ -81,6 +81,13 @@
             this.pnlRibbon.Name = "pnlRibbon";
             this.pnlRibbon.Size = new System.Drawing.Size(1009, 38);
             this.pnlRibbon.TabIndex = 0;
+            // 
+            // pnlKineticsInput
+            // 
+            this.pnlKineticsInput.Location = new System.Drawing.Point(245, 37);
+            this.pnlKineticsInput.Name = "pnlKineticsInput";
+            this.pnlKineticsInput.Size = new System.Drawing.Size(764, 519);
+            this.pnlKineticsInput.TabIndex = 2;
             // 
             // lbRibbon
             // 
@@ -301,20 +308,10 @@
             // 
             // pnlDoseOutput
             // 
-            this.pnlDoseOutput.Controls.Add(this.label1);
             this.pnlDoseOutput.Location = new System.Drawing.Point(0, 0);
             this.pnlDoseOutput.Name = "pnlDoseOutput";
             this.pnlDoseOutput.Size = new System.Drawing.Size(764, 519);
             this.pnlDoseOutput.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
             // 
             // pnlModelsInput
             // 
@@ -346,8 +343,6 @@
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlHomeInput.ResumeLayout(false);
-            this.pnlDoseOutput.ResumeLayout(false);
-            this.pnlDoseOutput.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -372,7 +367,7 @@
         private System.Windows.Forms.Panel pnlHomeInput;
         private Bunifu.Framework.UI.BunifuThinButton2 btnDose;
         private System.Windows.Forms.Panel pnlDoseOutput;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlKineticsInput;
     }
 }
 

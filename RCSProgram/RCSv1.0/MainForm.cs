@@ -28,14 +28,19 @@ namespace RCSv1._0
             homeInputPanel = new HomeInputPanel(pnlHomeInput);
             nuclideInputPanel = new NuclideInputPanel(pnlNuclideInput);
             modelsInputPanel = new ModelsInputPanel(pnlModelsInput);
+            kineticsInputPanel = new KineticsInputPanel(pnlKineticsInput);
             doseOutputPanel = new DoseOutputPanel(pnlDoseOutput);
 
-            modelsInputPanel.DrawModelsInputPanel();
-            pnlModelsInput.Hide();
             homeInputPanel.DrawHomeInputPanel();
             pnlHomeInput.Show();
+            modelsInputPanel.DrawModelsInputPanel();
+            pnlModelsInput.Hide();
             nuclideInputPanel.DrawNuclideInputPanel();
             pnlNuclideInput.Hide();
+            kineticsInputPanel.DrawKineticsInputPanel();
+            pnlKineticsInput.Hide();
+            doseOutputPanel.DrawDoseOutputPanel();
+            pnlDoseOutput.Hide();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
@@ -58,6 +63,7 @@ namespace RCSv1._0
             pnlModelsInput.Hide();
             pnlHomeInput.Hide();
             pnlDoseOutput.Hide();
+            pnlKineticsInput.Hide();
         }
 
         private void btnIModelsInput_Click(object sender, EventArgs e)
@@ -66,11 +72,13 @@ namespace RCSv1._0
             pnlNuclideInput.Hide();
             pnlHomeInput.Hide();
             pnlDoseOutput.Hide();
+            pnlKineticsInput.Hide();
         }
 
         private void btnKineticsInput_Click(object sender, EventArgs e)
         {
-            pnlDoseOutput.Show();
+            pnlKineticsInput.Show();
+            pnlDoseOutput.Hide();
             pnlHomeInput.Hide();
             pnlNuclideInput.Hide();
             pnlModelsInput.Hide();
@@ -81,6 +89,7 @@ namespace RCSv1._0
             pnlHomeInput.Show();
             pnlNuclideInput.Hide();
             pnlModelsInput.Hide();
+            pnlKineticsInput.Hide();
             pnlDoseOutput.Hide();
             UserData.HumanAge = modelsInputPanel.ReturnHumanAgeOption();
         }
