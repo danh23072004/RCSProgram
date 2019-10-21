@@ -77,8 +77,8 @@ namespace RCSv1._0
             lbChoose = new Label()
             {
                 Text = "Chọn độ tuổi",
-                Location = new Point(26, 5),
-                Font = new Font(pfc.Families[0], 16, FontStyle.Bold),
+                Location = new Point(26, 30),
+                Font = new Font(pfc.Families[0], 17, FontStyle.Bold),
                 Size = new Size(218, 50),
             };
             pnlModelsInput.Controls.Add(lbChoose);

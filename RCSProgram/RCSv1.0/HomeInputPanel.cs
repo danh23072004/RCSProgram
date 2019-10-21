@@ -15,7 +15,6 @@ namespace RCSv1._0
         #region Properties
 
         private Panel pnlHomeInput = new Panel();
-        private BunifuThinButton2 btnDose = new BunifuThinButton2();
 
         #endregion
 
@@ -32,13 +31,6 @@ namespace RCSv1._0
             string fontLocation = Application.StartupPath.Remove(Application.StartupPath.Length - 10, 10) + "\\Resources\\OpenSans-SemiBold.ttf";
             pfc.AddFontFile(fontLocation);
             // This uses for adding new fonts
-
-            btnDose.ButtonText = "Tính liều";
-            btnDose.Location = new Point(22, 273);
-            btnDose.Size = new Size(157, 45);
-            btnDose.Font = new Font(pfc.Families[0], 14, FontStyle.Regular);
-            pnlHomeInput.Controls.Add(btnDose);
-            btnDose.Click += BtnDose_Click;
 
             Button btnInstruction = new Button()
             {
@@ -64,12 +56,17 @@ namespace RCSv1._0
             };
             pnlHomeInput.Controls.Add(lbInstruction);
             lbInstruction.BringToFront();
-        }
 
+            TextBox txbInstruction = new TextBox()
+            {
+                Location = new Point(11, 71),
+                Multiline = true,
+                Size = new Size(717, 325),
+                Font = new Font(pfc.Families[0], 12, FontStyle.Regular),
+                ReadOnly = true,
+            };
+            pnlHomeInput.Controls.Add(txbInstruction);
 
-        private void BtnDose_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         #endregion

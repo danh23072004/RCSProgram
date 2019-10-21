@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="ModelsInputPanel.cs" />
     <Compile Include="NuclideInputPanel.cs" />
+    <Compile Include="DoseOutputPanel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserData.cs" />

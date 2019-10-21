@@ -14,8 +14,7 @@ namespace RCSv1._0
         #region Properties
 
         private Panel pnlNuclideInput = new Panel();
-        private Button button;
-        private Label lbChoosingIsolate;
+        private ComboBox cmbChooseNuclide = new ComboBox();
 
         #endregion
 
@@ -33,14 +32,26 @@ namespace RCSv1._0
             pfc.AddFontFile(fontLocation);
             // This uses for adding new fonts
 
-            lbChoosingIsolate = new Label()
+            // Modify lbChoosingIsolate
+            Label lbChoosingIsolate = new Label()
             {
                 Text = "Chọn đồng vị phóng xạ",
-                Location = new Point(43, 70),
+                Location = new Point(26, 70),
                 Font = new Font(pfc.Families[0], 16, FontStyle.Regular),
                 Size = new Size(250, 50),
             };
             pnlNuclideInput.Controls.Add(lbChoosingIsolate);
+
+            // Modify cmbChooseNuclide
+            cmbChooseNuclide.DataSource = UserData.listNuclide;
+            cmbChooseNuclide.AutoCompleteCustomSource = UserData.listNuclideAutoComplete;
+            cmbChooseNuclide.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbChooseNuclide.DropDownHeight = 250;
+            cmbChooseNuclide.Size = new Size(237, 28);
+            cmbChooseNuclide.MaxLength = 2;
+            cmbChooseNuclide.Font = new Font(pfc.Families[0], 12, FontStyle.Regular);
+            cmbChooseNuclide.Location = new Point(26, 145);
+            pnlNuclideInput.Controls.Add(cmbChooseNuclide);
         }
         #endregion 
     }

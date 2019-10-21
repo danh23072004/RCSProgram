@@ -19,9 +19,7 @@ namespace RCSv1._0
         private NuclideInputPanel nuclideInputPanel;
         private ModelsInputPanel modelsInputPanel;
         private KineticsInputPanel kineticsInputPanel;
-
-        // This uses for storing data
-        private UserData data = new UserData();
+        private DoseOutputPanel doseOutputPanel;
 
         public MainForm()
         {
@@ -30,6 +28,8 @@ namespace RCSv1._0
             homeInputPanel = new HomeInputPanel(pnlHomeInput);
             nuclideInputPanel = new NuclideInputPanel(pnlNuclideInput);
             modelsInputPanel = new ModelsInputPanel(pnlModelsInput);
+            doseOutputPanel = new DoseOutputPanel(pnlDoseOutput);
+
             modelsInputPanel.DrawModelsInputPanel();
             pnlModelsInput.Hide();
             homeInputPanel.DrawHomeInputPanel();
@@ -57,6 +57,7 @@ namespace RCSv1._0
             pnlNuclideInput.Show();
             pnlModelsInput.Hide();
             pnlHomeInput.Hide();
+            pnlDoseOutput.Hide();
         }
 
         private void btnIModelsInput_Click(object sender, EventArgs e)
@@ -64,11 +65,15 @@ namespace RCSv1._0
             pnlModelsInput.Show();
             pnlNuclideInput.Hide();
             pnlHomeInput.Hide();
+            pnlDoseOutput.Hide();
         }
 
         private void btnKineticsInput_Click(object sender, EventArgs e)
         {
-
+            pnlDoseOutput.Show();
+            pnlHomeInput.Hide();
+            pnlNuclideInput.Hide();
+            pnlModelsInput.Hide();
         }
 
         private void btnHomeInput_Click(object sender, EventArgs e)
@@ -76,8 +81,13 @@ namespace RCSv1._0
             pnlHomeInput.Show();
             pnlNuclideInput.Hide();
             pnlModelsInput.Hide();
-            data.HumanAge = modelsInputPanel.ReturnHumanAgeOption();
+            pnlDoseOutput.Hide();
+            UserData.HumanAge = modelsInputPanel.ReturnHumanAgeOption();
         }
 
+        private void btnDose_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
