@@ -15,6 +15,7 @@ namespace RCSv1._0
         #region Properties
 
         private Panel pnlKineticsInputPanel = new Panel();
+        private TextBox[] arrTxbKinetics = new TextBox[26];
 
         #endregion
 
@@ -50,6 +51,17 @@ namespace RCSv1._0
                 "Tuyến ức", "Tuyến giáp", "", "Tử cung", "",
             };
 
+            // Draw first column
+            int locationX = 133;
+            int locationY = 165;
+            for (int i = 0; i < 14; i++)
+            {
+                arrTxbKinetics[i] = new TextBox()
+                {
+                    Location = new Point(locationX, locationY),
+                    Font = new Font(pfc.Families[0], 10, FontStyle.Regular),
+                };
+            }
         }
 
         #endregion
