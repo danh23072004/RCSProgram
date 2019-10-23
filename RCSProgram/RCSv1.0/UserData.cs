@@ -9,12 +9,14 @@ namespace RCSv1._0
 {
     public static class UserData
     {
+        #region Properties
+
         public static bool[] HumanAge = new bool[10]
         {
             false, false, false, false, false, false, false, false, false, false
         };
         // There are total 97 elements
-        public static List<string> listNuclide = new List<string>()
+        public static string[] arrNuclide = new string[97]
         {
             "Ac","Ag","Al","Am","Ar","As","At","Au","Ba","Be","Bi","Bk","Br","C","Ca",
             "Cd","Ce","Cf","Cl","Cm","Co","Cr","Cs","Cu","Dy","Er","Es","Eu","F","Fe",
@@ -24,7 +26,7 @@ namespace RCSv1._0
             "Sm","Sn","Sr","Ta","Tb","Tc","Te","Th","Ti","Tl","Tm","U","V","W","Xe","Y","Yb",
             "Zn","Zr"
         };
-        public static string[][] listNuclideIsotopes =
+        public static string[][] arrNuclideIsotopes =
         {
             new string [] { "Ac-223", "Ac-224", "Ac-225", "Ac-226", "Ac-228"},
             new string [] { "Ag-102", "Ag-103", "Ag-104m", "Ag-104", "Ag-105,", "Ag-106",
@@ -175,7 +177,23 @@ namespace RCSv1._0
             "Xe-131m", "Xe-133m", "Xe-133", "Xe-135", "Xe-135m", "Xe-138"},
             new string [] { "Y-86m", "Y-86", "Y-87", "Y-88", "Y-89m", "Y-90m", "Y-90", "Y-91m",
             "Y-91", "Y-92", "Y-93", "Y-94", "Y-95",},
+            new string [] { "Yb-162", "Yb-166", "Yb-167", "Yb-169", "Yb-175", "Yb-177",},
+            new string [] { "Zn-62", "Zn-63", "Zn-65", "Zn-69", "Zn-69m", "Zn-71,", "Zn-72",},
+            new string [] { "Zr-86","Zr-88","Zr-89","Zr-93","Zr-95","Zr-97",},
         };
+        public static int nuclideIndex;
+        public static int isotopeIndex;
 
+        #endregion
+
+        #region Method
+
+        public static void SetDefaultUserData()
+        {
+            nuclideIndex = 0;
+            isotopeIndex = 0;
+        }
+
+        #endregion
     }
 }

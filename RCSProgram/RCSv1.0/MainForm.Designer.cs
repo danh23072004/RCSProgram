@@ -33,25 +33,27 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.pnlRibbon = new System.Windows.Forms.Panel();
-            this.pnlKineticsInput = new System.Windows.Forms.Panel();
             this.lbRibbon = new System.Windows.Forms.Label();
             this.btnMinimize = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
+            this.pnlKineticsInput = new System.Windows.Forms.Panel();
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnDose = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnHomeInput = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnKineticsInput = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnIModelsInput = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnModelsInput = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnNuclideInput = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlHomeInput = new System.Windows.Forms.Panel();
             this.pnlDoseOutput = new System.Windows.Forms.Panel();
             this.pnlModelsInput = new System.Windows.Forms.Panel();
             this.pnlNuclideInput = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnlRibbon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            this.pnlKineticsInput.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlHomeInput.SuspendLayout();
@@ -72,7 +74,6 @@
             // pnlRibbon
             // 
             this.pnlRibbon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.pnlRibbon.Controls.Add(this.pnlKineticsInput);
             this.pnlRibbon.Controls.Add(this.lbRibbon);
             this.pnlRibbon.Controls.Add(this.btnMinimize);
             this.pnlRibbon.Controls.Add(this.btnClose);
@@ -81,13 +82,6 @@
             this.pnlRibbon.Name = "pnlRibbon";
             this.pnlRibbon.Size = new System.Drawing.Size(1009, 38);
             this.pnlRibbon.TabIndex = 0;
-            // 
-            // pnlKineticsInput
-            // 
-            this.pnlKineticsInput.Location = new System.Drawing.Point(245, 37);
-            this.pnlKineticsInput.Name = "pnlKineticsInput";
-            this.pnlKineticsInput.Size = new System.Drawing.Size(764, 519);
-            this.pnlKineticsInput.TabIndex = 2;
             // 
             // lbRibbon
             // 
@@ -111,7 +105,7 @@
             this.btnMinimize.TabIndex = 2;
             this.btnMinimize.TabStop = false;
             this.btnMinimize.Zoom = 20;
-            this.btnMinimize.Click += new System.EventHandler(this.bunifuImageButton2_Click);
+            this.btnMinimize.Click += new System.EventHandler(this.BunifuImageButton2_Click);
             // 
             // btnClose
             // 
@@ -125,7 +119,15 @@
             this.btnClose.TabIndex = 1;
             this.btnClose.TabStop = false;
             this.btnClose.Zoom = 20;
-            this.btnClose.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            this.btnClose.Click += new System.EventHandler(this.BunifuImageButton1_Click);
+            // 
+            // pnlKineticsInput
+            // 
+            this.pnlKineticsInput.Controls.Add(this.textBox1);
+            this.pnlKineticsInput.Location = new System.Drawing.Point(245, 37);
+            this.pnlKineticsInput.Name = "pnlKineticsInput";
+            this.pnlKineticsInput.Size = new System.Drawing.Size(764, 519);
+            this.pnlKineticsInput.TabIndex = 2;
             // 
             // bunifuDragControl2
             // 
@@ -142,7 +144,7 @@
             this.bunifuGradientPanel1.Controls.Add(this.btnDose);
             this.bunifuGradientPanel1.Controls.Add(this.btnHomeInput);
             this.bunifuGradientPanel1.Controls.Add(this.btnKineticsInput);
-            this.bunifuGradientPanel1.Controls.Add(this.btnIModelsInput);
+            this.bunifuGradientPanel1.Controls.Add(this.btnModelsInput);
             this.bunifuGradientPanel1.Controls.Add(this.btnNuclideInput);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
@@ -162,7 +164,7 @@
             this.btnDose.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnDose.ActiveForecolor = System.Drawing.Color.White;
             this.btnDose.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnDose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnDose.BackColor = System.Drawing.Color.Transparent;
             this.btnDose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDose.BackgroundImage")));
             this.btnDose.ButtonText = "Tính liều";
             this.btnDose.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -179,7 +181,7 @@
             this.btnDose.Size = new System.Drawing.Size(206, 70);
             this.btnDose.TabIndex = 9;
             this.btnDose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDose.Click += new System.EventHandler(this.btnDose_Click);
+            this.btnDose.Click += new System.EventHandler(this.BtnDose_Click);
             // 
             // btnHomeInput
             // 
@@ -188,7 +190,7 @@
             this.btnHomeInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnHomeInput.ActiveForecolor = System.Drawing.Color.White;
             this.btnHomeInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnHomeInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnHomeInput.BackColor = System.Drawing.Color.Transparent;
             this.btnHomeInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHomeInput.BackgroundImage")));
             this.btnHomeInput.ButtonText = "Trang chủ";
             this.btnHomeInput.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -205,7 +207,7 @@
             this.btnHomeInput.Size = new System.Drawing.Size(206, 70);
             this.btnHomeInput.TabIndex = 8;
             this.btnHomeInput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnHomeInput.Click += new System.EventHandler(this.btnHomeInput_Click);
+            this.btnHomeInput.Click += new System.EventHandler(this.BtnHomeInput_Click);
             // 
             // btnKineticsInput
             // 
@@ -214,7 +216,7 @@
             this.btnKineticsInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnKineticsInput.ActiveForecolor = System.Drawing.Color.White;
             this.btnKineticsInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnKineticsInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnKineticsInput.BackColor = System.Drawing.Color.Transparent;
             this.btnKineticsInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnKineticsInput.BackgroundImage")));
             this.btnKineticsInput.ButtonText = "Nhập thời gian lưu trú";
             this.btnKineticsInput.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -231,33 +233,33 @@
             this.btnKineticsInput.Size = new System.Drawing.Size(206, 70);
             this.btnKineticsInput.TabIndex = 7;
             this.btnKineticsInput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnKineticsInput.Click += new System.EventHandler(this.btnKineticsInput_Click);
+            this.btnKineticsInput.Click += new System.EventHandler(this.BtnKineticsInput_Click);
             // 
-            // btnIModelsInput
+            // btnModelsInput
             // 
-            this.btnIModelsInput.ActiveBorderThickness = 1;
-            this.btnIModelsInput.ActiveCornerRadius = 20;
-            this.btnIModelsInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btnIModelsInput.ActiveForecolor = System.Drawing.Color.White;
-            this.btnIModelsInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnIModelsInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
-            this.btnIModelsInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIModelsInput.BackgroundImage")));
-            this.btnIModelsInput.ButtonText = "Chọn mô hình phóng xạ";
-            this.btnIModelsInput.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIModelsInput.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIModelsInput.ForeColor = System.Drawing.Color.Black;
-            this.btnIModelsInput.IdleBorderThickness = 1;
-            this.btnIModelsInput.IdleCornerRadius = 20;
-            this.btnIModelsInput.IdleFillColor = System.Drawing.Color.White;
-            this.btnIModelsInput.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.btnIModelsInput.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnIModelsInput.Location = new System.Drawing.Point(15, 166);
-            this.btnIModelsInput.Margin = new System.Windows.Forms.Padding(5);
-            this.btnIModelsInput.Name = "btnIModelsInput";
-            this.btnIModelsInput.Size = new System.Drawing.Size(206, 70);
-            this.btnIModelsInput.TabIndex = 6;
-            this.btnIModelsInput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnIModelsInput.Click += new System.EventHandler(this.btnIModelsInput_Click);
+            this.btnModelsInput.ActiveBorderThickness = 1;
+            this.btnModelsInput.ActiveCornerRadius = 20;
+            this.btnModelsInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btnModelsInput.ActiveForecolor = System.Drawing.Color.White;
+            this.btnModelsInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnModelsInput.BackColor = System.Drawing.Color.Transparent;
+            this.btnModelsInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnModelsInput.BackgroundImage")));
+            this.btnModelsInput.ButtonText = "Chọn mô hình phóng xạ";
+            this.btnModelsInput.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModelsInput.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModelsInput.ForeColor = System.Drawing.Color.Black;
+            this.btnModelsInput.IdleBorderThickness = 1;
+            this.btnModelsInput.IdleCornerRadius = 20;
+            this.btnModelsInput.IdleFillColor = System.Drawing.Color.White;
+            this.btnModelsInput.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btnModelsInput.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btnModelsInput.Location = new System.Drawing.Point(15, 166);
+            this.btnModelsInput.Margin = new System.Windows.Forms.Padding(5);
+            this.btnModelsInput.Name = "btnModelsInput";
+            this.btnModelsInput.Size = new System.Drawing.Size(206, 70);
+            this.btnModelsInput.TabIndex = 6;
+            this.btnModelsInput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnModelsInput.Click += new System.EventHandler(this.BtnModelsInput_Click);
             // 
             // btnNuclideInput
             // 
@@ -266,7 +268,7 @@
             this.btnNuclideInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnNuclideInput.ActiveForecolor = System.Drawing.Color.White;
             this.btnNuclideInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnNuclideInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnNuclideInput.BackColor = System.Drawing.Color.Transparent;
             this.btnNuclideInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuclideInput.BackgroundImage")));
             this.btnNuclideInput.ButtonText = "Chọn mô hình bệnh nhân";
             this.btnNuclideInput.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -283,10 +285,11 @@
             this.btnNuclideInput.Size = new System.Drawing.Size(206, 70);
             this.btnNuclideInput.TabIndex = 5;
             this.btnNuclideInput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnNuclideInput.Click += new System.EventHandler(this.btnNuclideInput_Click);
+            this.btnNuclideInput.Click += new System.EventHandler(this.BtnNuclideInput_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pnlKineticsInput);
             this.panel1.Controls.Add(this.pnlHomeInput);
             this.panel1.Controls.Add(this.pnlModelsInput);
             this.panel1.Controls.Add(this.pnlNuclideInput);
@@ -327,6 +330,13 @@
             this.pnlNuclideInput.Size = new System.Drawing.Size(764, 518);
             this.pnlNuclideInput.TabIndex = 2;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(133, 167);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,6 +350,8 @@
             this.pnlRibbon.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            this.pnlKineticsInput.ResumeLayout(false);
+            this.pnlKineticsInput.PerformLayout();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlHomeInput.ResumeLayout(false);
@@ -355,7 +367,7 @@
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private Bunifu.Framework.UI.BunifuThinButton2 btnKineticsInput;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnIModelsInput;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnModelsInput;
         private Bunifu.Framework.UI.BunifuThinButton2 btnNuclideInput;
         private System.Windows.Forms.Panel pnlRibbon;
         private System.Windows.Forms.Label lbRibbon;
@@ -368,6 +380,7 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnDose;
         private System.Windows.Forms.Panel pnlDoseOutput;
         private System.Windows.Forms.Panel pnlKineticsInput;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

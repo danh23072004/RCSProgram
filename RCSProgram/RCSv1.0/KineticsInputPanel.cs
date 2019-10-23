@@ -38,12 +38,18 @@ namespace RCSv1._0
                 Text = "Thời gian lưu trú của các nội tạng",
                 Location = new Point(26, 70),
                 Font = new Font(pfc.Families[0], 16, FontStyle.Regular),
-                Size = new Size(250, 50),
+                Size = new Size(400, 50),
             };
             pnlKineticsInputPanel.Controls.Add(lbTimeExist);
 
-            Button btn = new Button();
-            pnlKineticsInputPanel.Controls.Add(btn);
+            string[] txbName = new string[26] 
+            { 
+                "Tuyến thượng thận", "Não", "Ngực", "", "", "",
+                "", "", "", "", "", "Thận", "Gan", "Phổi", "Cơ",
+                "Buồng trứng", "Tuyến tụy", "", "", "", "Lá lách",
+                "Tuyến ức", "Tuyến giáp", "", "Tử cung", "",
+            };
+
         }
 
         #endregion

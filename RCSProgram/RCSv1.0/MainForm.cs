@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.Framework.UI;
 
 namespace RCSv1._0
 {
@@ -44,12 +45,28 @@ namespace RCSv1._0
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        public void DrawColourMouseHoverMenuButton(BunifuThinButton2 btn)
+        {
+            btnNuclideInput.IdleFillColor = Color.White;
+            btnNuclideInput.IdleForecolor = Color.SeaGreen;
+            btnModelsInput.IdleFillColor = Color.White;
+            btnModelsInput.IdleForecolor = Color.SeaGreen;
+            btnKineticsInput.IdleFillColor = Color.White;
+            btnKineticsInput.IdleForecolor = Color.SeaGreen;
+            btnDose.IdleFillColor = Color.White;
+            btnDose.IdleForecolor = Color.SeaGreen;
+            btnHomeInput.IdleFillColor = Color.White;
+            btnHomeInput.IdleForecolor = Color.SeaGreen;
+            btn.IdleFillColor = Color.SeaGreen;
+            btn.IdleForecolor = Color.White;
+        }
+
+        private void BunifuImageButton1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        private void BunifuImageButton2_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
             {
@@ -57,46 +74,87 @@ namespace RCSv1._0
             }
         }
 
-        private void btnNuclideInput_Click(object sender, EventArgs e)
+        private void BtnNuclideInput_Click(object sender, EventArgs e)
         {
             pnlNuclideInput.Show();
             pnlModelsInput.Hide();
             pnlHomeInput.Hide();
             pnlDoseOutput.Hide();
             pnlKineticsInput.Hide();
+            //btnNuclideInput.IdleFillColor = Color.SeaGreen;
+            //btnNuclideInput.IdleForecolor = Color.White;
+            try
+            {
+                DrawColourMouseHoverMenuButton(btnNuclideInput);
+            }
+            catch (ArgumentException exception)
+            {
+                DrawColourMouseHoverMenuButton(btnNuclideInput);
+                throw;
+            }
         }
 
-        private void btnIModelsInput_Click(object sender, EventArgs e)
+        private void BtnModelsInput_Click(object sender, EventArgs e)
         {
             pnlModelsInput.Show();
             pnlNuclideInput.Hide();
             pnlHomeInput.Hide();
             pnlDoseOutput.Hide();
             pnlKineticsInput.Hide();
+            //btnModelsInput.IdleFillColor = Color.SeaGreen;
+            //btnModelsInput.IdleForecolor = Color.White;
+            DrawColourMouseHoverMenuButton(btnModelsInput);
+            try
+            {
+                DrawColourMouseHoverMenuButton(btnModelsInput);
+            }
+            catch (AccessViolationException exception)
+            {
+                DrawColourMouseHoverMenuButton(btnModelsInput);
+                throw;
+            }
         }
 
-        private void btnKineticsInput_Click(object sender, EventArgs e)
+        private void BtnKineticsInput_Click(object sender, EventArgs e)
         {
             pnlKineticsInput.Show();
             pnlDoseOutput.Hide();
             pnlHomeInput.Hide();
             pnlNuclideInput.Hide();
             pnlModelsInput.Hide();
+            //btnKineticsInput.IdleFillColor = Color.SeaGreen;
+            //btnKineticsInput.IdleForecolor = Color.White;
+            DrawColourMouseHoverMenuButton(btnKineticsInput);
+            try
+            {
+                DrawColourMouseHoverMenuButton(btnKineticsInput);
+            }
+            catch (ArgumentException exception)
+            {
+                DrawColourMouseHoverMenuButton(btnKineticsInput);
+                throw;
+            }
         }
 
-        private void btnHomeInput_Click(object sender, EventArgs e)
+        private void BtnHomeInput_Click(object sender, EventArgs e)
         {
             pnlHomeInput.Show();
             pnlNuclideInput.Hide();
             pnlModelsInput.Hide();
             pnlKineticsInput.Hide();
             pnlDoseOutput.Hide();
+            //btnHomeInput.IdleFillColor = Color.SeaGreen;
+            //btnHomeInput.IdleForecolor = Color.White;
             UserData.HumanAge = modelsInputPanel.ReturnHumanAgeOption();
+            DrawColourMouseHoverMenuButton(btnHomeInput);
+
         }
 
-        private void btnDose_Click(object sender, EventArgs e)
+        private void BtnDose_Click(object sender, EventArgs e)
         {
-
+            //btnDose.IdleFillColor = Color.SeaGreen;
+            //btnDose.IdleForecolor = Color.White;
+            DrawColourMouseHoverMenuButton(btnDose);
         }
     }
 }
