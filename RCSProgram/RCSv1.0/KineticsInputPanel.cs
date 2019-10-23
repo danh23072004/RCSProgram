@@ -37,9 +37,9 @@ namespace RCSv1._0
             Label lbTimeExist = new Label()
             {
                 Text = "Thời gian lưu trú của các nội tạng",
-                Location = new Point(26, 70),
+                Location = new Point(26, 30),
                 Font = new Font(pfc.Families[0], 16, FontStyle.Regular),
-                Size = new Size(400, 50),
+                Size = new Size(400, 30),
             };
             pnlKineticsInputPanel.Controls.Add(lbTimeExist);
 
@@ -52,8 +52,8 @@ namespace RCSv1._0
             };
 
             // Draw first column
-            int locationX = 133;
-            int locationY = 165;
+            int locationX = 26;
+            int locationY = 130;
             for (int i = 0; i < 14; i++)
             {
                 arrTxbKinetics[i] = new TextBox()
@@ -61,6 +61,8 @@ namespace RCSv1._0
                     Location = new Point(locationX, locationY),
                     Font = new Font(pfc.Families[0], 10, FontStyle.Regular),
                 };
+                pnlKineticsInputPanel.Controls.Add(arrTxbKinetics[i]);
+                locationY += 28;
             }
         }
 

@@ -90,7 +90,16 @@ namespace RCSv1._0
             catch (ArgumentException exception)
             {
                 DrawColourMouseHoverMenuButton(btnNuclideInput);
-                throw;
+                throw exception;
+            }
+            try
+            {
+
+            }
+            catch (AccessViolationException exception)
+            {
+                DrawColourMouseHoverMenuButton(btnNuclideInput);
+                throw exception;
             }
         }
 
