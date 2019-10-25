@@ -40,12 +40,12 @@
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pnlKineticsInput = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pnlRibbon.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlKineticsInput.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -185,30 +185,29 @@
             // 
             this.panel1.Controls.Add(this.bunifuGradientPanel1);
             this.panel1.Controls.Add(this.pnlRibbon);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.pnlKineticsInput);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1009, 566);
             this.panel1.TabIndex = 1;
             // 
-            // panel2
+            // pnlKineticsInput
             // 
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(4, 45);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(764, 518);
-            this.panel2.TabIndex = 2;
+            this.pnlKineticsInput.Controls.Add(this.comboBox1);
+            this.pnlKineticsInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlKineticsInput.Location = new System.Drawing.Point(0, 38);
+            this.pnlKineticsInput.Name = "pnlKineticsInput";
+            this.pnlKineticsInput.Size = new System.Drawing.Size(764, 518);
+            this.pnlKineticsInput.TabIndex = 2;
             // 
-            // button1
+            // comboBox1
             // 
-            this.button1.Location = new System.Drawing.Point(44, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(161, 118);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 0;
             // 
             // FormDesign
             // 
@@ -223,7 +222,7 @@
             this.pnlRibbon.PerformLayout();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.pnlKineticsInput.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -240,8 +239,8 @@
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private System.Windows.Forms.Panel pnlRibbon;
         private System.Windows.Forms.Label lbRibbon;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel pnlKineticsInput;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
