@@ -44,7 +44,7 @@ namespace RCSv1._0
             pnlNuclideInput.Controls.Add(lbChoosingIsolate);
 
             // Modify cmbChooseNuclide
-            cmbChooseNuclide.DataSource = UserData.arrNuclide;
+            cmbChooseNuclide.DataSource = Constant.arrNuclide;
             cmbChooseNuclide.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbChooseNuclide.DropDownHeight = 250;
             cmbChooseNuclide.Size = new Size(237, 28);
@@ -54,7 +54,7 @@ namespace RCSv1._0
             pnlNuclideInput.Controls.Add(cmbChooseNuclide);
 
             //Modify cmbChooseIsotopes
-            cmbChooseIsotopes.DataSource = UserData.arrNuclideIsotopes[0];
+            cmbChooseIsotopes.DataSource = Constant.arrNuclideIsotopes[0];
             cmbChooseIsotopes.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbChooseIsotopes.DropDownHeight = 250;
             cmbChooseIsotopes.Size = new Size(237, 28);
@@ -67,7 +67,7 @@ namespace RCSv1._0
             string[] arr = new string[5];
             for (int i = 0; i < 5; i++)
             {
-                arr[i] = UserData.arrNuclideIsotopes[0][i];
+                arr[i] = Constant.arrNuclideIsotopes[0][i];
             }
             //cmbChooseIsotopes.DataSource = arr;
 
@@ -84,7 +84,7 @@ namespace RCSv1._0
         private void CmbChooseNuclide_SelectedValueChanged(object sender, EventArgs e)
         {
             // cmbChooseNuclide.SelectedIndex shows the position of the pointed nuclide
-            cmbChooseIsotopes.DataSource = UserData.arrNuclideIsotopes[cmbChooseNuclide.SelectedIndex];
+            cmbChooseIsotopes.DataSource = Constant.arrNuclideIsotopes[cmbChooseNuclide.SelectedIndex];
             UserData.nuclideIndex = cmbChooseNuclide.SelectedIndex;
             UserData.isotopeIndex = 0;
         }

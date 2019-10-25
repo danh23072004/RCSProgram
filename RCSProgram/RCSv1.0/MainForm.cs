@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.ExceptionServices;
 using System.Windows.Forms;
 using Bunifu.Framework.UI;
+using System.Drawing;
 
 namespace RCSv1._0
 {
@@ -16,6 +11,7 @@ namespace RCSv1._0
         /* These variables are different from the panel in the MainForm, these are used for 
          * supporting the way approaching those panel
          */
+
         private HomeInputPanel homeInputPanel;
         private NuclideInputPanel nuclideInputPanel;
         private ModelsInputPanel modelsInputPanel;
@@ -74,96 +70,65 @@ namespace RCSv1._0
             }
         }
 
+        //[HandleProcessCorruptedStateExceptions]
         private void BtnNuclideInput_Click(object sender, EventArgs e)
         {
-            pnlNuclideInput.Show();
-            pnlModelsInput.Hide();
-            pnlHomeInput.Hide();
-            pnlDoseOutput.Hide();
-            pnlKineticsInput.Hide();
-            //btnNuclideInput.IdleFillColor = Color.SeaGreen;
-            //btnNuclideInput.IdleForecolor = Color.White;
-            try
-            {
-                DrawColourMouseHoverMenuButton(btnNuclideInput);
-            }
-            catch (ArgumentException exception)
-            {
-                DrawColourMouseHoverMenuButton(btnNuclideInput);
-                throw exception;
-            }
-            try
-            {
-
-            }
-            catch (AccessViolationException exception)
-            {
-                DrawColourMouseHoverMenuButton(btnNuclideInput);
-                throw exception;
-            }
+            DrawColourMouseHoverMenuButton(btnNuclideInput);
+            pnlNuclideInput.Visible = true;
+            pnlModelsInput.Visible = false;
+            pnlHomeInput.Visible = false;
+            pnlDoseOutput.Visible = false;
+            pnlKineticsInput.Visible = false;
         }
 
+        //[HandleProcessCorruptedStateExceptions]
         private void BtnModelsInput_Click(object sender, EventArgs e)
         {
-            pnlModelsInput.Show();
-            pnlNuclideInput.Hide();
-            pnlHomeInput.Hide();
-            pnlDoseOutput.Hide();
-            pnlKineticsInput.Hide();
-            //btnModelsInput.IdleFillColor = Color.SeaGreen;
-            //btnModelsInput.IdleForecolor = Color.White;
             DrawColourMouseHoverMenuButton(btnModelsInput);
-            try
-            {
-                DrawColourMouseHoverMenuButton(btnModelsInput);
-            }
-            catch (AccessViolationException exception)
-            {
-                DrawColourMouseHoverMenuButton(btnModelsInput);
-                throw;
-            }
+            pnlModelsInput.Visible = true;
+            pnlNuclideInput.Visible = false;
+            pnlHomeInput.Visible = false;
+            pnlDoseOutput.Visible = false;
+            pnlKineticsInput.Visible = false;
         }
 
+        //[HandleProcessCorruptedStateExceptions]
         private void BtnKineticsInput_Click(object sender, EventArgs e)
         {
-            pnlKineticsInput.Show();
-            pnlDoseOutput.Hide();
-            pnlHomeInput.Hide();
-            pnlNuclideInput.Hide();
-            pnlModelsInput.Hide();
-            //btnKineticsInput.IdleFillColor = Color.SeaGreen;
-            //btnKineticsInput.IdleForecolor = Color.White;
             DrawColourMouseHoverMenuButton(btnKineticsInput);
-            try
-            {
-                DrawColourMouseHoverMenuButton(btnKineticsInput);
-            }
-            catch (ArgumentException exception)
-            {
-                DrawColourMouseHoverMenuButton(btnKineticsInput);
-                throw;
-            }
+            pnlKineticsInput.Visible = true;
+            pnlModelsInput.Visible = false;
+            pnlNuclideInput.Visible = false;
+            pnlHomeInput.Visible = false;
+            pnlDoseOutput.Visible = false;
         }
 
+        //[HandleProcessCorruptedStateExceptions]
         private void BtnHomeInput_Click(object sender, EventArgs e)
         {
-            pnlHomeInput.Show();
-            pnlNuclideInput.Hide();
-            pnlModelsInput.Hide();
-            pnlKineticsInput.Hide();
-            pnlDoseOutput.Hide();
-            //btnHomeInput.IdleFillColor = Color.SeaGreen;
-            //btnHomeInput.IdleForecolor = Color.White;
-            UserData.HumanAge = modelsInputPanel.ReturnHumanAgeOption();
             DrawColourMouseHoverMenuButton(btnHomeInput);
-
+            pnlModelsInput.Visible = false;
+            pnlNuclideInput.Visible = false;
+            pnlHomeInput.Visible = true;
+            pnlDoseOutput.Visible = false;
+            pnlKineticsInput.Visible = false;
+            UserData.HumanAge = modelsInputPanel.ReturnHumanAgeOption();
         }
 
+        //[HandleProcessCorruptedStateExceptions]
         private void BtnDose_Click(object sender, EventArgs e)
         {
-            //btnDose.IdleFillColor = Color.SeaGreen;
-            //btnDose.IdleForecolor = Color.White;
+            pnlDoseOutput.Visible = true;
+            pnlModelsInput.Visible = false;
+            pnlNuclideInput.Visible = false;
+            pnlHomeInput.Visible = false;
+            pnlKineticsInput.Visible = false;
             DrawColourMouseHoverMenuButton(btnDose);
+
+            // Checking data by the value in UserData get from Panel
+            UserData.fullData[3] = kineticsInputPanel.CheckNullTextBox();
+
+
         }
     }
 }

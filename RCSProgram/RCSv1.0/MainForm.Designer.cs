@@ -224,7 +224,7 @@
             this.btnKineticsInput.IdleFillColor = System.Drawing.Color.White;
             this.btnKineticsInput.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnKineticsInput.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnKineticsInput.Location = new System.Drawing.Point(15, 246);
+            this.btnKineticsInput.Location = new System.Drawing.Point(15, 250);
             this.btnKineticsInput.Margin = new System.Windows.Forms.Padding(5);
             this.btnKineticsInput.Name = "btnKineticsInput";
             this.btnKineticsInput.Size = new System.Drawing.Size(206, 70);
