@@ -107,7 +107,26 @@ namespace RCSv1._0
                 pnlModelsInput.Controls.Add(arrHumanAgeCheckboxLabel[i]);
                 locationY += 45;
             }
+        }
 
+        public bool CheckFullData()
+        {
+            int count = 0;
+            foreach (var ckb in ckbHumanAge)
+            {
+                if (ckb.Checked)
+                {
+                    count++;
+                }
+            }
+            if (count == 10)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         #endregion

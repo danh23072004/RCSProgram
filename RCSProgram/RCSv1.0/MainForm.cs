@@ -126,9 +126,18 @@ namespace RCSv1._0
             DrawColourMouseHoverMenuButton(btnDose);
 
             // Checking data by the value in UserData get from Panel
-            UserData.fullData[3] = kineticsInputPanel.CheckNullTextBox();
+            // If there is any data is not checked, show a message box
+            UserData.fullData[1] = nuclideInputPanel.CheckFullData();
+            UserData.fullData[2] = modelsInputPanel.CheckFullData();
+            UserData.fullData[3] = kineticsInputPanel.CheckFullData();
 
+            foreach (var check in UserData.fullData)
+            {
+                if (check == false)
+                {
 
+                }
+            }
         }
     }
 }

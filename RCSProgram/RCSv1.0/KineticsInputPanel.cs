@@ -112,7 +112,7 @@ namespace RCSv1._0
             }
         }
 
-        public bool CheckNullTextBox()
+        public bool CheckFullData()
         {
             bool check = false;
             foreach (var txb in arrTxbKinetics)

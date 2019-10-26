@@ -64,6 +64,7 @@ namespace RCSv1._0
             cmbChooseIsotopes.MaxLength = 7;
             cmbChooseIsotopes.DropDownStyle = ComboBoxStyle.DropDownList;
             pnlNuclideInput.Controls.Add(cmbChooseIsotopes);
+            cmbChooseNuclide.Text = "";
             string[] arr = new string[5];
             for (int i = 0; i < 5; i++)
             {
@@ -89,6 +90,18 @@ namespace RCSv1._0
             UserData.isotopeIndex = 0;
         }
 
+        public bool CheckFullData()
+        {
+            if (cmbChooseNuclide.Text == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
         #endregion
     }
 }
