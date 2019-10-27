@@ -27,17 +27,7 @@ namespace RCSv1._0
             modelsInputPanel = new ModelsInputPanel(pnlModelsInput);
             kineticsInputPanel = new KineticsInputPanel(pnlKineticsInput);
             doseOutputPanel = new DoseOutputPanel(pnlDoseOutput);
-
-            homeInputPanel.DrawHomeInputPanel();
-            pnlHomeInput.Show();
-            modelsInputPanel.DrawModelsInputPanel();
-            pnlModelsInput.Hide();
-            nuclideInputPanel.DrawNuclideInputPanel();
-            pnlNuclideInput.Hide();
-            kineticsInputPanel.DrawKineticsInputPanel();
-            pnlKineticsInput.Hide();
-            doseOutputPanel.DrawDoseOutputPanel();
-            pnlDoseOutput.Hide();
+            pnlHomeInput.BringToFront();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
@@ -70,66 +60,41 @@ namespace RCSv1._0
             }
         }
 
-        //[HandleProcessCorruptedStateExceptions]
         private void BtnNuclideInput_Click(object sender, EventArgs e)
         {
             DrawColourMouseHoverMenuButton(btnNuclideInput);
-            pnlNuclideInput.Visible = true;
-            pnlModelsInput.Visible = false;
-            pnlHomeInput.Visible = false;
-            pnlDoseOutput.Visible = false;
-            pnlKineticsInput.Visible = false;
+            pnlNuclideInput.BringToFront();
         }
 
-        //[HandleProcessCorruptedStateExceptions]
         private void BtnModelsInput_Click(object sender, EventArgs e)
         {
             DrawColourMouseHoverMenuButton(btnModelsInput);
-            pnlModelsInput.Visible = true;
-            pnlNuclideInput.Visible = false;
-            pnlHomeInput.Visible = false;
-            pnlDoseOutput.Visible = false;
-            pnlKineticsInput.Visible = false;
+            pnlModelsInput.BringToFront();
         }
 
-        //[HandleProcessCorruptedStateExceptions]
         private void BtnKineticsInput_Click(object sender, EventArgs e)
         {
             DrawColourMouseHoverMenuButton(btnKineticsInput);
-            pnlKineticsInput.Visible = true;
-            pnlModelsInput.Visible = false;
-            pnlNuclideInput.Visible = false;
-            pnlHomeInput.Visible = false;
-            pnlDoseOutput.Visible = false;
+            pnlKineticsInput.BringToFront();
         }
 
-        //[HandleProcessCorruptedStateExceptions]
         private void BtnHomeInput_Click(object sender, EventArgs e)
         {
             DrawColourMouseHoverMenuButton(btnHomeInput);
-            pnlModelsInput.Visible = false;
-            pnlNuclideInput.Visible = false;
-            pnlHomeInput.Visible = true;
-            pnlDoseOutput.Visible = false;
-            pnlKineticsInput.Visible = false;
+            pnlHomeInput.BringToFront();
             UserData.HumanAge = modelsInputPanel.ReturnHumanAgeOption();
         }
 
-        //[HandleProcessCorruptedStateExceptions]
         private void BtnDose_Click(object sender, EventArgs e)
         {
-            pnlDoseOutput.Visible = true;
-            pnlModelsInput.Visible = false;
-            pnlNuclideInput.Visible = false;
-            pnlHomeInput.Visible = false;
-            pnlKineticsInput.Visible = false;
+            pnlDoseOutput.BringToFront();
             DrawColourMouseHoverMenuButton(btnDose);
 
             // Checking data by the value in UserData get from Panel
             // If there is any data is not checked, show a message box
-            UserData.fullData[1] = nuclideInputPanel.CheckFullData();
-            UserData.fullData[2] = modelsInputPanel.CheckFullData();
-            UserData.fullData[3] = kineticsInputPanel.CheckFullData();
+            UserData.fullData[0] = nuclideInputPanel.CheckFullData();
+            UserData.fullData[1] = modelsInputPanel.CheckFullData();
+            UserData.fullData[2] = kineticsInputPanel.CheckFullData();
 
             foreach (var check in UserData.fullData)
             {

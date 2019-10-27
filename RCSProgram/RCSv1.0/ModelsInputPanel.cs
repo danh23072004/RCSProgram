@@ -48,6 +48,44 @@ namespace RCSv1._0
         public ModelsInputPanel(Panel PnlModelsInput)
         {
             pnlModelsInput = PnlModelsInput;
+            var pfc = new PrivateFontCollection();
+            string fontLocation = Application.StartupPath.Remove(Application.StartupPath.Length - 10, 10) + "\\Resources\\OpenSans-Light.ttf";
+            pfc.AddFontFile(fontLocation);
+            // This uses for adding new fonts
+
+            lbChoose = new Label()
+            {
+                Text = "Chọn mô hình người",
+                Location = new Point(26, 30),
+                Font = new Font(pfc.Families[0], 17, FontStyle.Bold),
+                Size = new Size(250, 50),
+            };
+            pnlModelsInput.Controls.Add(lbChoose);
+
+            int locationY = 80;
+            int locationX = 20;
+            // Position of ckbHumanAge and arrHumanAgeCheckboxLabel
+            for (int i = 0; i < 10; i++)
+            {
+                ckbHumanAge[i] = new BunifuCheckbox()
+                {
+                    BackColor = Color.Blue,
+                    CheckedOnColor = Color.Blue,
+                    Location = new Point(locationX, locationY),
+                    Size = new Size(20, 20),
+                    Checked = false,
+                };
+                arrHumanAgeCheckboxLabel[i] = new Label()
+                {
+                    Text = arrHumanAgeCheckboxName[i],
+                    Location = new Point(locationX + 40, locationY),
+                    Font = new Font(pfc.Families[0], 10, FontStyle.Regular),
+                    Size = new Size(360, 30),
+                };
+                pnlModelsInput.Controls.Add(ckbHumanAge[i]);
+                pnlModelsInput.Controls.Add(arrHumanAgeCheckboxLabel[i]);
+                locationY += 30;
+            }
         }
 
         public bool[] ReturnHumanAgeOption()
@@ -65,48 +103,6 @@ namespace RCSv1._0
                 }
             }
             return value;
-        }
-
-        public void DrawModelsInputPanel()
-        {
-            var pfc = new PrivateFontCollection();
-            string fontLocation = Application.StartupPath.Remove(Application.StartupPath.Length - 10, 10) + "\\Resources\\OpenSans-Light.ttf";
-            pfc.AddFontFile(fontLocation);
-            // This uses for adding new fonts
-
-            lbChoose = new Label()
-            {
-                Text = "Chọn độ tuổi",
-                Location = new Point(26, 30),
-                Font = new Font(pfc.Families[0], 17, FontStyle.Bold),
-                Size = new Size(218, 50),
-            };
-            pnlModelsInput.Controls.Add(lbChoose);
-
-            int locationY = 60;
-            int locationX = 30;
-            // Position of ckbHumanAge and arrHumanAgeCheckboxLabel
-            for (int i = 0; i < 10; i++)
-            {
-                ckbHumanAge[i] = new BunifuCheckbox()
-                {
-                    BackColor = Color.Blue,
-                    CheckedOnColor = Color.Blue,
-                    Location = new Point(locationX, locationY),
-                    Size = new Size(20, 20),
-                    Checked = false,
-                };
-                arrHumanAgeCheckboxLabel[i] = new Label()
-                {
-                    Text = arrHumanAgeCheckboxName[i],
-                    Location = new Point(locationX + 40, locationY),
-                    Font = new Font(pfc.Families[0], 10, FontStyle.Regular),
-                    Size = new Size(347, 30),
-                };
-                pnlModelsInput.Controls.Add(ckbHumanAge[i]);
-                pnlModelsInput.Controls.Add(arrHumanAgeCheckboxLabel[i]);
-                locationY += 45;
-            }
         }
 
         public bool CheckFullData()

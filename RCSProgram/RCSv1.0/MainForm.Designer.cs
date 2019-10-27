@@ -161,7 +161,7 @@
             this.btnDose.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnDose.ActiveForecolor = System.Drawing.Color.White;
             this.btnDose.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnDose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnDose.BackColor = System.Drawing.Color.Transparent;
             this.btnDose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDose.BackgroundImage")));
             this.btnDose.ButtonText = "Tính liều";
             this.btnDose.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -187,7 +187,7 @@
             this.btnHomeInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnHomeInput.ActiveForecolor = System.Drawing.Color.White;
             this.btnHomeInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnHomeInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnHomeInput.BackColor = System.Drawing.Color.Transparent;
             this.btnHomeInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHomeInput.BackgroundImage")));
             this.btnHomeInput.ButtonText = "Trang chủ";
             this.btnHomeInput.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -213,7 +213,7 @@
             this.btnKineticsInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnKineticsInput.ActiveForecolor = System.Drawing.Color.White;
             this.btnKineticsInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnKineticsInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnKineticsInput.BackColor = System.Drawing.Color.Transparent;
             this.btnKineticsInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnKineticsInput.BackgroundImage")));
             this.btnKineticsInput.ButtonText = "Nhập thời gian lưu trú";
             this.btnKineticsInput.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -239,9 +239,9 @@
             this.btnModelsInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnModelsInput.ActiveForecolor = System.Drawing.Color.White;
             this.btnModelsInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnModelsInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnModelsInput.BackColor = System.Drawing.Color.Transparent;
             this.btnModelsInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnModelsInput.BackgroundImage")));
-            this.btnModelsInput.ButtonText = "Chọn mô hình phóng xạ";
+            this.btnModelsInput.ButtonText = "Chọn mô hình người";
             this.btnModelsInput.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModelsInput.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModelsInput.ForeColor = System.Drawing.Color.Black;
@@ -265,9 +265,9 @@
             this.btnNuclideInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnNuclideInput.ActiveForecolor = System.Drawing.Color.White;
             this.btnNuclideInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnNuclideInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
+            this.btnNuclideInput.BackColor = System.Drawing.Color.Transparent;
             this.btnNuclideInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuclideInput.BackgroundImage")));
-            this.btnNuclideInput.ButtonText = "Chọn mô hình bệnh nhân";
+            this.btnNuclideInput.ButtonText = "Chọn đồng vị phóng xạ";
             this.btnNuclideInput.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuclideInput.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuclideInput.ForeColor = System.Drawing.Color.Black;

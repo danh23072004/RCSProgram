@@ -23,10 +23,6 @@ namespace RCSv1._0
         public HomeInputPanel(Panel PnlHomeInput)
         {
             pnlHomeInput = PnlHomeInput;
-        }
-
-        public void DrawHomeInputPanel()
-        {
             var pfc = new PrivateFontCollection();
             string fontLocation = Application.StartupPath.Remove(Application.StartupPath.Length - 10, 10) + "\\Resources\\OpenSans-SemiBold.ttf";
             pfc.AddFontFile(fontLocation);
@@ -66,6 +62,11 @@ namespace RCSv1._0
                 ReadOnly = true,
             };
             pnlHomeInput.Controls.Add(txbInstruction);
+        }
+
+        public void DrawHomeInputPanel()
+        {
+            
 
         }
 

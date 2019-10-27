@@ -24,10 +24,6 @@ namespace RCSv1._0
         public NuclideInputPanel(Panel PnlNuclideInput)
         {
             pnlNuclideInput = PnlNuclideInput;
-        }
-
-        public void DrawNuclideInputPanel()
-        {
             var pfc = new PrivateFontCollection();
             string fontLocation = Application.StartupPath.Remove(Application.StartupPath.Length - 10, 10) + "\\Resources\\OpenSans-Light.ttf";
             pfc.AddFontFile(fontLocation);
