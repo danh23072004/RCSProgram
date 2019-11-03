@@ -28,6 +28,7 @@ namespace RCSv1._0
             kineticsInputPanel = new KineticsInputPanel(pnlKineticsInput);
             doseOutputPanel = new DoseOutputPanel(pnlDoseOutput);
             pnlHomeInput.BringToFront();
+            UserData.HumanAge = modelsInputPanel.ReturnHumanAgeOption();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
@@ -50,6 +51,15 @@ namespace RCSv1._0
         private void BunifuImageButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void HidePanels()
+        {
+            pnlNuclideInput.Visible = false;
+            pnlModelsInput.Visible = false;
+            pnlKineticsInput.Visible = false;
+            pnlHomeInput.Visible = false;
+            pnlDoseOutput.Visible = false;
         }
 
         private void BunifuImageButton2_Click(object sender, EventArgs e)
@@ -87,21 +97,49 @@ namespace RCSv1._0
 
         private void BtnDose_Click(object sender, EventArgs e)
         {
-            pnlDoseOutput.BringToFront();
-            DrawColourMouseHoverMenuButton(btnDose);
-
             // Checking data by the value in UserData get from Panel
             // If there is any data is not checked, show a message box
             UserData.fullData[0] = nuclideInputPanel.CheckFullData();
             UserData.fullData[1] = modelsInputPanel.CheckFullData();
             UserData.fullData[2] = kineticsInputPanel.CheckFullData();
 
-            foreach (var check in UserData.fullData)
-            {
-                if (check == false)
-                {
+            bool check = true;
 
+            string errorMessage = "LỖI! Bạn chưa nhập ";
+            for (int i = 0; i < 3; i++)
+            {
+                if (UserData.fullData[i] == false)
+                {
+                    check = false;
+                    switch (i)
+                    {
+                        case 0:
+                            errorMessage += "đồng vị phóng xạ, ";
+                            break;
+                        case 1:
+                            errorMessage += "mô hình người, ";
+                            break;
+                        case 2:
+                            errorMessage += "thời gian lưu trú, ";
+                            break;
+                        default:
+                            break;
+                    }
                 }
+            }
+            errorMessage = errorMessage.Remove(errorMessage.Length - 2);
+
+            if (check == false)
+            {
+                MessageBox.Show(errorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+
+
+
+                pnlDoseOutput.BringToFront();
+                DrawColourMouseHoverMenuButton(btnDose);
             }
         }
     }

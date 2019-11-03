@@ -63,19 +63,9 @@ namespace RCSv1._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] OpenSans_Light {
+        internal static byte[] Tc_99m {
             get {
-                object obj = ResourceManager.GetObject("OpenSans_Light", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] OpenSans_SemiBold {
-            get {
-                object obj = ResourceManager.GetObject("OpenSans_SemiBold", resourceCulture);
+                object obj = ResourceManager.GetObject("Tc_99m", resourceCulture);
                 return ((byte[])(obj));
             }
         }

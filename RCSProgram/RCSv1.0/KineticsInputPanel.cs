@@ -14,29 +14,27 @@ namespace RCSv1._0
     {
         #region Properties
 
-        private Panel pnlKineticsInputPanel = new Panel();
+        private Panel pnlKineticsInput = new Panel();
         private TextBox[] arrTxbKinetics = new TextBox[30];
+        private Keys[] arrAcceptKeys = new Keys[12];
 
         #endregion
 
         #region Method
 
-        public KineticsInputPanel(Panel PnlKineticsInputPanel)
+        public KineticsInputPanel(Panel PnlKineticsInput)
         {
-            pnlKineticsInputPanel = PnlKineticsInputPanel;
-            var pfc = new PrivateFontCollection();
-            string fontLocation = Application.StartupPath.Remove(Application.StartupPath.Length - 10, 10) + "\\Resources\\OpenSans-Light.ttf";
-            pfc.AddFontFile(fontLocation);
-            // This uses for adding new fonts
+            pnlKineticsInput = PnlKineticsInput;
 
+            // Draw main label
             Label lbTimeExist = new Label()
             {
                 Text = "Thời gian lưu trú của các cơ quan",
                 Location = new Point(26, 30),
-                Font = new Font(pfc.Families[0], 16, FontStyle.Regular),
+                Font = new Font("Segoe UI", 16, FontStyle.Regular),
                 Size = new Size(400, 30),
             };
-            pnlKineticsInputPanel.Controls.Add(lbTimeExist);
+            pnlKineticsInput.Controls.Add(lbTimeExist);
 
             string[] arrTxbName = new string[28]
             {
@@ -46,7 +44,7 @@ namespace RCSv1._0
                 "Tuyến ức", "Tuyến giáp", "Bàng quang", "Tử cung", "Tổng cân nặng cơ thể/Còn lại",
             };
 
-            // Draw first column
+            // Draw textbox at first column
             int locationX = 10;
             int locationY = 90;
             for (int i = 0; i < 14; i++)
@@ -54,14 +52,16 @@ namespace RCSv1._0
                 arrTxbKinetics[i] = new TextBox()
                 {
                     Location = new Point(locationX, locationY),
-                    Font = new Font(pfc.Families[0], 10, FontStyle.Regular),
+                    Font = new Font("Segoe UI", 10, FontStyle.Regular),
                     Size = new Size(150, 30),
                     Text = "0.00000",
                 };
-                pnlKineticsInputPanel.Controls.Add(arrTxbKinetics[i]);
+                arrTxbKinetics[i].KeyPress += KineticsInputPanel_KeyPress;
+                pnlKineticsInput.Controls.Add(arrTxbKinetics[i]);
                 locationY += 28;
             }
 
+            // Darw textbox at second column
             locationX = 356;
             locationY = 90;
             for (int i = 14; i < 28; i++)
@@ -69,14 +69,16 @@ namespace RCSv1._0
                 arrTxbKinetics[i] = new TextBox()
                 {
                     Location = new Point(locationX, locationY),
-                    Font = new Font(pfc.Families[0], 10, FontStyle.Regular),
+                    Font = new Font("Segoe UI", 10, FontStyle.Regular),
                     Size = new Size(150, 30),
                     Text = "0.00000",
                 };
-                pnlKineticsInputPanel.Controls.Add(arrTxbKinetics[i]);
+                arrTxbKinetics[i].KeyPress += KineticsInputPanel_KeyPress;
+                pnlKineticsInput.Controls.Add(arrTxbKinetics[i]);
                 locationY += 28;
             }
 
+            // Draw label for each textbox at first column
             Label[] arrTextBoxLabel = new Label[28];
             locationX = 200;
             locationY = 90;
@@ -85,14 +87,15 @@ namespace RCSv1._0
                 arrTextBoxLabel[i] = new Label()
                 {
                     Location = new Point(locationX, locationY),
-                    Font = new Font(pfc.Families[0], 10, FontStyle.Regular),
+                    Font = new Font("Segoe UI", 10, FontStyle.Regular),
                     Size = new Size(150, 30),
                     Text = arrTxbName[i],
                 };
-                pnlKineticsInputPanel.Controls.Add(arrTextBoxLabel[i]);
+                pnlKineticsInput.Controls.Add(arrTextBoxLabel[i]);
                 locationY += 28;
             }
 
+            // Draw label for each textbox at second column
             locationX = 520;
             locationY = 90;
             for (int i = 14; i < 28; i++)
@@ -100,23 +103,49 @@ namespace RCSv1._0
                 arrTextBoxLabel[i] = new Label()
                 {
                     Location = new Point(locationX, locationY),
-                    Font = new Font(pfc.Families[0], 10, FontStyle.Regular),
+                    Font = new Font("Segoe UI", 10, FontStyle.Regular),
                     Size = new Size(195, 30),
                     Text = arrTxbName[i],
                 };
-                pnlKineticsInputPanel.Controls.Add(arrTextBoxLabel[i]);
+                pnlKineticsInput.Controls.Add(arrTextBoxLabel[i]);
                 locationY += 28;
+            }
+
+            // Set value for arrAcceptKey
+            for (int i = 48; i <= 57; i++)
+            {
+                arrAcceptKeys[i - 48] = (Keys)i;
+            }
+            arrAcceptKeys[11] = Keys.Back;
+        }
+
+        // This event is used for checking the character of key press action
+        private void KineticsInputPanel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool check = false;
+            foreach (var item in arrAcceptKeys)
+            {
+                if (e.KeyChar == (char)item )
+                {
+                    check = true;
+                    break;
+                }
+            }
+            if (check == false)
+            {
+                e.Handled = true;
             }
         }
 
         public bool CheckFullData()
         {
             bool check = false;
-            foreach (var txb in arrTxbKinetics)
+            for (int i = 0; i < 28; i++)
             {
-                if (txb.Text != null)
+                if (arrTxbKinetics[i].Text != "0.00000")
                 {
                     check = true;
+                    break;
                 }
             }
             return check;

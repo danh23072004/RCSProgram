@@ -16,7 +16,7 @@ namespace RCSv1._0
 
         #region Controls
 
-        private BunifuCheckbox[] ckbHumanAge = new BunifuCheckbox[10];
+        private BunifuCheckbox[] ckbHumanAge = new BunifuCheckbox[15];
         private Panel pnlModelsInput = new Panel();
         private Label lbChoose;
 
@@ -24,20 +24,25 @@ namespace RCSv1._0
 
         #region Local Variables
 
-        private string[] arrHumanAgeCheckboxName = new string[10]
+        private string[] arrHumanAgeCheckboxName = new string[15]
         {
             "Đàn ông trưởng thành",
             "Phụ nữ trưởng thành",
-            "Trẻ em (15 tuổi)",
-            "Trẻ em (10 tuổi)",
-            "Trẻ em (5 tuổi)",
-            "Trẻ em (1 tuổi)",
-            "Trẻ em sơ sinh",
+            "Trẻ em nam (15 tuổi)",
+            "Trẻ em nam(10 tuổi)",
+            "Trẻ em nam (5 tuổi)",
+            "Trẻ em nam (1 tuổi)",
+            "Trẻ em nam sơ sinh",
+            "Trẻ em nữ (15 tuổi)",
+            "Trẻ em nữ (10 tuổi)",
+            "Trẻ em nữ (5 tuổi)",
+            "Trẻ em nữ (1 tuổi)",
+            "Trẻ em nữ sơ sinh",
             "Phụ nữ mang thai (3 tháng)",
             "Phụ nữ mang thai (6 tháng)",
             "Phụ nữ mang thai (9 tháng)",
         };
-        Label[] arrHumanAgeCheckboxLabel = new Label[10];
+        Label[] arrHumanAgeCheckboxLabel = new Label[15];
 
         #endregion
 
@@ -47,17 +52,14 @@ namespace RCSv1._0
 
         public ModelsInputPanel(Panel PnlModelsInput)
         {
+
             pnlModelsInput = PnlModelsInput;
-            var pfc = new PrivateFontCollection();
-            string fontLocation = Application.StartupPath.Remove(Application.StartupPath.Length - 10, 10) + "\\Resources\\OpenSans-Light.ttf";
-            pfc.AddFontFile(fontLocation);
-            // This uses for adding new fonts
 
             lbChoose = new Label()
             {
                 Text = "Chọn mô hình người",
                 Location = new Point(26, 30),
-                Font = new Font(pfc.Families[0], 17, FontStyle.Bold),
+                Font = new Font("Segoe UI", 17, FontStyle.Bold),
                 Size = new Size(250, 50),
             };
             pnlModelsInput.Controls.Add(lbChoose);
@@ -65,7 +67,7 @@ namespace RCSv1._0
             int locationY = 80;
             int locationX = 20;
             // Position of ckbHumanAge and arrHumanAgeCheckboxLabel
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 15; i++)
             {
                 ckbHumanAge[i] = new BunifuCheckbox()
                 {
@@ -79,7 +81,7 @@ namespace RCSv1._0
                 {
                     Text = arrHumanAgeCheckboxName[i],
                     Location = new Point(locationX + 40, locationY),
-                    Font = new Font(pfc.Families[0], 10, FontStyle.Regular),
+                    Font = new Font("Segoe UI", 10, FontStyle.Regular),
                     Size = new Size(360, 30),
                 };
                 pnlModelsInput.Controls.Add(ckbHumanAge[i]);
@@ -90,8 +92,8 @@ namespace RCSv1._0
 
         public bool[] ReturnHumanAgeOption()
         {
-            bool[] value = new bool[10];
-            for (int i = 0; i < 10; i++)
+            bool[] value = new bool[15];
+            for (int i = 0; i < 15; i++)
             {
                 if (ckbHumanAge[i].Checked == true)
                 {
@@ -107,22 +109,16 @@ namespace RCSv1._0
 
         public bool CheckFullData()
         {
-            int count = 0;
+            bool check = false;
             foreach (var ckb in ckbHumanAge)
             {
-                if (ckb.Checked)
+                if (ckb.Checked == true)
                 {
-                    count++;
+                    check = true;
+                    break;
                 }
             }
-            if (count == 10)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return check;
         }
 
         #endregion

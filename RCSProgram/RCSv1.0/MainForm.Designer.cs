@@ -37,6 +37,7 @@
             this.btnMinimize = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnlKineticsInput = new System.Windows.Forms.Panel();
+            this.pnlDoseOutput = new System.Windows.Forms.Panel();
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnDose = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -46,7 +47,6 @@
             this.btnNuclideInput = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlHomeInput = new System.Windows.Forms.Panel();
-            this.pnlDoseOutput = new System.Windows.Forms.Panel();
             this.pnlModelsInput = new System.Windows.Forms.Panel();
             this.pnlNuclideInput = new System.Windows.Forms.Panel();
             this.pnlRibbon.SuspendLayout();
@@ -54,7 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.pnlHomeInput.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -121,10 +120,17 @@
             // 
             // pnlKineticsInput
             // 
-            this.pnlKineticsInput.Location = new System.Drawing.Point(245, 37);
+            this.pnlKineticsInput.Location = new System.Drawing.Point(245, 38);
             this.pnlKineticsInput.Name = "pnlKineticsInput";
             this.pnlKineticsInput.Size = new System.Drawing.Size(764, 519);
             this.pnlKineticsInput.TabIndex = 2;
+            // 
+            // pnlDoseOutput
+            // 
+            this.pnlDoseOutput.Location = new System.Drawing.Point(245, 38);
+            this.pnlDoseOutput.Name = "pnlDoseOutput";
+            this.pnlDoseOutput.Size = new System.Drawing.Size(764, 519);
+            this.pnlDoseOutput.TabIndex = 1;
             // 
             // bunifuDragControl2
             // 
@@ -161,11 +167,11 @@
             this.btnDose.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnDose.ActiveForecolor = System.Drawing.Color.White;
             this.btnDose.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnDose.BackColor = System.Drawing.Color.Transparent;
+            this.btnDose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btnDose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDose.BackgroundImage")));
             this.btnDose.ButtonText = "Tính liều";
             this.btnDose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDose.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDose.ForeColor = System.Drawing.Color.Black;
             this.btnDose.IdleBorderThickness = 1;
             this.btnDose.IdleCornerRadius = 20;
@@ -187,11 +193,11 @@
             this.btnHomeInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnHomeInput.ActiveForecolor = System.Drawing.Color.White;
             this.btnHomeInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnHomeInput.BackColor = System.Drawing.Color.Transparent;
+            this.btnHomeInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btnHomeInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHomeInput.BackgroundImage")));
             this.btnHomeInput.ButtonText = "Trang chủ";
             this.btnHomeInput.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHomeInput.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHomeInput.Font = new System.Drawing.Font("Segoe UI Semilight", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHomeInput.ForeColor = System.Drawing.Color.Black;
             this.btnHomeInput.IdleBorderThickness = 1;
             this.btnHomeInput.IdleCornerRadius = 20;
@@ -213,18 +219,18 @@
             this.btnKineticsInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnKineticsInput.ActiveForecolor = System.Drawing.Color.White;
             this.btnKineticsInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnKineticsInput.BackColor = System.Drawing.Color.Transparent;
+            this.btnKineticsInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btnKineticsInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnKineticsInput.BackgroundImage")));
             this.btnKineticsInput.ButtonText = "Nhập thời gian lưu trú";
             this.btnKineticsInput.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKineticsInput.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKineticsInput.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKineticsInput.ForeColor = System.Drawing.Color.Black;
             this.btnKineticsInput.IdleBorderThickness = 1;
             this.btnKineticsInput.IdleCornerRadius = 20;
             this.btnKineticsInput.IdleFillColor = System.Drawing.Color.White;
             this.btnKineticsInput.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnKineticsInput.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnKineticsInput.Location = new System.Drawing.Point(15, 250);
+            this.btnKineticsInput.Location = new System.Drawing.Point(14, 246);
             this.btnKineticsInput.Margin = new System.Windows.Forms.Padding(5);
             this.btnKineticsInput.Name = "btnKineticsInput";
             this.btnKineticsInput.Size = new System.Drawing.Size(206, 70);
@@ -239,11 +245,11 @@
             this.btnModelsInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnModelsInput.ActiveForecolor = System.Drawing.Color.White;
             this.btnModelsInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnModelsInput.BackColor = System.Drawing.Color.Transparent;
+            this.btnModelsInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btnModelsInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnModelsInput.BackgroundImage")));
             this.btnModelsInput.ButtonText = "Chọn mô hình người";
             this.btnModelsInput.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModelsInput.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModelsInput.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModelsInput.ForeColor = System.Drawing.Color.Black;
             this.btnModelsInput.IdleBorderThickness = 1;
             this.btnModelsInput.IdleCornerRadius = 20;
@@ -265,11 +271,11 @@
             this.btnNuclideInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnNuclideInput.ActiveForecolor = System.Drawing.Color.White;
             this.btnNuclideInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnNuclideInput.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuclideInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btnNuclideInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuclideInput.BackgroundImage")));
             this.btnNuclideInput.ButtonText = "Chọn đồng vị phóng xạ";
             this.btnNuclideInput.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuclideInput.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuclideInput.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuclideInput.ForeColor = System.Drawing.Color.Black;
             this.btnNuclideInput.IdleBorderThickness = 1;
             this.btnNuclideInput.IdleCornerRadius = 20;
@@ -286,10 +292,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pnlKineticsInput);
             this.panel1.Controls.Add(this.pnlHomeInput);
             this.panel1.Controls.Add(this.pnlModelsInput);
             this.panel1.Controls.Add(this.pnlNuclideInput);
+            this.panel1.Controls.Add(this.pnlDoseOutput);
+            this.panel1.Controls.Add(this.pnlKineticsInput);
             this.panel1.Controls.Add(this.bunifuGradientPanel1);
             this.panel1.Controls.Add(this.pnlRibbon);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -300,18 +307,10 @@
             // 
             // pnlHomeInput
             // 
-            this.pnlHomeInput.Controls.Add(this.pnlDoseOutput);
             this.pnlHomeInput.Location = new System.Drawing.Point(245, 38);
             this.pnlHomeInput.Name = "pnlHomeInput";
             this.pnlHomeInput.Size = new System.Drawing.Size(764, 519);
             this.pnlHomeInput.TabIndex = 0;
-            // 
-            // pnlDoseOutput
-            // 
-            this.pnlDoseOutput.Location = new System.Drawing.Point(0, 0);
-            this.pnlDoseOutput.Name = "pnlDoseOutput";
-            this.pnlDoseOutput.Size = new System.Drawing.Size(764, 519);
-            this.pnlDoseOutput.TabIndex = 1;
             // 
             // pnlModelsInput
             // 
@@ -324,7 +323,7 @@
             // 
             this.pnlNuclideInput.Location = new System.Drawing.Point(245, 38);
             this.pnlNuclideInput.Name = "pnlNuclideInput";
-            this.pnlNuclideInput.Size = new System.Drawing.Size(764, 518);
+            this.pnlNuclideInput.Size = new System.Drawing.Size(764, 519);
             this.pnlNuclideInput.TabIndex = 2;
             // 
             // MainForm
@@ -342,7 +341,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.pnlHomeInput.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
