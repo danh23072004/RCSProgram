@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCSv1.0", "RCSv1.0\RCSv1.0.csproj", "{DB45B2D7-4041-49D1-8065-5340176AEE85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestReadRCSFile", "..\..\TestReadRCSFile\TestReadRCSFile.csproj", "{1A68BE13-839C-4E8C-A9C5-D262B8A9D944}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCSTest", "RCSTest\RCSTest.csproj", "{86ED9E25-9D36-490D-A155-35D9CA9DE7AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{DB45B2D7-4041-49D1-8065-5340176AEE85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB45B2D7-4041-49D1-8065-5340176AEE85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB45B2D7-4041-49D1-8065-5340176AEE85}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A68BE13-839C-4E8C-A9C5-D262B8A9D944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A68BE13-839C-4E8C-A9C5-D262B8A9D944}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A68BE13-839C-4E8C-A9C5-D262B8A9D944}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A68BE13-839C-4E8C-A9C5-D262B8A9D944}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86ED9E25-9D36-490D-A155-35D9CA9DE7AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86ED9E25-9D36-490D-A155-35D9CA9DE7AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86ED9E25-9D36-490D-A155-35D9CA9DE7AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86ED9E25-9D36-490D-A155-35D9CA9DE7AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
