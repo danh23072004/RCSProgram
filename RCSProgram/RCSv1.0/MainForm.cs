@@ -135,9 +135,6 @@ namespace RCSv1._0
             }
             else
             {
-
-
-
                 pnlDoseOutput.BringToFront();
                 DrawColourMouseHoverMenuButton(btnDose);
             }

@@ -23,10 +23,6 @@ namespace RCSv1._0
         public HomeInputPanel(Panel PnlHomeInput)
         {
             pnlHomeInput = PnlHomeInput;
-            var pfc = new PrivateFontCollection();
-            string fontLocation = Application.StartupPath.Remove(Application.StartupPath.Length - 10, 10) + "\\Resources\\OpenSans-SemiBold.ttf";
-            pfc.AddFontFile(fontLocation);
-            // This uses for adding new fonts
 
             Button btnInstruction = new Button()
             {
@@ -46,7 +42,7 @@ namespace RCSv1._0
                 Text = "Hướng dẫn",
                 Location = new Point(12, 3),
                 Size = new Size(231, 45),
-                Font = new Font(pfc.Families[0], 17, FontStyle.Regular),
+                Font = new Font("Segoe UI", 17, FontStyle.Regular),
                 ForeColor = Color.White,
                 BackColor = Color.Transparent,
             };
@@ -58,16 +54,10 @@ namespace RCSv1._0
                 Location = new Point(11, 71),
                 Multiline = true,
                 Size = new Size(717, 325),
-                Font = new Font(pfc.Families[0], 12, FontStyle.Regular),
+                Font = new Font("Segoe UI", 10, FontStyle.Regular),
                 ReadOnly = true,
             };
             pnlHomeInput.Controls.Add(txbInstruction);
-        }
-
-        public void DrawHomeInputPanel()
-        {
-            
-
         }
 
         #endregion

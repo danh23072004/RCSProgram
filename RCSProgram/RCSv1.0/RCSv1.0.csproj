@@ -98,8 +98,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Resources\OpenSans-Light.ttf" />
-    <EmbeddedResource Include="Resources\OpenSans-SemiBold.ttf" />
     <None Include="Resources\Tc-99m" />
   </ItemGroup>
   <ItemGroup>
