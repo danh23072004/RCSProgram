@@ -9,48 +9,18 @@ namespace RCSTest
 {
     class Program
     {
+        class LineLieu {
+            String organ = "";
+            List<float> lieus = new List<float>();
+        }
+
+        /*
+        static LineLieu parse(string line) { 
+        
+        }
+        */
         static void Main(string[] args)
         {
-
-
-            // Nhap thoi gian luu tru
-            /*
-            Console.WriteLine("Nhap thoi gian luu tru cac co quan");
-            
-            int index = 0;
-            string dose = "";
-            
-            for (int i = 0; i < 28; i++)
-            {
-                if (listsourceOrganOrdinal.IndexOf(i) != -1)
-                {
-                    Console.WriteLine(sourceOrgan[i]);
-                    timeSourceOrgan[i] = float.Parse(Console.ReadLine());
-                    if (timeSourceOrgan[i] != 0)
-                    {
-                        index = fileText[4].IndexOf(sourceOrgan[i]);
-                        dose = fileText[5].Substring(index);
-                        dose = dose.Remove(dose.IndexOf(' '));
-                        SsourceOrgan[i,0] = float.Parse(dose);
-                    }
-                    Console.WriteLine(SsourceOrgan[i,0]);
-                    Console.WriteLine();
-                }
-            }
-            */
-
-
-            /* 
-            Console.WriteLine();
-            Console.WriteLine("Ket qua tinh lieu");
-            for (int i = 0; i < 25; i++)
-            {
-                for (int t = 0; t < countSourceOrgan; t++)
-                {
-
-                }
-            }
-            */
             List<int> arrSourceOrgan = new List<int>() { 0, 2 };
             float[] arrTimeSourceOrgan = new float[28]
             { 
@@ -63,12 +33,15 @@ namespace RCSTest
             };
             
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 5; i < 7; i++)
             {
                 Console.WriteLine("Model " + (i + 1));
                 test(i, arrSourceOrgan, arrTimeSourceOrgan);
                 Console.WriteLine();
             }
+            int index = 0;  // just for test
+
+            //Console.WriteLine(GetTargetOrgan(ref index));
 
             Console.ReadLine();
         }
@@ -107,17 +80,49 @@ namespace RCSTest
             return check;
         }
 
+        static List<string> GetTargetOrgan(ref int indexLineSourceOrganName)
+        {
+            List<string> listTargetOrgan = new List<string>();
+            string fileLocation = @"C:\Users\COMPUTER\Documents\RCSProgram\Tc-99m";
+            FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(file);
+            string line = "";
+            string listSourceOrganName = "";
+            indexLineSourceOrganName = 0;
+            while (reader.EndOfStream == false)
+            {
+                line = reader.ReadLine();
+                indexLineSourceOrganName++;
+                if (isOrganName(line) == true)
+                {
+                    listSourceOrganName = line;
+                    break;
+                }
+            }
+            // Line lúc này mang giá trị của dòng sau cơ quan bia, giá trị liều (số)
+            // đóng vai trò làm khuôn (vị trí) để lấy ra tên của cơ quan
+            line = reader.ReadLine();
+
+            return listTargetOrgan;
+        }
+
         static void test(int modelIndex, List<int> listsourceOrganOrdinal, float[] timeSourceOrgan) {
             // arrTimeSourceOrgan : là thời gian lưu trú của từng cơ quan
             // listsourceOrganOrdinal : là dãy model (phantom) mà mình cần xét
             // modelIndex : Số thứ từ của model (phantom) cần xét
             // listsourceOrganOrdinal : danh sach cac model (phantom) can tinh
+            int indexLineSourceOrganName = 0;
             string fileLocation = @"C:\Users\COMPUTER\Documents\RCSProgram\Tc-99m";
             FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(file);
             // Thoi gian luu tru cua co quan nguon
             string[] modelName = new string[]
             {
+                "Adult Male",
+                "Adult Female",
+                "1-year-old Male",
+                "5-year-old Male",
+                "10-year-old Male",
                 "3-month Pregnant Female",
                 "6-month Pregnant Female",
                 "9-month Pregnant Female",
@@ -125,7 +130,7 @@ namespace RCSTest
             List<string> fileText = new List<string>();
             string listSourceOrganName = "";
             // Ten cua cac co quan nguon
-            /*
+            
             string[] sourceOrgan = new string[28]
             {
                 "Adrenals", "Brain", "Breasts", "GB Cont", "LLI Cont",
@@ -135,6 +140,7 @@ namespace RCSTest
                 "Spleen", "Thymus", "Thyroid", "UB Cont", "Uterus", "Fetus",
                 "TotBody"
             };
+            /*
             Không thể liệt kê rồi cố định các cơ quan (đối với phantom/model cũng tương tự), 
             bởi khi thêm vào một cơ quan mới (hay phantom/model) mới nào thì phần mềm sẽ không xử lý được
             */
