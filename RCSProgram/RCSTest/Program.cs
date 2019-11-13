@@ -9,9 +9,11 @@ namespace RCSTest
 {
     class Program
     {
-        class LineLieu {
-            String organ = "";
-            List<float> lieus = new List<float>();
+        class LineLieu 
+        {
+            String organ = "";  // Lưu tên của cơ quan bia
+            // Lưu danh sách các giá trị S của cqnguồn -> cqbia
+            List<float> doses = new List<float>();  
         }
 
         /*
@@ -35,13 +37,14 @@ namespace RCSTest
 
             for (int i = 5; i < 7; i++)
             {
-                Console.WriteLine("Model " + (i + 1));
-                test(i, arrSourceOrgan, arrTimeSourceOrgan);
-                Console.WriteLine();
+                //Console.WriteLine("Model " + (i + 1));
+                //test(i, arrSourceOrgan, arrTimeSourceOrgan);
+                //Console.WriteLine();
             }
             int index = 0;  // just for test
 
-            //Console.WriteLine(GetTargetOrgan(ref index));
+            Console.WriteLine(GetTargetOrgan(ref index));
+
 
             Console.ReadLine();
         }
@@ -82,28 +85,60 @@ namespace RCSTest
 
         static List<string> GetTargetOrgan(ref int indexLineSourceOrganName)
         {
-            List<string> listTargetOrgan = new List<string>();
-            string fileLocation = @"C:\Users\COMPUTER\Documents\RCSProgram\Tc-99m";
+            List<string> listSourceOrgan = new List<string>();
+            string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m";
             FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(file);
             string line = "";
-            string listSourceOrganName = "";
+            string listSourceOrganNameStr = "";
             indexLineSourceOrganName = 0;
             while (reader.EndOfStream == false)
             {
                 line = reader.ReadLine();
                 indexLineSourceOrganName++;
-                if (isOrganName(line) == true)
+                if (isOrganName(line) == true && indexLineSourceOrganName != 1)
                 {
-                    listSourceOrganName = line;
+                    listSourceOrganNameStr = line;
                     break;
                 }
             }
             // Line lúc này mang giá trị của dòng sau cơ quan bia, giá trị liều (số)
             // đóng vai trò làm khuôn (vị trí) để lấy ra tên của cơ quan
             line = reader.ReadLine();
+            char[] number = new char[10]
+            {
+                '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'
+            };
+            bool check = false;
+            int count = 0;
+            while (check == false)
+            {
+                line = line.Remove(0, 1);
+                count++;
+                foreach (var item in number)
+                {
+                    if (line[0] == item)
+                    {
+                        check = true;
+                    }
+                }
+            }
 
-            return listTargetOrgan;
+            listSourceOrganNameStr = listSourceOrganNameStr.Remove(0, count);
+            while (listSourceOrganNameStr.IndexOf(' ') != -1)
+            {
+                if (listSourceOrganNameStr[0] == ' ')
+                {
+                    listSourceOrganNameStr = listSourceOrganNameStr.Remove(0, 1);
+                }
+                else
+                {
+                    listSourceOrgan.Add(listSourceOrganNameStr.Substring(0, listSourceOrganNameStr.IndexOf(' ')));
+                    listSourceOrganNameStr = listSourceOrganNameStr.Remove(0, listSourceOrganNameStr.IndexOf(' '));
+                }
+            }
+
+            return listSourceOrgan;
         }
 
         static void test(int modelIndex, List<int> listsourceOrganOrdinal, float[] timeSourceOrgan) {
@@ -214,7 +249,6 @@ namespace RCSTest
                                         SsourceOrgan[t, i] = float.Parse(dose);
                                         Console.WriteLine(SsourceOrgan[t, i]);
                                     }
-                                    // Console.WriteLine(SsourceOrgan[0, i]);
                                 }
                                 line = reader.ReadLine();
                             }
