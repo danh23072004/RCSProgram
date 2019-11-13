@@ -1,0 +1,6 @@
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSTest\bin\Debug\RCSTest.exe.config
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSTest\bin\Debug\RCSTest.exe
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSTest\bin\Debug\RCSTest.pdb
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSTest\obj\Debug\RCSTest.csprojAssemblyReference.cache
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSTest\obj\Debug\RCSTest.exe
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSTest\obj\Debug\RCSTest.pdb
