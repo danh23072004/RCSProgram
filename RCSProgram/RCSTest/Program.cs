@@ -35,7 +35,7 @@ namespace RCSTest
             };
             
 
-            for (int i = 5; i <= 7; i++)
+            for (int i = 12; i <= 14; i++)
             {
                 Console.WriteLine("Model " + (i + 1));
                 test(i, arrSourceOrgan, arrTimeSourceOrgan);
@@ -178,6 +178,7 @@ namespace RCSTest
 
         static List<string> GetSourceOrgan(int lineLocation)
         {
+            // lineLocation là biến chỉ vị trí (số dòng) trong file text để tìm kiếm danh sách cquan nguồn
             string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m";
             FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(file);
@@ -190,7 +191,21 @@ namespace RCSTest
             line = reader.ReadLine();
             while (line != "")
             {
-                line = line.Substring(0, line.IndexOf(' '));
+                // Biến này dùng để lưu vị trí của kí tự số trong biến line
+                int minNumberPosition = line.Length;
+                for (int i = 0; i <= 9; i++)
+                {
+                    if (line.IndexOf(i.ToString()) <= minNumberPosition)
+                    {
+                        minNumberPosition = line.IndexOf(i.ToString());
+                    }
+                }
+                line = line.Substring(0, minNumberPosition - 1);
+                // Xóa khoảng trắng ở cuối tên cơ quan
+                while (line[line.Length - 1] == ' ')
+                {
+                    line = line.Remove(line.Length - 1, 1);
+                }
                 sourceOrgan.Add(line);
                 line = reader.ReadLine();
             }
@@ -202,7 +217,6 @@ namespace RCSTest
             // listsourceOrganOrdinal : là dãy model (phantom) mà mình cần xét
             // modelIndex : Số thứ từ của model (phantom) cần xét
             // listsourceOrganOrdinal : danh sach cac model (phantom) can tinh
-            int indexLineSourceOrganName = 0;
             string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m";
             FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(file);
@@ -211,12 +225,20 @@ namespace RCSTest
             {
                 "Adult Male",
                 "Adult Female",
-                "1-year-old Male",
-                "5-year-old Male",
+                "15-year-old Male",
                 "10-year-old Male",
+                "5-year-old Male",
+                "1-year-old Male",
+                "Newborn Male",
+                "15-year-old Female",
+                "10-year-old Female",
+                "5-year-old Female",
+                "1-year-old Female",
+                "Newborn Female",
                 "3-month Pregnant Female",
                 "6-month Pregnant Female",
                 "9-month Pregnant Female",
+
             };
             List<string> fileText = new List<string>();
             string listSourceOrganName = "";
@@ -231,17 +253,10 @@ namespace RCSTest
             bởi khi thêm vào một cơ quan mới (hay phantom/model) mới nào thì phần mềm sẽ không xử lý được
             */
 
-            float[,] SsourceOrgan = new float[25, 28];
+            float[,] SsourceOrgan = new float[sourceOrgan.Count, targetOrgan.Count];
 
             // Ten cua cac co quan bia
-            sourceOrgan = new List<string>()
-            {
-                "Adrenals", "Brain", "Breasts", "Gallbladder Wall", "LLI Wall", "Small Intestine",
-                "Stomach Wall", "ULI Wall", "Heart Wall", "Kidneys", "Liver", "Lungs",
-                "Muscle", "Ovaries", "Pancreas", "Red Marrow", "Osteogenic Cells", "Skin",
-                "Spleen", "Thymus", "Thyroid", "Urinary Bladder Wall", "Uterus", "Fetus", "Total Body",
-            };
-            float[] doseTargetOrgan = new float[25];
+            float[] doseTargetOrgan = new float[targetOrgan.Count];
             
 
             // Đọc từng dòng của file
