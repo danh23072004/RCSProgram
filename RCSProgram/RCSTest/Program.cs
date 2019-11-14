@@ -42,9 +42,12 @@ namespace RCSTest
                 //Console.WriteLine();
             }
             int index = 0;  // just for test
-
-            Console.WriteLine(GetTargetOrgan(ref index));
-
+            int length = GetTargetOrgan(ref index).Count;
+            List<string> result = GetTargetOrgan(ref index);
+            for (int i = 1; i < length; i++)
+            {
+                Console.WriteLine(result[i]);
+            }
 
             Console.ReadLine();
         }
@@ -125,18 +128,34 @@ namespace RCSTest
             }
 
             listSourceOrganNameStr = listSourceOrganNameStr.Remove(0, count);
-            while (listSourceOrganNameStr.IndexOf(' ') != -1)
+            count = 0;  // count lúc này là khoảng cách giữa tên cơ quan này và tên cơ quan kia
+            while (line.IndexOf(' ') != -1)
             {
-                if (listSourceOrganNameStr[0] == ' ')
+                if (line[0] == ' ')
                 {
-                    listSourceOrganNameStr = listSourceOrganNameStr.Remove(0, 1);
+                    line = line.Remove(0, 1);
                 }
                 else
                 {
-                    listSourceOrgan.Add(listSourceOrganNameStr.Substring(0, listSourceOrganNameStr.IndexOf(' ')));
-                    listSourceOrganNameStr = listSourceOrganNameStr.Remove(0, listSourceOrganNameStr.IndexOf(' '));
+                    count = line.IndexOf(' ') + 1;
+                    line = line.Remove(0, count);
+                    listSourceOrgan.Add(listSourceOrganNameStr.Substring(0, count));
+                    listSourceOrganNameStr = listSourceOrganNameStr.Remove(0, count);
                 }
             }
+
+            //while (listSourceOrganNameStr.IndexOf(' ') != -1)
+            //{
+            //    if (listSourceOrganNameStr[0] == ' ')
+            //    {
+            //        listSourceOrganNameStr = listSourceOrganNameStr.Remove(0, 1);
+            //    }
+            //    else
+            //    {
+            //        listSourceOrgan.Add(listSourceOrganNameStr.Substring(0, listSourceOrganNameStr.IndexOf(' ')));
+            //        listSourceOrganNameStr = listSourceOrganNameStr.Remove(0, listSourceOrganNameStr.IndexOf(' '));
+            //    }
+            //}
 
             return listSourceOrgan;
         }
