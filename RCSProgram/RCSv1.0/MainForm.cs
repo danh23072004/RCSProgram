@@ -100,7 +100,7 @@ namespace RCSv1._0
         {
             // Checking data by the value in UserData get from Panel
             // If there is any data is not checked, show a message box
-            UserData.fullData[0] = nuclideInputPanel.CheckFullData();
+            UserData.fullData[0] = nuclideInputPanel.CheckFullKineticsData();
             UserData.fullData[1] = modelsInputPanel.CheckFullData();
             UserData.fullData[2] = kineticsInputPanel.CheckFullData();
 
@@ -138,6 +138,7 @@ namespace RCSv1._0
             {
                 pnlDoseOutput.BringToFront();
                 DrawColourMouseHoverMenuButton(btnDose);
+
             }
         }
     }
