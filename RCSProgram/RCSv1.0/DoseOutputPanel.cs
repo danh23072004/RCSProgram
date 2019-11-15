@@ -14,7 +14,8 @@ namespace RCSv1._0
     {
         #region Properties
 
-        Panel pnlDoseOutput = new Panel();
+        private Panel pnlDoseOutput = new Panel();
+        private List<TextBox> arrTxbDose = new List<TextBox>();
 
         #endregion
 
@@ -23,11 +24,16 @@ namespace RCSv1._0
         public DoseOutputPanel(Panel PnlDoseOutput)
         {
             pnlDoseOutput = PnlDoseOutput;
-        }
 
-        public void DrawDoseOutputPanel()
-        {
-
+            // Draw main label
+            Label lbDoseResult = new Label()
+            {
+                Text = "Kết quả tính liều",
+                Location = new Point(26, 30),
+                Font = new Font("Segoe UI", 16, FontStyle.Regular),
+                Size = new Size(400, 50),
+            };
+            pnlDoseOutput.Controls.Add(lbDoseResult);
         }
 
         #endregion

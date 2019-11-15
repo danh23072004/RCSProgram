@@ -137,7 +137,7 @@ namespace RCSv1._0
             }
         }
 
-        public bool CheckFullData()
+        public bool CheckFullKineticsData()
         {
             bool check = false;
             for (int i = 0; i < 28; i++)
@@ -149,6 +149,16 @@ namespace RCSv1._0
                 }
             }
             return check;
+        }
+
+        public List<float> GetKineticsData()
+        {
+            List<float> kineticsData = new List<float>();
+            foreach (var txb in arrTxbKinetics)
+            {
+                kineticsData.Add(float.Parse(txb.Text));
+            }
+            return kineticsData;
         }
 
         #endregion

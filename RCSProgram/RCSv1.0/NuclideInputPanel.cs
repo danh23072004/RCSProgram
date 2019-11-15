@@ -83,7 +83,7 @@ namespace RCSv1._0
             UserData.isotopeIndex = 0;
         }
 
-        public bool CheckFullKineticsData()
+        public bool CheckFullNuclideData()
         {
             if (cmbChooseNuclide.Text == null)
             {
@@ -94,12 +94,6 @@ namespace RCSv1._0
                 return true;
             }
 
-        }
-        public List<float> GetKineticsData()
-        {
-            List<float> kineticsData = new List<float>();
-
-            return kineticsData;
         }
         #endregion
     }

@@ -295,53 +295,6 @@ namespace RCSTest
             */
 
 
-            string listSourceOrganName = "";    // Ten cua cac co quan nguon
-            string line = "";   // Đọc từng dòng của file
-            //while (reader.EndOfStream == false)
-            //{
-            //    line = reader.ReadLine();
-            //    if (isModelName(line, modelIndex, modelName) == true)
-            //    {
-            //        // Tiếp tục đọc file sau khi đã tìm ra được tên model
-            //        while (reader.EndOfStream == false)
-            //        {
-
-            //            line = reader.ReadLine();
-            //            if (isOrganName(line) == true)
-            //            {
-            //                listSourceOrganName = line;
-            //            }
-            //            if (listSourceOrganName != "")
-            //            {
-            //                index = 0;
-            //                string dose = "";
-            //                line = reader.ReadLine();
-            //                for (int t = 0; t < organDoses.Count; t++)
-            //                {
-            //                    Console.WriteLine(organDoses[t].organSourceName);
-            //                    //organDoses.Add();
-            //                    for (int i = 0; i < targetOrgan.Count; i++)
-            //                    {
-            //                        if (timeSourceOrgan[t] != 0)
-            //                        {
-            //                            Console.WriteLine(targetOrgan[i]);
-            //                            index = listSourceOrganName.IndexOf(targetOrgan[i]);
-            //                            dose = line.Substring(index);
-            //                            dose = dose.Remove(dose.IndexOf(' '));
-            //                            Console.WriteLine(organDoses[t].doses[i]);
-            //                        }
-            //                    }
-            //                    line = reader.ReadLine();
-            //                }
-            //                break;
-            //                // Khi đã đọc hết dữ liệu của bảng cần tìm, out ra khỏi file
-            //            }
-            //        }
-            //    }
-
-
-            //}
-
             for (int i = 0; i < organDoses.Count; i++)
             {
                 Console.WriteLine(organDoses[i].organSourceName);

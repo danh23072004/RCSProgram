@@ -19,6 +19,8 @@ namespace RCSv1._0
         private KineticsInputPanel kineticsInputPanel;
         private DoseOutputPanel doseOutputPanel;
 
+        #region Support Method
+
         public MainForm()
         {
             InitializeComponent();
@@ -49,11 +51,6 @@ namespace RCSv1._0
             btn.IdleForecolor = Color.White;
         }
 
-        private void BunifuImageButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void HidePanels()
         {
             pnlNuclideInput.Visible = false;
@@ -61,6 +58,17 @@ namespace RCSv1._0
             pnlKineticsInput.Visible = false;
             pnlHomeInput.Visible = false;
             pnlDoseOutput.Visible = false;
+        }
+
+
+
+        #endregion
+
+        #region Events
+
+        private void BunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void BunifuImageButton2_Click(object sender, EventArgs e)
@@ -93,16 +101,15 @@ namespace RCSv1._0
         {
             DrawColourMouseHoverMenuButton(btnHomeInput);
             pnlHomeInput.BringToFront();
-            UserData.HumanAge = modelsInputPanel.ReturnHumanAgeOption();
         }
 
         private void BtnDose_Click(object sender, EventArgs e)
         {
             // Checking data by the value in UserData get from Panel
             // If there is any data is not checked, show a message box
-            UserData.fullData[0] = nuclideInputPanel.CheckFullKineticsData();
+            UserData.fullData[0] = nuclideInputPanel.CheckFullNuclideData();
             UserData.fullData[1] = modelsInputPanel.CheckFullData();
-            UserData.fullData[2] = kineticsInputPanel.CheckFullData();
+            UserData.fullData[2] = kineticsInputPanel.CheckFullKineticsData();
 
             bool check = true;
 
@@ -136,10 +143,12 @@ namespace RCSv1._0
             }
             else
             {
-                pnlDoseOutput.BringToFront();
+                UserData.HumanAge = modelsInputPanel.ReturnHumanAgeOption();
                 DrawColourMouseHoverMenuButton(btnDose);
-
+                pnlDoseOutput.BringToFront();
             }
         }
+
+        #endregion
     }
 }
