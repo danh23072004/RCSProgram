@@ -7,14 +7,16 @@ using System.IO;
 
 namespace RCSTest
 {
+    class OrganDose
+    {
+        string organ = "";  
+        // Lưu tên của cơ quan bia
+        List<float> doses = new List<float>();
+        // Lưu danh sách các giá trị S của cqnguồn -> cqbia
+    }
     class Program
     {
-        class LineLieu 
-        {
-            String organ = "";  // Lưu tên của cơ quan bia
-            // Lưu danh sách các giá trị S của cqnguồn -> cqbia
-            List<float> doses = new List<float>();  
-        }
+
 
         /*
         static LineLieu parse(string line) { 
@@ -24,6 +26,7 @@ namespace RCSTest
         static void Main(string[] args)
         {
             List<int> arrSourceOrgan = new List<int>() { 0, 2 };
+            // Khi đưa vào MainForm, kích cỡ của mảng sẽ phụ thuộc vào số lượng textbox
             float[] arrTimeSourceOrgan = new float[28]
             { 
                 0,0.01f,0,0.02f,0,
@@ -212,7 +215,8 @@ namespace RCSTest
             return sourceOrgan;
         }
 
-        static void test(int modelIndex, List<int> listsourceOrganOrdinal, float[] timeSourceOrgan) {
+        static void test(int modelIndex, List<int> listsourceOrganOrdinal, float[] timeSourceOrgan) 
+        {
             // arrTimeSourceOrgan : là thời gian lưu trú của từng cơ quan
             // listsourceOrganOrdinal : là dãy model (phantom) mà mình cần xét
             // modelIndex : Số thứ từ của model (phantom) cần xét
@@ -220,6 +224,7 @@ namespace RCSTest
             string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m";
             FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(file);
+
             // Thời gian lưu trú của cơ quan nguồn
             string[] modelName = new string[]
             {
@@ -241,12 +246,12 @@ namespace RCSTest
 
             };
             List<string> fileText = new List<string>();
-            string listSourceOrganName = "";
-            // Ten cua cac co quan nguon
+
 
             int index = 0; 
             List<string> targetOrgan = GetTargetOrgan(ref index, modelName, modelIndex);
             List<string> sourceOrgan = GetSourceOrgan(index);
+            List<OrganDose> organDoses = new List<OrganDose>();
 
             /*
             Không thể liệt kê rồi cố định các cơ quan (đối với phantom/model cũng tương tự), 
@@ -257,19 +262,16 @@ namespace RCSTest
 
             // Ten cua cac co quan bia
             float[] doseTargetOrgan = new float[targetOrgan.Count];
-            
 
-            // Đọc từng dòng của file
-            string line = "";
-            // bool isModelName = false;
+
+            string listSourceOrganName = "";    // Ten cua cac co quan nguon
+            string line = "";   // Đọc từng dòng của file
             while (reader.EndOfStream == false)
             {
                 line = reader.ReadLine();
                 if (isModelName(line, modelIndex, modelName) == true)
                 {
-                    //checkModelName = true;
-                    // Dùng để lưu lại kết quả là đã tìm ra bảng model cần tìm
-
+                    // Tiếp tục đọc file sau khi đã tìm ra được tên model
                     while (reader.EndOfStream == false) {
 
                         line = reader.ReadLine();
