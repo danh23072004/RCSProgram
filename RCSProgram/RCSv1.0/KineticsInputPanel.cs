@@ -15,7 +15,7 @@ namespace RCSv1._0
         #region Properties
 
         private Panel pnlKineticsInput = new Panel();
-        private TextBox[] arrTxbKinetics = new TextBox[25];
+        private TextBox[] arrTxbKinetics = new TextBox[28];
         private Keys[] arrAcceptKeys = new Keys[12];
 
         #endregion
@@ -36,12 +36,12 @@ namespace RCSv1._0
             };
             pnlKineticsInput.Controls.Add(lbTimeExist);
 
-            string[] arrTxbName = new string[25]
+            string[] arrTxbName = new string[28]
             {
                 "Tuyến thượng thận", "Não", "Ngực", "Túi mật", "Ruột già (dưới)", "Ruột non",
                 "Dạ dày", "Ruột già (trên)", "Tim (bên trong)", "Tim (bên ngoài)", "Thận", "Gan", "Phổi", "Cơ", "Buồng trứng",
-                "Tuyến tụy", "Tủy đỏ", "Xương đặc", "Xương xốp", "Lá lách",
-                "Tuyến ức", "Tuyến giáp", "Bàng quang", "Tử cung", "Tổng cân nặng cơ thể/Còn lại",
+                "Tuyến tụy", "Tủy đỏ", "Xương đặc", "Xương xốp", "Lá lách", "Tinh hoàn", "Tuyến ức", "Tuyến giáp",
+                "Bàng quang", "Tử cung", "Thai nhi", "Nhau thai", "Tổng cân nặng cơ thể/Còn lại",
             };
 
             // Draw textbox at first column
@@ -64,7 +64,7 @@ namespace RCSv1._0
             // Darw textbox at second column
             locationX = 356;
             locationY = 90;
-            for (int i = 14; i < 25; i++)
+            for (int i = 14; i < 28; i++)
             {
                 arrTxbKinetics[i] = new TextBox()
                 {
@@ -98,7 +98,7 @@ namespace RCSv1._0
             // Draw label for each textbox at second column
             locationX = 520;
             locationY = 90;
-            for (int i = 14; i < 25; i++)
+            for (int i = 14; i < 28; i++)
             {
                 arrTextBoxLabel[i] = new Label()
                 {
@@ -140,7 +140,7 @@ namespace RCSv1._0
         public bool CheckFullKineticsData()
         {
             bool check = false;
-            for (int i = 0; i < 25; i++)
+            for (int i = 0; i < 28; i++)
             {
                 if (arrTxbKinetics[i].Text != "0.00000")
                 {

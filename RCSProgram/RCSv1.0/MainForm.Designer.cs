@@ -47,12 +47,32 @@
             this.btnNuclideInput = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlHomeInput = new System.Windows.Forms.Panel();
+            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.pnlModelsInput = new System.Windows.Forms.Panel();
             this.pnlNuclideInput = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.textBox20 = new System.Windows.Forms.TextBox();
             this.pnlRibbon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -172,7 +192,7 @@
             this.btnDose.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnDose.ActiveForecolor = System.Drawing.Color.White;
             this.btnDose.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnDose.BackColor = System.Drawing.Color.Transparent;
+            this.btnDose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btnDose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDose.BackgroundImage")));
             this.btnDose.ButtonText = "Tính liều";
             this.btnDose.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -198,7 +218,7 @@
             this.btnHomeInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnHomeInput.ActiveForecolor = System.Drawing.Color.White;
             this.btnHomeInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnHomeInput.BackColor = System.Drawing.Color.Transparent;
+            this.btnHomeInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btnHomeInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHomeInput.BackgroundImage")));
             this.btnHomeInput.ButtonText = "Trang chủ";
             this.btnHomeInput.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -224,7 +244,7 @@
             this.btnKineticsInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnKineticsInput.ActiveForecolor = System.Drawing.Color.White;
             this.btnKineticsInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnKineticsInput.BackColor = System.Drawing.Color.Transparent;
+            this.btnKineticsInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btnKineticsInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnKineticsInput.BackgroundImage")));
             this.btnKineticsInput.ButtonText = "Nhập thời gian lưu trú";
             this.btnKineticsInput.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -250,7 +270,7 @@
             this.btnModelsInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnModelsInput.ActiveForecolor = System.Drawing.Color.White;
             this.btnModelsInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnModelsInput.BackColor = System.Drawing.Color.Transparent;
+            this.btnModelsInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btnModelsInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnModelsInput.BackgroundImage")));
             this.btnModelsInput.ButtonText = "Chọn mô hình người";
             this.btnModelsInput.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -276,7 +296,7 @@
             this.btnNuclideInput.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnNuclideInput.ActiveForecolor = System.Drawing.Color.White;
             this.btnNuclideInput.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnNuclideInput.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuclideInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btnNuclideInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuclideInput.BackgroundImage")));
             this.btnNuclideInput.ButtonText = "Chọn đồng vị phóng xạ";
             this.btnNuclideInput.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -312,51 +332,32 @@
             // 
             // pnlHomeInput
             // 
+            this.pnlHomeInput.Controls.Add(this.textBox11);
+            this.pnlHomeInput.Controls.Add(this.textBox12);
+            this.pnlHomeInput.Controls.Add(this.textBox13);
+            this.pnlHomeInput.Controls.Add(this.textBox14);
+            this.pnlHomeInput.Controls.Add(this.textBox15);
+            this.pnlHomeInput.Controls.Add(this.textBox16);
+            this.pnlHomeInput.Controls.Add(this.textBox17);
+            this.pnlHomeInput.Controls.Add(this.textBox18);
+            this.pnlHomeInput.Controls.Add(this.textBox19);
+            this.pnlHomeInput.Controls.Add(this.textBox20);
+            this.pnlHomeInput.Controls.Add(this.textBox10);
+            this.pnlHomeInput.Controls.Add(this.textBox9);
+            this.pnlHomeInput.Controls.Add(this.textBox8);
+            this.pnlHomeInput.Controls.Add(this.textBox7);
+            this.pnlHomeInput.Controls.Add(this.textBox6);
+            this.pnlHomeInput.Controls.Add(this.textBox5);
+            this.pnlHomeInput.Controls.Add(this.textBox4);
+            this.pnlHomeInput.Controls.Add(this.textBox3);
+            this.pnlHomeInput.Controls.Add(this.textBox2);
+            this.pnlHomeInput.Controls.Add(this.textBox1);
             this.pnlHomeInput.Controls.Add(this.bunifuThinButton22);
             this.pnlHomeInput.Controls.Add(this.bunifuThinButton21);
             this.pnlHomeInput.Location = new System.Drawing.Point(245, 38);
             this.pnlHomeInput.Name = "pnlHomeInput";
             this.pnlHomeInput.Size = new System.Drawing.Size(764, 519);
             this.pnlHomeInput.TabIndex = 0;
-            // 
-            // pnlModelsInput
-            // 
-            this.pnlModelsInput.Location = new System.Drawing.Point(245, 38);
-            this.pnlModelsInput.Name = "pnlModelsInput";
-            this.pnlModelsInput.Size = new System.Drawing.Size(764, 519);
-            this.pnlModelsInput.TabIndex = 0;
-            // 
-            // pnlNuclideInput
-            // 
-            this.pnlNuclideInput.Location = new System.Drawing.Point(245, 38);
-            this.pnlNuclideInput.Name = "pnlNuclideInput";
-            this.pnlNuclideInput.Size = new System.Drawing.Size(764, 519);
-            this.pnlNuclideInput.TabIndex = 0;
-            // 
-            // bunifuThinButton21
-            // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "<<     Mô hình trước";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.Honeydew;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(39, 146);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(195, 54);
-            this.bunifuThinButton21.TabIndex = 0;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuThinButton22
             // 
@@ -376,12 +377,211 @@
             this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.Honeydew;
             this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.Location = new System.Drawing.Point(533, 146);
+            this.bunifuThinButton22.Location = new System.Drawing.Point(533, 92);
             this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuThinButton22.Name = "bunifuThinButton22";
             this.bunifuThinButton22.Size = new System.Drawing.Size(195, 54);
             this.bunifuThinButton22.TabIndex = 1;
             this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuThinButton21
+            // 
+            this.bunifuThinButton21.ActiveBorderThickness = 1;
+            this.bunifuThinButton21.ActiveCornerRadius = 20;
+            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
+            this.bunifuThinButton21.ButtonText = "<<     Mô hình trước";
+            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleBorderThickness = 1;
+            this.bunifuThinButton21.IdleCornerRadius = 20;
+            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.Honeydew;
+            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.Location = new System.Drawing.Point(39, 92);
+            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
+            this.bunifuThinButton21.Name = "bunifuThinButton21";
+            this.bunifuThinButton21.Size = new System.Drawing.Size(195, 54);
+            this.bunifuThinButton21.TabIndex = 0;
+            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlModelsInput
+            // 
+            this.pnlModelsInput.Location = new System.Drawing.Point(245, 38);
+            this.pnlModelsInput.Name = "pnlModelsInput";
+            this.pnlModelsInput.Size = new System.Drawing.Size(764, 519);
+            this.pnlModelsInput.TabIndex = 0;
+            // 
+            // pnlNuclideInput
+            // 
+            this.pnlNuclideInput.Location = new System.Drawing.Point(245, 38);
+            this.pnlNuclideInput.Name = "pnlNuclideInput";
+            this.pnlNuclideInput.Size = new System.Drawing.Size(764, 519);
+            this.pnlNuclideInput.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(39, 166);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(150, 25);
+            this.textBox1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(39, 197);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(150, 25);
+            this.textBox2.TabIndex = 3;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(39, 228);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(150, 25);
+            this.textBox3.TabIndex = 4;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(39, 259);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(150, 25);
+            this.textBox4.TabIndex = 5;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(39, 290);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(150, 25);
+            this.textBox5.TabIndex = 6;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(39, 321);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(150, 25);
+            this.textBox6.TabIndex = 7;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(39, 352);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(150, 25);
+            this.textBox7.TabIndex = 8;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(39, 383);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(150, 25);
+            this.textBox8.TabIndex = 9;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(39, 414);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(150, 25);
+            this.textBox9.TabIndex = 10;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox10.Location = new System.Drawing.Point(39, 445);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(150, 25);
+            this.textBox10.TabIndex = 11;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Location = new System.Drawing.Point(578, 445);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(150, 25);
+            this.textBox11.TabIndex = 21;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox12.Location = new System.Drawing.Point(578, 414);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(150, 25);
+            this.textBox12.TabIndex = 20;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox13.Location = new System.Drawing.Point(578, 383);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(150, 25);
+            this.textBox13.TabIndex = 19;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox14.Location = new System.Drawing.Point(578, 352);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(150, 25);
+            this.textBox14.TabIndex = 18;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox15.Location = new System.Drawing.Point(578, 321);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(150, 25);
+            this.textBox15.TabIndex = 17;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox16.Location = new System.Drawing.Point(578, 290);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(150, 25);
+            this.textBox16.TabIndex = 16;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox17.Location = new System.Drawing.Point(578, 259);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(150, 25);
+            this.textBox17.TabIndex = 15;
+            // 
+            // textBox18
+            // 
+            this.textBox18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox18.Location = new System.Drawing.Point(578, 228);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(150, 25);
+            this.textBox18.TabIndex = 14;
+            // 
+            // textBox19
+            // 
+            this.textBox19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox19.Location = new System.Drawing.Point(578, 197);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(150, 25);
+            this.textBox19.TabIndex = 13;
+            // 
+            // textBox20
+            // 
+            this.textBox20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox20.Location = new System.Drawing.Point(578, 166);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(150, 25);
+            this.textBox20.TabIndex = 12;
             // 
             // MainForm
             // 
@@ -399,6 +599,7 @@
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlHomeInput.ResumeLayout(false);
+            this.pnlHomeInput.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -428,6 +629,26 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

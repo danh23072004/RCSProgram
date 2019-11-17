@@ -15,6 +15,8 @@ namespace RCSv1._0
 
         public static List<float> doseResult = new List<float>();
 
+        public static List<string> targetOrganName = new List<string>();
+
         // There are total 97 elements
         public static int nuclideIndex;
         public static int isotopeIndex;

@@ -56,6 +56,15 @@ namespace RCSv1._0
             };
             pnlDoseOutput.Controls.Add(previousPhantom);
 
+            for (int i = 0; i < UserData.targetOrganName.Count; i++)
+            {
+                TextBox txbDose = new TextBox()
+                {
+                    Size = new Size(150, 30),
+                    Font = new Font("Segoe UI", 10, FontStyle.Regular),
+
+                };
+            }
         }
 
         #endregion

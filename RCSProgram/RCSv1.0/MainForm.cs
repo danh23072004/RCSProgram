@@ -305,7 +305,7 @@ namespace RCSv1._0
             for (int i = 0; i < targetOrgan.Count; i++)
             {
                 dose = 0f;
-                for (int t = 0; t < sourceOrgan.Count; t++)
+                for (int t = 0; t < timeSourceOrgan.Length; t++)
                 {
                     if (timeSourceOrgan[i] != 0)
                     {
@@ -314,6 +314,7 @@ namespace RCSv1._0
                     }
                 }
                 organDose.Add(dose);
+                UserData.targetOrganName.Add(targetOrgan[i].organTargetName);
             }
 
             reader.Close();
