@@ -90,18 +90,14 @@ namespace RCSv1._0
             }
         }
 
-        public bool[] ReturnHumanAgeOption()
+        public List<int> ReturnHumanAgeOption()
         {
-            bool[] value = new bool[15];
+            List<int> value = new List<int>();
             for (int i = 0; i < 15; i++)
             {
                 if (ckbHumanAge[i].Checked == true)
                 {
-                    value[i] = true;
-                }
-                else
-                {
-                    value[i] = false;
+                    value.Add(i);
                 }
             }
             return value;

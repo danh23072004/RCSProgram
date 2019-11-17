@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.ExceptionServices;
 using System.Windows.Forms;
 using Bunifu.Framework.UI;
 using System.Drawing;
 using System.IO;
+
 
 namespace RCSv1._0
 {
@@ -31,7 +33,7 @@ namespace RCSv1._0
             kineticsInputPanel = new KineticsInputPanel(pnlKineticsInput);
             doseOutputPanel = new DoseOutputPanel(pnlDoseOutput);
             pnlHomeInput.BringToFront();
-            UserData.HumanAge = modelsInputPanel.ReturnHumanAgeOption();
+            UserData.humanPhantom = modelsInputPanel.ReturnHumanAgeOption();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
@@ -51,13 +53,272 @@ namespace RCSv1._0
             btn.IdleForecolor = Color.White;
         }
 
-        private void HidePanels()
+        bool isOrganName(string text)
         {
-            pnlNuclideInput.Visible = false;
-            pnlModelsInput.Visible = false;
-            pnlKineticsInput.Visible = false;
-            pnlHomeInput.Visible = false;
-            pnlDoseOutput.Visible = false;
+            bool check = true;
+            char[] number = new char[10]
+            {
+                '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'
+            };
+            foreach (var item in number)
+            {
+                if (text.IndexOf(item) != -1)
+                {
+                    check = false;
+                }
+            }
+            if (check == false || text == "")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        bool isModelName(string text, int index, string[] modelname)
+        {
+            bool check = false;
+            if (text.IndexOf(modelname[index]) != -1)
+            {
+                check = true;
+            }
+            return check;
+        }
+
+        List<string> GetSourceOrgan(ref int indexLineSourceOrganName, string[] modelName, int modelIndex)
+        {
+            List<string> listTargetOrgan = new List<string>();
+            string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m";
+            FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(file);
+            string line = "";
+            string listTargetOrganNameStr = "";
+            indexLineSourceOrganName = 0;
+            bool isFinishReading = false;
+            while (reader.EndOfStream == false)
+            {
+                line = reader.ReadLine();
+                indexLineSourceOrganName++;
+                if (isModelName(line, modelIndex, modelName) == true)
+                {
+                    while (reader.EndOfStream == false)
+                    {
+                        line = reader.ReadLine();
+                        indexLineSourceOrganName++;
+                        if (isOrganName(line) == true && indexLineSourceOrganName != 1)
+                        {
+                            listTargetOrganNameStr = line;
+                            isFinishReading = true;
+                            break;
+                        }
+                    }
+                }
+                if (isFinishReading == true)
+                {
+                    break;
+                }
+            }
+            // Line lúc này mang giá trị của dòng sau cơ quan bia, giá trị liều (số)
+            // đóng vai trò làm khuôn (vị trí) để lấy ra tên của cơ quan
+            line = reader.ReadLine();
+            char[] number = new char[10]
+            {
+                '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'
+            };
+            bool check = false;
+            int count = 0;
+            while (check == false)
+            {
+                line = line.Remove(0, 1);
+                count++;
+                foreach (var item in number)
+                {
+                    if (line[0] == item)
+                    {
+                        check = true;
+                    }
+                }
+            }
+
+            listTargetOrganNameStr = listTargetOrganNameStr.Remove(0, count);
+            line = line.Remove(line.Length - 2, 2);
+            count = 0;
+            // count lúc này là khoảng cách giữa tên cơ quan này và tên cơ quan
+
+            while (line.IndexOf(' ') != -1)
+            {
+                if (listTargetOrganNameStr[0] == ' ')
+                {
+                    listTargetOrganNameStr = listTargetOrganNameStr.Remove(0, 1);
+                }
+                if (line[0] == ' ')
+                {
+                    line = line.Remove(0, 1);
+                }
+                else if (count <= listTargetOrganNameStr.Length)
+                {
+                    // Ngoại trừ trường hợp cơ quan cuối cùng, lúc này cơ quan cuối cùng chỉ cần lấy tên
+                    // bằng cách add thẳng biến line vào trong listTargetOrgan
+                    count = line.IndexOf(' ');
+                    while (line[count] == ' ' && line[count + 1] == ' ')
+                    {
+                        count++;
+                        line = line.Remove(line.IndexOf(' '), 1);
+                    }
+                    line = line.Remove(0, count);
+                    listTargetOrgan.Add(listTargetOrganNameStr.Substring(0, count));
+                    listTargetOrganNameStr = listTargetOrganNameStr.Remove(0, count);
+                }
+                else
+                {
+                    listTargetOrgan.Add(listTargetOrganNameStr); // Add cơ quan cuối cùng vào listTargetOrgan
+                }
+
+
+            }
+            file.Close();
+
+            return listTargetOrgan;
+        }
+
+        List<OrganDose> GetTargetOrgan(int lineLocation)
+        {
+            // lineLocation là biến chỉ vị trí (số dòng) trong file text để tìm kiếm danh sách cquan nguồn
+            string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m";
+            FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(file);
+            string line = "";
+            string text = "";
+            string number = "";
+            string dose = "";
+
+            List<OrganDose> organDoses = new List<OrganDose>();
+            for (int i = 0; i < lineLocation; i++)
+            {
+                reader.ReadLine();
+            }
+            line = reader.ReadLine();
+            while (line != "")
+            {
+                OrganDose lineData = new OrganDose();
+
+                #region Text
+
+                // Biến này dùng để lưu vị trí của kí tự số trong biến line
+                int minNumberPosition = line.Length;
+                for (int i = 0; i <= 9; i++)
+                {
+                    if (line.IndexOf(i.ToString()) <= minNumberPosition)
+                    {
+                        minNumberPosition = line.IndexOf(i.ToString());
+                    }
+                }
+                text = line.Substring(0, minNumberPosition - 1);
+                // Xóa khoảng trắng ở cuối tên cơ quan
+                while (text[text.Length - 1] == ' ')
+                {
+                    text = text.Remove(text.Length - 1, 1);
+                }
+                lineData.organTargetName = text;
+
+                #endregion
+
+                #region Number
+
+                dose = line.Substring(minNumberPosition, line.Length - minNumberPosition);
+                while (dose != "")
+                {
+                    number = dose.Substring(0, dose.IndexOf(' '));
+                    lineData.listDoses.Add(float.Parse(number));
+                    dose = dose.Remove(0, number.Length + 1);
+                    if (dose != " ")
+                    {
+                        while (dose[0] == ' ')
+                        {
+                            dose = dose.Remove(0, 1);
+                        }
+                    }
+                    else break;
+                }
+
+                #endregion
+
+                organDoses.Add(lineData);
+                line = reader.ReadLine();
+            }
+            return organDoses;
+        }
+
+        List<float> Dose(int modelIndex, float[] timeSourceOrgan)
+        {
+            // arrTimeSourceOrgan : là thời gian lưu trú của từng cơ quan
+            // listtargetOrganOrdinal : là dãy model (phantom) mà mình cần xét
+            // modelIndex : Số thứ từ của model (phantom) cần xét
+            // listtargetOrganOrdinal : danh sach cac model (phantom) can tinh
+            string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m";
+            FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(file);
+
+            // Thời gian lưu trú của cơ quan nguồn
+            string[] modelName = new string[]
+            {
+                "Adult Male",
+                "Adult Female",
+                "15-year-old Male",
+                "10-year-old Male",
+                "5-year-old Male",
+                "1-year-old Male",
+                "Newborn Male",
+                "15-year-old Female",
+                "10-year-old Female",
+                "5-year-old Female",
+                "1-year-old Female",
+                "Newborn Female",
+                "3-month Pregnant Female",
+                "6-month Pregnant Female",
+                "9-month Pregnant Female",
+
+            };
+
+            int index = 0;
+            List<string> sourceOrgan = GetSourceOrgan(ref index, modelName, modelIndex);
+
+            List<OrganDose> targetOrgan = GetTargetOrgan(index);
+            // targetOrgan này bao gồm cả S của cqbia đối với từng cqnguồn
+
+            List<float> organDose = new List<float>();
+            // Dùng để lưu kết quả tính liều của các cơ quan bia
+
+            /*
+            Không thể liệt kê rồi cố định các cơ quan (đối với phantom/model cũng tương tự), 
+            bởi khi thêm vào một cơ quan mới (hay phantom/model) mới nào thì phần mềm sẽ không xử lý được
+            */
+
+            float time = 0;
+            // Biến này dùng để đổi trung gian từ giờ -> giây
+
+            float dose;
+            // Biến này dùng để tính trung gian, để add vào mảng organDose
+
+            for (int i = 0; i < targetOrgan.Count; i++)
+            {
+                dose = 0f;
+                for (int t = 0; t < sourceOrgan.Count; t++)
+                {
+                    if (timeSourceOrgan[i] != 0)
+                    {
+                        time = timeSourceOrgan[i] * 3600;
+                        dose += time * targetOrgan[i].listDoses[t];
+                    }
+                }
+                organDose.Add(dose);
+            }
+
+            reader.Close();
+            file.Close();
+            return organDose;
         }
 
 
@@ -143,12 +404,22 @@ namespace RCSv1._0
             }
             else
             {
-                UserData.HumanAge = modelsInputPanel.ReturnHumanAgeOption();
+
                 DrawColourMouseHoverMenuButton(btnDose);
                 pnlDoseOutput.BringToFront();
+                UserData.humanPhantom = modelsInputPanel.ReturnHumanAgeOption();    // Đây là listModelIndex
+                UserData.kineticsData = kineticsInputPanel.GetKineticsData();   // Đây là timeSourceOrgan
+
             }
         }
 
         #endregion
+    }
+    public class OrganDose
+    {
+        public string organTargetName = "";
+        // Lưu tên của cơ quan bia
+        public List<float> listDoses = new List<float>();
+        // Lưu danh sách các giá trị S của cqnguồn -> cqbia
     }
 }

@@ -11,13 +11,11 @@ namespace RCSv1._0
     {
         #region Properties
 
-        public static bool[] HumanAge = new bool[10]
-        {
-            false, false, false, false, false, false, false, false, false, false
-        };
-        // There are total 97 elements
+        public static List<int> humanPhantom = new List<int>();
 
-        
+        public static List<float> doseResult = new List<float>();
+
+        // There are total 97 elements
         public static int nuclideIndex;
         public static int isotopeIndex;
 
@@ -27,6 +25,8 @@ namespace RCSv1._0
             false, false, false,
             // 1: RadioIsotopes 2: Models 3: Kinetics
         };
+
+        public static List<float> kineticsData = new List<float>();
 
         #endregion
 

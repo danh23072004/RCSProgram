@@ -34,6 +34,28 @@ namespace RCSv1._0
                 Size = new Size(400, 50),
             };
             pnlDoseOutput.Controls.Add(lbDoseResult);
+
+            int locationX = 10;
+            int locationY = 90;
+
+            BunifuThinButton2 nextPhantom = new BunifuThinButton2()
+            {
+                ButtonText = "Mô hình sau     >>",
+                Font = new Font("Segoe UI", 14, FontStyle.Regular),
+                Location = new Point(533, 146),
+                Size = new Size(195, 54),
+            };
+            pnlDoseOutput.Controls.Add(nextPhantom);
+
+            BunifuThinButton2 previousPhantom = new BunifuThinButton2()
+            {
+                ButtonText = "<<     Mô hình trước",
+                Font = new Font("Segoe UI", 14, FontStyle.Regular),
+                Location = new Point(39, 146),
+                Size = new Size(195, 54),
+            };
+            pnlDoseOutput.Controls.Add(previousPhantom);
+
         }
 
         #endregion

@@ -49,11 +49,16 @@
             this.pnlHomeInput = new System.Windows.Forms.Panel();
             this.pnlModelsInput = new System.Windows.Forms.Panel();
             this.pnlNuclideInput = new System.Windows.Forms.Panel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.pnlRibbon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.pnlHomeInput.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -307,6 +312,8 @@
             // 
             // pnlHomeInput
             // 
+            this.pnlHomeInput.Controls.Add(this.bunifuThinButton22);
+            this.pnlHomeInput.Controls.Add(this.bunifuThinButton21);
             this.pnlHomeInput.Location = new System.Drawing.Point(245, 38);
             this.pnlHomeInput.Name = "pnlHomeInput";
             this.pnlHomeInput.Size = new System.Drawing.Size(764, 519);
@@ -326,6 +333,56 @@
             this.pnlNuclideInput.Size = new System.Drawing.Size(764, 519);
             this.pnlNuclideInput.TabIndex = 0;
             // 
+            // bunifuThinButton21
+            // 
+            this.bunifuThinButton21.ActiveBorderThickness = 1;
+            this.bunifuThinButton21.ActiveCornerRadius = 20;
+            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
+            this.bunifuThinButton21.ButtonText = "<<     Mô hình trước";
+            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleBorderThickness = 1;
+            this.bunifuThinButton21.IdleCornerRadius = 20;
+            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.Honeydew;
+            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.Location = new System.Drawing.Point(39, 146);
+            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
+            this.bunifuThinButton21.Name = "bunifuThinButton21";
+            this.bunifuThinButton21.Size = new System.Drawing.Size(195, 54);
+            this.bunifuThinButton21.TabIndex = 0;
+            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuThinButton22
+            // 
+            this.bunifuThinButton22.ActiveBorderThickness = 1;
+            this.bunifuThinButton22.ActiveCornerRadius = 20;
+            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.White;
+            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton22.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
+            this.bunifuThinButton22.ButtonText = "Mô hình sau     >>";
+            this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.bunifuThinButton22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuThinButton22.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton22.IdleBorderThickness = 1;
+            this.bunifuThinButton22.IdleCornerRadius = 20;
+            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.Honeydew;
+            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton22.Location = new System.Drawing.Point(533, 146);
+            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5);
+            this.bunifuThinButton22.Name = "bunifuThinButton22";
+            this.bunifuThinButton22.Size = new System.Drawing.Size(195, 54);
+            this.bunifuThinButton22.TabIndex = 1;
+            this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,6 +398,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.pnlHomeInput.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -366,6 +424,10 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnDose;
         private System.Windows.Forms.Panel pnlDoseOutput;
         private System.Windows.Forms.Panel pnlKineticsInput;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
     }
 }
 

@@ -47,38 +47,38 @@ namespace RCSv1._0
             cmbChooseNuclide.Location = new Point(26, 145);
             pnlNuclideInput.Controls.Add(cmbChooseNuclide);
 
-            //Modify cmbChooseIsotopes
-            cmbChooseIsotopes.DataSource = Constant.arrNuclideIsotopes[0];
-            cmbChooseNuclide.Text = null;
-            cmbChooseIsotopes.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            cmbChooseIsotopes.DropDownHeight = 250;
-            cmbChooseIsotopes.Size = new Size(237, 28);
-            cmbChooseIsotopes.MaxLength = 2;
-            cmbChooseIsotopes.Font = new Font("Segoe UI", 12, FontStyle.Regular);
-            cmbChooseIsotopes.Location = new Point(400, 145);
-            cmbChooseIsotopes.MaxLength = 7;
-            cmbChooseIsotopes.DropDownStyle = ComboBoxStyle.DropDownList;
-            pnlNuclideInput.Controls.Add(cmbChooseIsotopes);
-            string[] arr = new string[5];
-            for (int i = 0; i < 5; i++)
-            {
-                arr[i] = Constant.arrNuclideIsotopes[0][i];
-            }
+            ////Modify cmbChooseIsotopes
+            //cmbChooseIsotopes.DataSource = Constant.arrNuclideIsotopes[0];
+            //cmbChooseNuclide.Text = null;
+            //cmbChooseIsotopes.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //cmbChooseIsotopes.DropDownHeight = 250;
+            //cmbChooseIsotopes.Size = new Size(237, 28);
+            //cmbChooseIsotopes.MaxLength = 2;
+            //cmbChooseIsotopes.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            //cmbChooseIsotopes.Location = new Point(400, 145);
+            //cmbChooseIsotopes.MaxLength = 7;
+            //cmbChooseIsotopes.DropDownStyle = ComboBoxStyle.DropDownList;
+            //pnlNuclideInput.Controls.Add(cmbChooseIsotopes);
+            //string[] arr = new string[5];
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    arr[i] = Constant.arrNuclideIsotopes[0][i];
+            //}
 
             cmbChooseNuclide.SelectedValueChanged += CmbChooseNuclide_SelectedValueChanged;
-            cmbChooseIsotopes.SelectedValueChanged += CmbChooseIsotopes_SelectedValueChanged;
+            //cmbChooseIsotopes.SelectedValueChanged += CmbChooseIsotopes_SelectedValueChanged;
         }
 
-        private void CmbChooseIsotopes_SelectedValueChanged(object sender, EventArgs e)
-        {
-            UserData.nuclideIndex = cmbChooseNuclide.SelectedIndex;
-            UserData.isotopeIndex = cmbChooseIsotopes.SelectedIndex;
-        }
+        //private void CmbChooseIsotopes_SelectedValueChanged(object sender, EventArgs e)
+        //{
+        //    UserData.nuclideIndex = cmbChooseNuclide.SelectedIndex;
+        //    UserData.isotopeIndex = cmbChooseIsotopes.SelectedIndex;
+        //}
 
         private void CmbChooseNuclide_SelectedValueChanged(object sender, EventArgs e)
         {
             // cmbChooseNuclide.SelectedIndex shows the position of the pointed nuclide
-            cmbChooseIsotopes.DataSource = Constant.arrNuclideIsotopes[cmbChooseNuclide.SelectedIndex];
+            //cmbChooseIsotopes.DataSource = Constant.arrNuclideIsotopes[cmbChooseNuclide.SelectedIndex];
             UserData.nuclideIndex = cmbChooseNuclide.SelectedIndex;
             UserData.isotopeIndex = 0;
         }

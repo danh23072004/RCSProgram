@@ -85,7 +85,7 @@ namespace RCSTest
             return check;
         }
 
-        static List<string> GetTargetOrgan(ref int indexLineSourceOrganName, string[] modelName, int modelIndex)
+        static List<string> GetSourceOrgan(ref int indexLineSourceOrganName, string[] modelName, int modelIndex)
         {
             List<string> listTargetOrgan = new List<string>();
             string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m";
@@ -181,7 +181,7 @@ namespace RCSTest
             return listTargetOrgan;
         }
 
-        static List<OrganDose> GetSourceOrgan(int lineLocation)
+        static List<OrganDose> GetTargetOrgan(int lineLocation)
         {
             // lineLocation là biến chỉ vị trí (số dòng) trong file text để tìm kiếm danh sách cquan nguồn
             string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m";
@@ -250,12 +250,12 @@ namespace RCSTest
         }
 
 
-        static void test(int modelIndex, List<int> listsourceOrganOrdinal, float[] timeSourceOrgan) 
+        static void test(int modelIndex, List<int> listtargetOrganOrdinal, float[] timeSourceOrgan) 
         {
             // arrTimeSourceOrgan : là thời gian lưu trú của từng cơ quan
-            // listsourceOrganOrdinal : là dãy model (phantom) mà mình cần xét
+            // listtargetOrganOrdinal : là dãy model (phantom) mà mình cần xét
             // modelIndex : Số thứ từ của model (phantom) cần xét
-            // listsourceOrganOrdinal : danh sach cac model (phantom) can tinh
+            // listtargetOrganOrdinal : danh sach cac model (phantom) can tinh
             string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m";
             FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(file);
@@ -284,10 +284,10 @@ namespace RCSTest
 
 
             int index = 0; 
-            List<string> targetOrgan = GetTargetOrgan(ref index, modelName, modelIndex);
+            List<string> targetOrgan = GetSourceOrgan(ref index, modelName, modelIndex);
 
-            //List<string> sourceOrgan = GetSourceOrgan(index);
-            List<OrganDose> organDoses = GetSourceOrgan(index);
+            //List<string> targetOrgan = GetTargetOrgan(index);
+            List<OrganDose> organDoses = GetTargetOrgan(index);
 
             /*
             Không thể liệt kê rồi cố định các cơ quan (đối với phantom/model cũng tương tự), 
