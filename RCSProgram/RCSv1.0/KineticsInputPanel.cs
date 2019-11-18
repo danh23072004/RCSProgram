@@ -17,6 +17,7 @@ namespace RCSv1._0
         private Panel pnlKineticsInput = new Panel();
         private TextBox[] arrTxbKinetics = new TextBox[28];
         private Keys[] arrAcceptKeys = new Keys[12];
+        private Label[] arrTextBoxLabel = new Label[28];
 
         #endregion
 
@@ -79,7 +80,6 @@ namespace RCSv1._0
             }
 
             // Draw label for each textbox at first column
-            Label[] arrTextBoxLabel = new Label[28];
             locationX = 200;
             locationY = 90;
             for (int i = 0; i < 14; i++)
@@ -154,12 +154,12 @@ namespace RCSv1._0
         public List<float> GetKineticsData()
         {
             List<float> kineticsData = new List<float>();
-            foreach (var txb in arrTxbKinetics)
+            for (int i = 0; i < arrTxbKinetics.Length; i++)
             {
-                kineticsData.Add(float.Parse(txb.Text));
-                if (txb.Text != "Xương đặc" && txb.Text != "Xương xốp")
+                kineticsData.Add(float.Parse(arrTxbKinetics[i].Text));
+                if (arrTextBoxLabel[i].Text == "Xương đặc" || arrTextBoxLabel[i].Text == "Xương xốp")
                 {
-                    kineticsData.Add(float.Parse(txb.Text));
+                    kineticsData.Add(float.Parse(arrTxbKinetics[i].Text));
                 }
             }
             return kineticsData;

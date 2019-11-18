@@ -279,7 +279,6 @@ namespace RCSv1._0
                 "3-month Pregnant Female",
                 "6-month Pregnant Female",
                 "9-month Pregnant Female",
-
             };
 
             int index = 0;
@@ -311,10 +310,10 @@ namespace RCSv1._0
                     {
                         time = timeSourceOrgan[i] * 3600;
                         dose += time * targetOrgan[i].listDoses[t];
+                        UserData.targetOrganName.Add(targetOrgan[i].organTargetName);
                     }
                 }
                 organDose.Add(dose);
-                UserData.targetOrganName.Add(targetOrgan[i].organTargetName);
             }
 
             reader.Close();
@@ -410,7 +409,12 @@ namespace RCSv1._0
                 pnlDoseOutput.BringToFront();
                 UserData.humanPhantom = modelsInputPanel.ReturnHumanAgeOption();    // Đây là listModelIndex
                 UserData.kineticsData = kineticsInputPanel.GetKineticsData();   // Đây là timeSourceOrgan
+                List<List<float>> listOrganDose = new List<List<float>>();  // Lưu theo danh sách kết quả tính liều của từng phantom
 
+                for (int i = 0; i < UserData.humanPhantom.Count; i++)
+                {
+                    //listOrganDose.Add(Dose(UserData.humanPhantom[i], UserData.kineticsData));
+                }
             }
         }
 

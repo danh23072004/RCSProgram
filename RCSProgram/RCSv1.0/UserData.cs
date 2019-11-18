@@ -11,6 +11,7 @@ namespace RCSv1._0
     {
         #region Properties
 
+        // Store the list of checked phantoms in ModelsInputPanel
         public static List<int> humanPhantom = new List<int>();
 
         public static List<float> doseResult = new List<float>();
