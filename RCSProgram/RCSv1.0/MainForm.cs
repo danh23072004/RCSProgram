@@ -89,12 +89,12 @@ namespace RCSv1._0
 
         List<string> GetSourceOrgan(ref int indexLineSourceOrganName, string[] modelName, int modelIndex)
         {
-            List<string> listTargetOrgan = new List<string>();
-            string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m";
+            List<string> listSourceOrgan = new List<string>();
+            string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m.txt";
             FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(file);
             string line = "";
-            string listTargetOrganNameStr = "";
+            string listSourceOrganNameStr = "";
             indexLineSourceOrganName = 0;
             bool isFinishReading = false;
             while (reader.EndOfStream == false)
@@ -109,7 +109,7 @@ namespace RCSv1._0
                         indexLineSourceOrganName++;
                         if (isOrganName(line) == true && indexLineSourceOrganName != 1)
                         {
-                            listTargetOrganNameStr = line;
+                            listSourceOrganNameStr = line;
                             isFinishReading = true;
                             break;
                         }
@@ -142,25 +142,25 @@ namespace RCSv1._0
                 }
             }
 
-            listTargetOrganNameStr = listTargetOrganNameStr.Remove(0, count);
+            listSourceOrganNameStr = listSourceOrganNameStr.Remove(0, count);
             line = line.Remove(line.Length - 2, 2);
             count = 0;
             // count lúc này là khoảng cách giữa tên cơ quan này và tên cơ quan
 
             while (line.IndexOf(' ') != -1)
             {
-                if (listTargetOrganNameStr[0] == ' ')
+                if (listSourceOrganNameStr[0] == ' ')
                 {
-                    listTargetOrganNameStr = listTargetOrganNameStr.Remove(0, 1);
+                    listSourceOrganNameStr = listSourceOrganNameStr.Remove(0, 1);
                 }
                 if (line[0] == ' ')
                 {
                     line = line.Remove(0, 1);
                 }
-                else if (count <= listTargetOrganNameStr.Length)
+                else if (count <= listSourceOrganNameStr.Length)
                 {
                     // Ngoại trừ trường hợp cơ quan cuối cùng, lúc này cơ quan cuối cùng chỉ cần lấy tên
-                    // bằng cách add thẳng biến line vào trong listTargetOrgan
+                    // bằng cách add thẳng biến line vào trong listSourceOrgan
                     count = line.IndexOf(' ');
                     while (line[count] == ' ' && line[count + 1] == ' ')
                     {
@@ -168,25 +168,24 @@ namespace RCSv1._0
                         line = line.Remove(line.IndexOf(' '), 1);
                     }
                     line = line.Remove(0, count);
-                    listTargetOrgan.Add(listTargetOrganNameStr.Substring(0, count));
-                    listTargetOrganNameStr = listTargetOrganNameStr.Remove(0, count);
+                    listSourceOrgan.Add(listSourceOrganNameStr.Substring(0, count));
+                    listSourceOrganNameStr = listSourceOrganNameStr.Remove(0, count);
                 }
                 else
                 {
-                    listTargetOrgan.Add(listTargetOrganNameStr); // Add cơ quan cuối cùng vào listTargetOrgan
+                    listSourceOrgan.Add(listSourceOrganNameStr); // Add cơ quan cuối cùng vào listSourceOrgan
                 }
-
 
             }
             file.Close();
 
-            return listTargetOrgan;
+            return listSourceOrgan;
         }
 
         List<OrganDose> GetTargetOrgan(int lineLocation)
         {
             // lineLocation là biến chỉ vị trí (số dòng) trong file text để tìm kiếm danh sách cquan nguồn
-            string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m";
+            string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m.txt";
             FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(file);
             string line = "";
@@ -251,13 +250,13 @@ namespace RCSv1._0
             return organDoses;
         }
 
-        List<float> Dose(int modelIndex, float[] timeSourceOrgan)
+        List<float> Dose(int modelIndex, List<float> timeSourceOrgan)
         {
             // arrTimeSourceOrgan : là thời gian lưu trú của từng cơ quan
             // listtargetOrganOrdinal : là dãy model (phantom) mà mình cần xét
             // modelIndex : Số thứ từ của model (phantom) cần xét
             // listtargetOrganOrdinal : danh sach cac model (phantom) can tinh
-            string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m";
+            string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m.txt";
             FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(file);
 
@@ -304,13 +303,26 @@ namespace RCSv1._0
             for (int i = 0; i < targetOrgan.Count; i++)
             {
                 dose = 0f;
-                for (int t = 0; t < timeSourceOrgan.Length; t++)
+                // timeSourceOrgan - 2 do có 2 dữ liệu lưu trú phải copy
+                for (int t = 0; t < timeSourceOrgan.Count; t++)
                 {
                     if (timeSourceOrgan[i] != 0)
                     {
+                        if (t > targetOrgan[i].listDoses[t])
+                        {
+                            break;
+                        }
                         time = timeSourceOrgan[i] * 3600;
                         dose += time * targetOrgan[i].listDoses[t];
-                        UserData.targetOrganName.Add(targetOrgan[i].organTargetName);
+                        if (targetOrgan[i].organTargetName == "TrabBone" || targetOrgan[i].organTargetName == "CortBone")
+                        {
+                            UserData.targetOrganName.Add(targetOrgan[i].organTargetName + 'S');
+                            UserData.targetOrganName.Add(targetOrgan[i].organTargetName + 'V');
+                        }
+                        else
+                        {
+                            UserData.targetOrganName.Add(targetOrgan[i].organTargetName);
+                        }
                     }
                 }
                 organDose.Add(dose);
@@ -413,7 +425,7 @@ namespace RCSv1._0
 
                 for (int i = 0; i < UserData.humanPhantom.Count; i++)
                 {
-                    //listOrganDose.Add(Dose(UserData.humanPhantom[i], UserData.kineticsData));
+                    listOrganDose.Add(Dose(UserData.humanPhantom[i], UserData.kineticsData));
                 }
             }
         }
