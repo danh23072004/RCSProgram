@@ -306,23 +306,25 @@ namespace RCSv1._0
                 // timeSourceOrgan - 2 do có 2 dữ liệu lưu trú phải copy
                 for (int t = 0; t < timeSourceOrgan.Count; t++)
                 {
-                    if (timeSourceOrgan[i] != 0)
+                    if (timeSourceOrgan[t] != 0)
+                    //    || Array.Exists(Constant.malePhantom, element => element == modelIndex && sourceOrgan[t] == "Ovaries")
+                    //    || Array.Exists(Constant.femalePhantom, element => element == modelIndex && sourceOrgan[t] == "Testes"))
                     {
-                        if (t > targetOrgan[i].listDoses[t])
+                        if (t > targetOrgan[i].listDoses.Count)
                         {
                             break;
                         }
-                        time = timeSourceOrgan[i] * 3600;
+                        time = timeSourceOrgan[t] * 3600;
                         dose += time * targetOrgan[i].listDoses[t];
-                        if (targetOrgan[i].organTargetName == "TrabBone" || targetOrgan[i].organTargetName == "CortBone")
-                        {
-                            UserData.targetOrganName.Add(targetOrgan[i].organTargetName + 'S');
-                            UserData.targetOrganName.Add(targetOrgan[i].organTargetName + 'V');
-                        }
-                        else
-                        {
-                            UserData.targetOrganName.Add(targetOrgan[i].organTargetName);
-                        }
+                        //if (targetOrgan[i].organTargetName == "TrabBone" || targetOrgan[i].organTargetName == "CortBone")
+                        //{
+                        //    UserData.targetOrganName.Add(targetOrgan[t].organTargetName + 'S');
+                        //    UserData.targetOrganName.Add(targetOrgan[t].organTargetName + 'V');
+                        //}
+                        //else
+                        //{
+                            UserData.targetOrganName.Add(targetOrgan[t].organTargetName);
+                        //}
                     }
                 }
                 organDose.Add(dose);
@@ -366,6 +368,8 @@ namespace RCSv1._0
 
         private void BtnKineticsInput_Click(object sender, EventArgs e)
         {
+            UserData.humanPhantom = modelsInputPanel.ReturnHumanAgeOption();
+            kineticsInputPanel.DisableTextBox();
             DrawColourMouseHoverMenuButton(btnKineticsInput);
             pnlKineticsInput.BringToFront();
         }

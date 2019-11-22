@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Text;
 using Bunifu.Framework.UI;
+using System.Linq.Expressions;
 
 namespace RCSv1._0
 {
@@ -22,6 +23,48 @@ namespace RCSv1._0
         #endregion
 
         #region Method
+
+        /// <summary>
+        /// Disable some unecessary textBox (because the data at the current textbox is null)
+        /// </summary>
+        public void DisableTextBox()
+        {
+            bool isMalePhantom = false;
+            bool isFemalePhantom = false;
+            arrTxbKinetics[26].Enabled = false;
+            for (int i = 0; i < UserData.humanPhantom.Count; i++)
+            {
+                if (Array.Exists(Constant.malePhantom, element => element == UserData.humanPhantom[i]) == true)
+                {
+                    isMalePhantom = true;
+                }
+                if (Array.Exists(Constant.femalePhantom, element => element == UserData.humanPhantom[i]) == true)
+                {
+                    isFemalePhantom = true;
+                }
+                if (Array.Exists(Constant.placentaFemalePhantom, element => element == UserData.humanPhantom[i]) == true)
+                {
+                    arrTxbKinetics[26].Enabled = true;
+                }
+            }
+            if (isMalePhantom == true && isFemalePhantom == true)
+            {
+                arrTxbKinetics[14].Enabled = true;
+                arrTxbKinetics[20].Enabled = true;
+            }
+            else if (isMalePhantom == true)
+            {
+                arrTxbKinetics[14].Enabled = false;
+                arrTxbKinetics[20].Enabled = true;
+                arrTxbKinetics[26].Enabled = false;
+            }
+            else if (isFemalePhantom == true)
+            {
+                arrTxbKinetics[20].Enabled = false;
+                arrTxbKinetics[14].Enabled = true;
+            }
+
+        }
 
         public KineticsInputPanel(Panel PnlKineticsInput)
         {
@@ -156,10 +199,14 @@ namespace RCSv1._0
             List<float> kineticsData = new List<float>();
             for (int i = 0; i < arrTxbKinetics.Length; i++)
             {
-                kineticsData.Add(float.Parse(arrTxbKinetics[i].Text));
-                if (arrTextBoxLabel[i].Text == "Xương đặc" || arrTextBoxLabel[i].Text == "Xương xốp")
+                if (arrTxbKinetics[i].Enabled == true)
                 {
                     kineticsData.Add(float.Parse(arrTxbKinetics[i].Text));
+                    if (arrTextBoxLabel[i].Text == "Xương đặc" || arrTextBoxLabel[i].Text == "Xương xốp")
+                    {
+                        kineticsData.Add(float.Parse(arrTxbKinetics[i].Text));
+                    }
+
                 }
             }
             return kineticsData;
