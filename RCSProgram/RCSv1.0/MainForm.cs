@@ -185,7 +185,7 @@ namespace RCSv1._0
         List<OrganDose> GetTargetOrgan(int lineLocation)
         {
             // lineLocation là biến chỉ vị trí (số dòng) trong file text để tìm kiếm danh sách cquan nguồn
-            string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m.txt";
+            string fileLocation = Application.StartupPath + @"\data\";
             FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(file);
             string line = "";
@@ -248,6 +248,20 @@ namespace RCSv1._0
                 line = reader.ReadLine();
             }
             return organDoses;
+        }
+
+        private string filePath(string nuclideName, string modelName) { 
+            return Application.StartupPath + @"\data\" + modelName + "." + nuclideName;
+        }
+
+        List<float> Dose(string nuclideName, string modelName, List<float> timeSourceOrgan) {
+            List<float> output = new List<float>();
+            string fileLocation = filePath(nuclideName, modelName);
+            DoseFileReader reader = new DoseFileReader();
+            var doseTable = reader.findDoseTable(fileLocation, modelName);
+            
+            output = doseTable.calculate(timeSourceOrgan);
+            return output;
         }
 
         List<float> Dose(int modelIndex, List<float> timeSourceOrgan)
@@ -425,12 +439,8 @@ namespace RCSv1._0
                 pnlDoseOutput.BringToFront();
                 UserData.humanPhantom = modelsInputPanel.ReturnHumanAgeOption();    // Đây là listModelIndex
                 UserData.kineticsData = kineticsInputPanel.GetKineticsData();   // Đây là timeSourceOrgan
-                List<List<float>> listOrganDose = new List<List<float>>();  // Lưu theo danh sách kết quả tính liều của từng phantom
-
-                for (int i = 0; i < UserData.humanPhantom.Count; i++)
-                {
-                    listOrganDose.Add(Dose(UserData.humanPhantom[i], UserData.kineticsData));
-                }
+                List<float> listOrganDose = new List<float>();  // Lưu theo danh sách kết quả tính liều của từng phantom
+                listOrganDose = Dose(nuclideInputPanel.selectedNuclideName(), UserData.humanPhantom, UserData.kineticsData);
             }
         }
 

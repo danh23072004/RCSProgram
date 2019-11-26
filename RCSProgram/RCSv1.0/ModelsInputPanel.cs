@@ -16,33 +16,12 @@ namespace RCSv1._0
 
         #region Controls
 
-        private BunifuCheckbox[] ckbHumanAge = new BunifuCheckbox[15];
+        private RadioButton[] ckbHumanAge = new RadioButton[SettingManager.shared.models.Count];
         private Panel pnlModelsInput = new Panel();
-        private Label lbChoose;
 
         #endregion
 
         #region Local Variables
-
-        private string[] arrHumanAgeCheckboxName = new string[15]
-        {
-            "Đàn ông trưởng thành",
-            "Phụ nữ trưởng thành",
-            "Trẻ em nam (15 tuổi)",
-            "Trẻ em nam(10 tuổi)",
-            "Trẻ em nam (5 tuổi)",
-            "Trẻ em nam (1 tuổi)",
-            "Trẻ em nam sơ sinh",
-            "Trẻ em nữ (15 tuổi)",
-            "Trẻ em nữ (10 tuổi)",
-            "Trẻ em nữ (5 tuổi)",
-            "Trẻ em nữ (1 tuổi)",
-            "Trẻ em nữ sơ sinh",
-            "Phụ nữ mang thai (3 tháng)",
-            "Phụ nữ mang thai (6 tháng)",
-            "Phụ nữ mang thai (9 tháng)",
-        };
-        Label[] arrHumanAgeCheckboxLabel = new Label[15];
 
         #endregion
 
@@ -55,7 +34,7 @@ namespace RCSv1._0
 
             pnlModelsInput = PnlModelsInput;
 
-            lbChoose = new Label()
+            var lbChoose = new Label()
             {
                 Text = "Chọn mô hình người",
                 Location = new Point(26, 30),
@@ -66,41 +45,38 @@ namespace RCSv1._0
 
             int locationY = 80;
             int locationX = 20;
+            SettingManager setting = SettingManager.shared;
+            GroupBox groupBox = new GroupBox();
             // Position of ckbHumanAge and arrHumanAgeCheckboxLabel
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < setting.models.Count; i++)
             {
-                ckbHumanAge[i] = new BunifuCheckbox()
+                
+                ckbHumanAge[i] = new RadioButton()
                 {
-                    BackColor = Color.Blue,
-                    CheckedOnColor = Color.Blue,
                     Location = new Point(locationX, locationY),
-                    Size = new Size(20, 20),
+                    Size = new Size(400, 20),
                     Checked = false,
+                    Text = setting.models[i]
                 };
-                arrHumanAgeCheckboxLabel[i] = new Label()
-                {
-                    Text = arrHumanAgeCheckboxName[i],
-                    Location = new Point(locationX + 40, locationY),
-                    Font = new Font("Segoe UI", 10, FontStyle.Regular),
-                    Size = new Size(360, 30),
-                };
+                groupBox.Controls.Add(ckbHumanAge[i]);
+             
                 pnlModelsInput.Controls.Add(ckbHumanAge[i]);
-                pnlModelsInput.Controls.Add(arrHumanAgeCheckboxLabel[i]);
-                locationY += 30;
+                locationY += 25;
             }
+            ckbHumanAge[0].Checked = true;
         }
 
-        public List<int> ReturnHumanAgeOption()
+        public string ReturnHumanAgeOption()
         {
             List<int> value = new List<int>();
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < SettingManager.shared.models.Count; i++)
             {
-                if (ckbHumanAge[i].Checked == true)
+                if (ckbHumanAge[i].Checked)
                 {
-                    value.Add(i);
+                    return ckbHumanAge[i].Text;
                 }
             }
-            return value;
+            return null;
         }
 
         public bool CheckFullData()

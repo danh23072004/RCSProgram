@@ -25,6 +25,9 @@ namespace RCSTest
         */
         static void Main(string[] args)
         {
+            DoseFileReader doseFileReader = new DoseFileReader();
+            DoseTable table = doseFileReader.findDoseTable(@"C:\Users\COMPUTER\Desktop\F-18.txt", "Newborn");
+
             // Mảng này dùng để lưu index của những model được chọn để tính
             List<int> arrSourceOrgan = new List<int>() { 0, 2 };
 
@@ -88,7 +91,7 @@ namespace RCSTest
         static List<string> GetSourceOrgan(ref int indexLineSourceOrganName, string[] modelName, int modelIndex)
         {
             List<string> listTargetOrgan = new List<string>();
-            string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m";
+            string fileLocation = @"C:\Users\COMPUTER\Desktop\F-18.txt";
             FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(file);
             string line = "";

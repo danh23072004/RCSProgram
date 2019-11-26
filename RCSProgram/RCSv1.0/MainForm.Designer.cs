@@ -47,6 +47,14 @@
             this.btnNuclideInput = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlHomeInput = new System.Windows.Forms.Panel();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
@@ -73,14 +81,6 @@
             this.pnlNuclideInput = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
             this.pnlRibbon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -375,6 +375,70 @@
             this.pnlHomeInput.Size = new System.Drawing.Size(764, 519);
             this.pnlHomeInput.TabIndex = 0;
             // 
+            // textBox28
+            // 
+            this.textBox28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox28.Location = new System.Drawing.Point(552, 485);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(150, 25);
+            this.textBox28.TabIndex = 29;
+            // 
+            // textBox27
+            // 
+            this.textBox27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox27.Location = new System.Drawing.Point(13, 485);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.Size = new System.Drawing.Size(150, 25);
+            this.textBox27.TabIndex = 28;
+            // 
+            // textBox26
+            // 
+            this.textBox26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox26.Location = new System.Drawing.Point(552, 454);
+            this.textBox26.Name = "textBox26";
+            this.textBox26.Size = new System.Drawing.Size(150, 25);
+            this.textBox26.TabIndex = 27;
+            // 
+            // textBox25
+            // 
+            this.textBox25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox25.Location = new System.Drawing.Point(13, 454);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(150, 25);
+            this.textBox25.TabIndex = 26;
+            // 
+            // textBox24
+            // 
+            this.textBox24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox24.Location = new System.Drawing.Point(552, 423);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(150, 25);
+            this.textBox24.TabIndex = 25;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox23.Location = new System.Drawing.Point(13, 423);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(150, 25);
+            this.textBox23.TabIndex = 24;
+            // 
+            // textBox22
+            // 
+            this.textBox22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox22.Location = new System.Drawing.Point(552, 392);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(150, 25);
+            this.textBox22.TabIndex = 23;
+            // 
+            // textBox21
+            // 
+            this.textBox21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox21.Location = new System.Drawing.Point(13, 392);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(150, 25);
+            this.textBox21.TabIndex = 22;
+            // 
             // textBox11
             // 
             this.textBox11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -598,70 +662,6 @@
             this.pnlNuclideInput.Name = "pnlNuclideInput";
             this.pnlNuclideInput.Size = new System.Drawing.Size(764, 519);
             this.pnlNuclideInput.TabIndex = 0;
-            // 
-            // textBox21
-            // 
-            this.textBox21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox21.Location = new System.Drawing.Point(13, 392);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(150, 25);
-            this.textBox21.TabIndex = 22;
-            // 
-            // textBox22
-            // 
-            this.textBox22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox22.Location = new System.Drawing.Point(552, 392);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(150, 25);
-            this.textBox22.TabIndex = 23;
-            // 
-            // textBox23
-            // 
-            this.textBox23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox23.Location = new System.Drawing.Point(13, 423);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(150, 25);
-            this.textBox23.TabIndex = 24;
-            // 
-            // textBox24
-            // 
-            this.textBox24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox24.Location = new System.Drawing.Point(552, 423);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(150, 25);
-            this.textBox24.TabIndex = 25;
-            // 
-            // textBox25
-            // 
-            this.textBox25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox25.Location = new System.Drawing.Point(13, 454);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(150, 25);
-            this.textBox25.TabIndex = 26;
-            // 
-            // textBox26
-            // 
-            this.textBox26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox26.Location = new System.Drawing.Point(552, 454);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(150, 25);
-            this.textBox26.TabIndex = 27;
-            // 
-            // textBox27
-            // 
-            this.textBox27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox27.Location = new System.Drawing.Point(13, 485);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(150, 25);
-            this.textBox27.TabIndex = 28;
-            // 
-            // textBox28
-            // 
-            this.textBox28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox28.Location = new System.Drawing.Point(552, 485);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(150, 25);
-            this.textBox28.TabIndex = 29;
             // 
             // MainForm
             // 

@@ -12,10 +12,8 @@ namespace RCSv1._0
         #region Properties
 
         // Store the list of checked phantoms in ModelsInputPanel
-        public static List<int> humanPhantom = new List<int>();
-
+        public static string humanPhantom = "";
         public static List<float> doseResult = new List<float>();
-
         public static List<string> targetOrganName = new List<string>();
 
         // There are total 97 elements

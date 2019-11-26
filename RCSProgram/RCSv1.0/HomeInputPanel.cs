@@ -23,7 +23,6 @@ namespace RCSv1._0
         public HomeInputPanel(Panel PnlHomeInput)
         {
             pnlHomeInput = PnlHomeInput;
-
             Button btnInstruction = new Button()
             {
                 Text = "",
