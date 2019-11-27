@@ -25,3 +25,62 @@ C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\setting.xlsx
 C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\obj\Debug\RCSv1.0.csproj.ResolveComReference.cache
 C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\cauhinhBia
 C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\cauhinhNguon
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Phụ nữ trưởng thành.F-18
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Phụ nữ trưởng thành.I-131
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Phụ nữ trưởng thành.Lu-177
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Phụ nữ trưởng thành.Tc-99m
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Phụ nữ trưởng thành.Y-90
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 1 tuổi.F-18
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 1 tuổi.I-131
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 1 tuổi.Lu-177
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 1 tuổi.Tc-99m
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 1 tuổi.Y-90
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 10 tuổi.F-18
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 10 tuổi.I-131
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 10 tuổi.Lu-177
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 10 tuổi.Y-90
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 15 tuổi.F-18
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 15 tuổi.I-131
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 15 tuổi.Lu-177
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 15 tuổi.Tc-99m
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 15 tuổi.Y-90
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 5 tuổi.F-18
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 5 tuổi.I-131
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 5 tuổi.Lu-177
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 5 tuổi.Tc-99m
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam 5 tuổi.Y-90
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam sơ sinh.F-18
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam sơ sinh.I-131
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam sơ sinh.Lu-177
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam sơ sinh.Tc-99m
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nam sơ sinh.Y-90
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 1 tuổi.F-18
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 1 tuổi.I-131
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 1 tuổi.Lu-177
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 1 tuổi.Tc-99m
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 1 tuổi.Y-90
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 10 tuổi.F-18
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 10 tuổi.I-131
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 10 tuổi.Lu-177
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 10 tuổi.Tc-99m
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 10 tuổi.Y-90
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 15 tuổi.F-18
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 15 tuổi.I-131
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 15 tuổi.Lu-177
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 15 tuổi.Tc-99m
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 15 tuổi.Y-90
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 5 tuổi.F-18
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 5 tuổi.I-131
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 5 tuổi.Lu-177
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 5 tuổi.Tc-99m
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ 5 tuổi.Y-90
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ sơ sinh.F-18
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ sơ sinh.I-131
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ sơ sinh.Lu-177
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ sơ sinh.Tc-99m
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Trẻ em nữ sơ sinh.Y-90
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Đàn ông trưởng thành.F-18
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Đàn ông trưởng thành.I-131
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Đàn ông trưởng thành.Lu-177
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Đàn ông trưởng thành.Tc-99m
+C:\Users\COMPUTER\Documents\RCSProgram\RCSProgram\RCSv1.0\bin\Debug\data\Đàn ông trưởng thành.Y-90

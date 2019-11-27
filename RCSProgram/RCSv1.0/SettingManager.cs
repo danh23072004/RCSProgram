@@ -39,6 +39,33 @@ namespace RCSv1._0
             }
         }
 
+        public string[] sourceVnName
+        {
+            get
+            {
+                List<string> arr = new List<string>();
+                foreach (var item in sources)
+                {
+                    arr.Add(item.vnName);
+                }
+
+                return arr.ToArray();
+            }
+        }
+
+        public string[] sourceEnName
+        {
+            get
+            {
+                List<string> arr = new List<string>();
+                foreach (var item in sources)
+                {
+                    arr.Add(item.enName);
+                }
+
+                return arr.ToArray();
+            }
+        }
         public List<bool> getTargetSupport(string vnName) {
             List<bool> output = new List<bool>();
             foreach (var item in targets) {

@@ -25,63 +25,27 @@ namespace RCSv1._0
         public DoseOutputPanel(Panel PnlDoseOutput)
         {
             pnlDoseOutput = PnlDoseOutput;
+        }
 
-            BunifuThinButton2 nextPhantom = new BunifuThinButton2()
+        public void showResult(List<float> results)
+        {
+            pnlDoseOutput.Controls.Clear();
+            int x = 20;
+            int y = 10;
+            for(var ri = 0; ri < results.Count; ri ++)
             {
-                ButtonText = "Mô hình sau     >>",
-                Font = new Font("Segoe UI", 14, FontStyle.Regular),
-                Location = new Point(13, 8),
-                Size = new Size(195, 54),
-                ActiveFillColor = Color.SeaGreen,
-                ActiveForecolor = Color.White,
-                ActiveLineColor = Color.SeaGreen,
-            };
-            pnlDoseOutput.Controls.Add(nextPhantom);
+                var result = results[ri];
+                var vnNguonName = SettingManager.shared.sourceVnName[ri];
 
-            BunifuThinButton2 previousPhantom = new BunifuThinButton2()
-            {
-                ButtonText = "<<     Mô hình trước",
-                Font = new Font("Segoe UI", 14, FontStyle.Regular),
-                Location = new Point(507, 8),
-                Size = new Size(195, 54),
-                ActiveFillColor = Color.SeaGreen,
-                ActiveForecolor = Color.White,
-                ActiveLineColor = Color.SeaGreen,
-            };
-            pnlDoseOutput.Controls.Add(previousPhantom);
-
-
-            // Draw Textbox
-            int locationX = 13;
-            int locationY = 82;
-
-            for (int i = 0; i < UserData.targetOrganName.Count / 2; i++)
-            {
-                TextBox txbDose = new TextBox()
+                var label = new Label()
                 {
-                    Size = new Size(150, 30),
-                    Font = new Font("Segoe UI", 10, FontStyle.Regular),
-                    Location = new Point(locationX, locationY),
-                    Modified = false,
+                    Text = vnNguonName + " -- " + result,
+                    Size = new Size(600, 20),
+                    Location = new Point(x, y),
+                    ForeColor = Color.Black
                 };
-                locationY += 31;
-                arrTxbDose.Add(txbDose);
-                pnlDoseOutput.Controls.Add(arrTxbDose[i]);
-            }
-            locationX = 82;
-            locationY = 552;
-            for (int i = UserData.targetOrganName.Count / 2; i < UserData.targetOrganName.Count; i++)
-            {
-                TextBox txbDose = new TextBox()
-                {
-                    Size = new Size(150, 30),
-                    Font = new Font("Segoe UI", 10, FontStyle.Regular),
-                    Location = new Point(locationX, locationY),
-                    Modified = false,
-                };
-                locationY += 31;
-                arrTxbDose.Add(txbDose);
-                pnlDoseOutput.Controls.Add(arrTxbDose[i]);
+                y += 20;
+                pnlDoseOutput.Controls.Add(label);
             }
         }
 

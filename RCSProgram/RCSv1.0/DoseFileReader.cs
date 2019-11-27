@@ -139,32 +139,35 @@ namespace RCSv1._0
         /// </summary>
         public Dictionary<string, double> DoseDict = new Dictionary<string, double>();
 
-        public List<float> calculate(List<float> timeSourceOrgan) {
+        public List<float> calculate(List<float> timeSourceOrgan)
+        {
             var output = new List<float>();
-            for (int bi = 0; bi < timeSourceOrgan.Count; bi++) {
-                var targetEnName = SettingManager.shared.targetEnNames[bi];
-                output.Add((float)sum(timeSourceOrgan[bi], findDoseOf(targetEnName)));
-            }
-            return output;
-        }
-
-        private double sum(float time, Dictionary<string, double> doses) {
-            double output = 0;
-            foreach (var value in doses.Values) {
-                output += value * time * 3600;
-            }
-            return output;
-        }
-
-        private Dictionary<string, double> findDoseOf(string target) {
-            Dictionary<string, double> output = new Dictionary<string, double>();
-            foreach (var key in DoseDict.Keys) {
-                var trimKey = key.Trim();
-                if (trimKey.StartsWith(target + "+")) {
-                    output.Add(trimKey, DoseDict[key]);
+            var listSourceEn = SettingManager.shared.sourceEnName;
+            var listTargetEn = SettingManager.shared.targetEnNames;
+            for (int si = 0; si < listSourceEn.Length; si++)
+            {
+                var source = listSourceEn[si];
+                float value = 0;
+                for (int ti = 0; ti < listTargetEn.Length; ti++)
+                {
+                    var target = listTargetEn[ti];
+                    var dose = findDose(target, source);
+                    value += timeSourceOrgan[ti] * 3600 * dose;
                 }
+                output.Add(value);
             }
+
             return output;
+        }
+
+        private float findDose(string target, string source)
+        {
+            var key = target + "+" + source;
+            if (DoseDict.ContainsKey(key))
+            {
+                return (float)DoseDict[key];
+            }
+            return 0;
         }
     }
 }
