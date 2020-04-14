@@ -83,6 +83,10 @@ namespace RCSv1._0
             UserData.isotopeIndex = 0;
         }
 
+        public string selectedNuclideName() {
+            return Constant.arrNuclide[cmbChooseNuclide.SelectedIndex];
+        }
+
         public bool CheckFullNuclideData()
         {
             if (cmbChooseNuclide.Text == null)

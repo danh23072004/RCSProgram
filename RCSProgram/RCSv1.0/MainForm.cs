@@ -185,7 +185,7 @@ namespace RCSv1._0
         List<OrganDose> GetTargetOrgan(int lineLocation)
         {
             // lineLocation là biến chỉ vị trí (số dòng) trong file text để tìm kiếm danh sách cquan nguồn
-            string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m.txt";
+            string fileLocation = Application.StartupPath + @"\data\";
             FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(file);
             string line = "";
@@ -250,92 +250,19 @@ namespace RCSv1._0
             return organDoses;
         }
 
-        List<float> Dose(int modelIndex, List<float> timeSourceOrgan)
-        {
-            // arrTimeSourceOrgan : là thời gian lưu trú của từng cơ quan
-            // listtargetOrganOrdinal : là dãy model (phantom) mà mình cần xét
-            // modelIndex : Số thứ từ của model (phantom) cần xét
-            // listtargetOrganOrdinal : danh sach cac model (phantom) can tinh
-            string fileLocation = @"D:\NHHSchool\RCSProgram\Tc-99m.txt";
-            FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
-            StreamReader reader = new StreamReader(file);
-
-            // Thời gian lưu trú của cơ quan nguồn
-            string[] modelName = new string[]
-            {
-                "Adult Male",
-                "Adult Female",
-                "15-year-old Male",
-                "10-year-old Male",
-                "5-year-old Male",
-                "1-year-old Male",
-                "Newborn Male",
-                "15-year-old Female",
-                "10-year-old Female",
-                "5-year-old Female",
-                "1-year-old Female",
-                "Newborn Female",
-                "3-month Pregnant Female",
-                "6-month Pregnant Female",
-                "9-month Pregnant Female",
-            };
-
-            int index = 0;
-            List<string> sourceOrgan = GetSourceOrgan(ref index, modelName, modelIndex);
-
-            List<OrganDose> targetOrgan = GetTargetOrgan(index);
-            // targetOrgan này bao gồm cả S của cqbia đối với từng cqnguồn
-
-            List<float> organDose = new List<float>();
-            // Dùng để lưu kết quả tính liều của các cơ quan bia
-
-            /*
-            Không thể liệt kê rồi cố định các cơ quan (đối với phantom/model cũng tương tự), 
-            bởi khi thêm vào một cơ quan mới (hay phantom/model) mới nào thì phần mềm sẽ không xử lý được
-            */
-
-            float time = 0;
-            // Biến này dùng để đổi trung gian từ giờ -> giây
-
-            float dose;
-            // Biến này dùng để tính trung gian, để add vào mảng organDose
-
-            for (int i = 0; i < targetOrgan.Count; i++)
-            {
-                dose = 0f;
-                // timeSourceOrgan - 2 do có 2 dữ liệu lưu trú phải copy
-                for (int t = 0; t < timeSourceOrgan.Count; t++)
-                {
-                    if (timeSourceOrgan[t] != 0)
-                    //    || Array.Exists(Constant.malePhantom, element => element == modelIndex && sourceOrgan[t] == "Ovaries")
-                    //    || Array.Exists(Constant.femalePhantom, element => element == modelIndex && sourceOrgan[t] == "Testes"))
-                    {
-                        if (t > targetOrgan[i].listDoses.Count)
-                        {
-                            break;
-                        }
-                        time = timeSourceOrgan[t] * 3600;
-                        dose += time * targetOrgan[i].listDoses[t];
-                        //if (targetOrgan[i].organTargetName == "TrabBone" || targetOrgan[i].organTargetName == "CortBone")
-                        //{
-                        //    UserData.targetOrganName.Add(targetOrgan[t].organTargetName + 'S');
-                        //    UserData.targetOrganName.Add(targetOrgan[t].organTargetName + 'V');
-                        //}
-                        //else
-                        //{
-                            UserData.targetOrganName.Add(targetOrgan[t].organTargetName);
-                        //}
-                    }
-                }
-                organDose.Add(dose);
-            }
-
-            reader.Close();
-            file.Close();
-            return organDose;
+        private string filePath(string nuclideName, string modelName) { 
+            return Application.StartupPath + @"\data\" + modelName + "." + nuclideName;
         }
 
-
+        List<float> Dose(string nuclideName, string modelName, List<float> timeSourceOrgan) {
+            List<float> output = new List<float>();
+            string fileLocation = filePath(nuclideName, modelName);
+            DoseFileReader reader = new DoseFileReader();
+            var doseTable = reader.findDoseTable(fileLocation, modelName);
+            
+            output = doseTable.calculate(timeSourceOrgan);
+            return output;
+        }
 
         #endregion
 
@@ -425,12 +352,10 @@ namespace RCSv1._0
                 pnlDoseOutput.BringToFront();
                 UserData.humanPhantom = modelsInputPanel.ReturnHumanAgeOption();    // Đây là listModelIndex
                 UserData.kineticsData = kineticsInputPanel.GetKineticsData();   // Đây là timeSourceOrgan
-                List<List<float>> listOrganDose = new List<List<float>>();  // Lưu theo danh sách kết quả tính liều của từng phantom
-
-                for (int i = 0; i < UserData.humanPhantom.Count; i++)
-                {
-                    listOrganDose.Add(Dose(UserData.humanPhantom[i], UserData.kineticsData));
-                }
+                List<float> listOrganDose = new List<float>();  // Lưu theo danh sách kết quả tính liều của từng phantom
+                listOrganDose = Dose(nuclideInputPanel.selectedNuclideName(), UserData.humanPhantom, UserData.kineticsData);
+                doseOutputPanel.showResult(listOrganDose);
+                pnlDoseOutput.BringToFront();
             }
         }
 
